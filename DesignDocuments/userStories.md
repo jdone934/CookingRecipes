@@ -28,7 +28,11 @@ As any user, I want to view recipes that are created on the website.
 ### View Recipe Overview
 As a user viewing a recipe, I want to see an overview of the recipe.
 
+### View Step-by-step Instructions
+As a user viewing a recipe, I want to see step-by-step instructions for the recipe.
 
+### View Ingredients
+As a user viewing a recipe step-by-step, I want to see the ingredients list.
 
 ## Admin Features
 
@@ -42,6 +46,9 @@ As an admin, I want to ban a user.
 As an admin, I want to delete a malicious recipe.
 
 # Features for After MVP developed
+
+### Set a timer
+As a user viewing a recipe, I want to set a timer.
 
 ### Share Recipes
 As a logged in user, I want to share recipes with other users.
