@@ -52,7 +52,7 @@ avoiding this drawback.
 ### Design
 
 * [User Stories](DesignDocuments/userStories.md)
-* [Screen Design](DesignDocuments/Screens.md)
+* [Screen Design (External Page to Moqups Project)](https://app.moqups.com/PwlaN4YYza/view/page/aa9df7b72)
 * [Application Flow](DesignDocuments/applicationFlow.md)
 * [Database Design](DesignDocuments/databaseDiagram.png)
 
