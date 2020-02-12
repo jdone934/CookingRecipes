@@ -9,16 +9,17 @@
 - [ ] List technologies, versions and how they will be used
 - [ ] Weekly journal entry
 - [ ] Write project plan
-- [ ] Document application flow in text and pictures - I'll use wireframes that have clickable links for the screen design. Use Balsamiq? 
+- [ ] Document application flow in text and pictures. I'll visualize the flow with a Moqups project. 
 - [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub. 
 
 ### Week 4
 - [ ] Complete database design
-- [ ] Create the database and user table
+- [ ] Create the database and user and recipes tables
 - [ ] Create the user entity class and annotate for hibernate
 - [ ] Create user dao
 - [ ] Create the test database
 - [ ] Create user dao unit tests
+- [ ] Repeat above four steps for recipes
 - [ ] Weekly journal entry
 - [ ] Set up logging
 - [ ] Create class uml diagram
@@ -41,12 +42,8 @@
 - [ ] Create db on AWS
 - [ ] Deploy to AWS for first time
 - [ ] Weekly journal entry
-- [ ] Create trail table
-- [ ] Add the trail entity (test, dev and prod dbs)
-- [ ] Realize that these daos are repetitive. Refactor into a generic dao!
-- [ ] Add update and delete functionality in jsp for user and role
-- [ ] Build the trail search jsp
-- [ ] Build the trail add/update/delete jsp
+- [ ] Build skeleton of index jsp. Allow user to 
+- [ ] Build the add recipe jsp
 - [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created. 
 
 
@@ -55,34 +52,27 @@
 - [ ] Weekly journal entry
 - [ ] Set up authentication locally
 - [ ] Set up authentication on AWS
-- [ ] Add the Trail Type and Grooming Tables, populate with data, (test, dev and prod dbs)
-- [ ] Create the Trail Type and Grooming entities
-- [ ] Update Trail and Trail report to use trail type and grooming
-- [ ] Update Trail and Trail report tests to be sure they work with the new relationships
-- [ ] Review and incorporate any feedback from Checkpoint 2.
-
+- [ ] Build the user account jsp
+- [ ] Create the view recipe overview jsp 
 
 ### Week 8
 
 - [ ] Weekly journal entry
-- [ ] Integration with google maps api
-- [ ] Create trail report table (test, dev and prod dbs)
-- [ ] Add the trail report entity
-- [ ] Create the trail report dao
-- [ ] Create the trail report dao unit tests
-- [ ] Build the trail report search jsp
-- [ ] Build the trail report crud jsps
+- [ ] Create the view recipe Step-by-Step jsp with all features.
 - [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented. 
 
 ### Week 9
 - [ ] Weekly journal entry
-- [ ] Integration with weather service and/or snow depth data
+- [ ] Build out index jsp with search functionality
+- [ ] Add account creation/sign in with Google and Facebook accounts
 - [ ] Review and incorporate feedback from Checkpoint 3.
 - [ ] Carefully review code for standards and best practices - use a code quality tool? 
 
 ### Week 8
 - [ ] Weekly journal entry
 - [ ] Implement paging of search results
+- [ ] Begin Exploring ability to add Alexa functionality.
+- [ ] Review/revise project plan to add Alexa functionality.
 - [ ] Code review
 
 ### Week 9
