@@ -5,22 +5,51 @@ Document how your week in Ent Java went. You may use whatever format suits you, 
 
 ### Week 1
 
-1/18/2016 - 7.5 hours
+Week Starting 1/19/2020 - 2.5 hours
 
 Tasks Completed:
- * Chose a project goal
- * Reviewed SkinnySki.com 
- * Created this repository 
- * Wrote the problem statement
- * Started documenting the project plan
- * Began listing technologies and how they fit in this project
+ * Reviewed intro course materials. Watched videos to prep for week 1. 
+ * Began thinking about a project goal
+ * Completed Week 1 Assignments
  
-I have a solid idea for the individual project and am anxious to get started. One area I struggled with a little bit was getting specific on the project plan with regard to what exactly I'll be doing in the later weeks. I think once I have the screen layout complete this coming week, it will make it much easier to add more detail to the plan. 
+I spent a large portion of this week trying to figure out what to do for my individual project. I'm bad at coming up with large ideas like this, so I expected trying to come up with an idea to run up to the last minute.
 
-I also started looking at a few different services that could be used:
-
-* Here's the home page for the google maps web services: https://developers.google.com/maps/web-services/overview?hl=en This can be used to display a map of the trail location.
-* A service to identify the current snow depth, most recent snowfal, etc.  Looks like this data is available: http://www.weather.gov/nerfc/snow, but I did not quickly find a service that returns the data. Will keep searching. Scraping the details from something like this, may work as well: http://www.nohrsc.noaa.gov/nsa/reports.html?region=National&var=snowdepth&dy=2016&dm=1&dd=24&units=e&sort=value&filter=0
-* A service for current weather conditions migth be helpful as well. http://openweathermap.org looks promising and they have a free tier. There's also some integration with google maps, so I think I may be able to project weather data over the google map?
+Intro materials for the course went over well
 
 ### Week 2
+
+Week Starting 1/26/2020 - 4 hours
+
+Tasks Completed:
+* Searched for technologies I may want to base my project around.
+* Discovered ability to control a website with Alexa. 
+* Did some preliminary research on how feasible this is.
+* Finalized project idea.
+* Developed Project Plan.
+* Watched videos and completed exercises/activities for Week 2.
+
+I feel a little behind last week, so i put in some extra work to get caught up this week. I made sure to complete this weeks work and get a start on Week 3 materials to get caught up.
+
+I spent a large amount of time this week trying to finalize my vision for the final project. After stumbling across this technology that allows you to control a website with Alexa, I wanted to come up with a project that would allow me to use this technology. I've recently began cooking more, so that was on my mind and I decided on a website to store cooking recipes that was easy to use while cooking.
+
+After doing some preliminary research, I think it is feasible to pursue this Alexa route. I'm definitely planning on it being an add on feature, but I'm deeply hoping to include it in the final project.
+
+### Week 3
+
+Week Starting 2/2/2020 - 1 hours
+
+Tasks Completed:
+* Watched videos and read materials for Week 3
+
+Unfortunately, work got in the way this week and I had to prioritize other things in my personal/work life above work for this class. Things should clear up next week and I will have to make up for it then.
+
+### Week 4 (ongoing)
+
+Week Starting 2/9/2020 - 5 hours
+
+Tasks Completed:
+* Completed activities and assignments for Week 3
+* Completed Project Plan and created directory and skeletons for design documents
+* Completed design documents (including wireframes, application flow, user stories and Project Plan)
+
+As I mentioned in week 3, I'm putting in some extra time this week to catch up. The bulk of my work this week was spent in putting the materials together for the project 1 checkpoint (Project plan and design documents).
