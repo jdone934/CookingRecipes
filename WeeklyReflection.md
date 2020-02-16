@@ -43,13 +43,14 @@ Tasks Completed:
 
 Unfortunately, work got in the way this week and I had to prioritize other things in my personal/work life above work for this class. Things should clear up next week and I will have to make up for it then.
 
-### Week 4 (ongoing)
+### Week 4
 
-Week Starting 2/9/2020 - 5 hours
+Week Starting 2/9/2020 - 6 hours
 
 Tasks Completed:
 * Completed activities and assignments for Week 3
 * Completed Project Plan and created directory and skeletons for design documents
 * Completed design documents (including wireframes, application flow, user stories and Project Plan)
+* Read materials for week 4
 
 As I mentioned in week 3, I'm putting in some extra time this week to catch up. The bulk of my work this week was spent in putting the materials together for the project 1 checkpoint (Project plan and design documents).
