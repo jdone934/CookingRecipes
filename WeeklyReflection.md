@@ -54,3 +54,14 @@ Tasks Completed:
 * Read materials for week 4
 
 As I mentioned in week 3, I'm putting in some extra time this week to catch up. The bulk of my work this week was spent in putting the materials together for the project 1 checkpoint (Project plan and design documents).
+
+### Week 5
+
+Week Starting 2/16/2020 - 3 hours 
+
+Tasks Completed:
+* Completed Exercise for week 4
+* Watched videos for week 5
+* Completed Exercise for week 5
+
+I was able to catch up on graded materials for the week but wasn't able to put in any work on my project. Need to catch up on this for next week.
