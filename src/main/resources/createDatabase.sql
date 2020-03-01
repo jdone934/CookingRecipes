@@ -12,7 +12,7 @@ CREATE TABLE users (
     `email` varchar(320) NOT NULL,
     `first_name` varchar(50),
     `last_name` varchar(50),
-    `users_role` varchar(25) NOT NULL,
+    `user_role` varchar(25) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
