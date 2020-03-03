@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UsersDaoTest {
-    UsersDao dao;
+    GenericDao dao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -30,7 +30,7 @@ public class UsersDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new UsersDao();
+        dao = new GenericDao(Users.class);
     }
 
     /**
@@ -38,7 +38,7 @@ public class UsersDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Users retrievedUser = dao.getById(1);
+        Users retrievedUser = (Users) dao.getById(1);
         Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
                             "Jacob", "Doney", "admin");
 
@@ -53,7 +53,7 @@ public class UsersDaoTest {
         Users newUser = new Users("myhero34", "IM A SAILOR", "sdoney@gmail.com", "Sam", "Doney", "user");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
-        Users insertedUser = dao.getById(id);
+        Users insertedUser = (Users) dao.getById(id);
         assertEquals(newUser, insertedUser);
     }
 
@@ -64,10 +64,10 @@ public class UsersDaoTest {
     void updateSuccess() {
         Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
                 "Joseph", "Doney", "admin");
-        Users userToUpdate = dao.getById(1);
+        Users userToUpdate = (Users) dao.getById(1);
         userToUpdate.setFirstName(expectedUser.getFirstName());
         dao.saveOrUpdate(userToUpdate);
-        Users userAfterUpdate = dao.getById(1);
+        Users userAfterUpdate = (Users) dao.getById(1);
         assertEquals(expectedUser, userAfterUpdate);
     }
 

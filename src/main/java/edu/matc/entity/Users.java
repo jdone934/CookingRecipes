@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
@@ -11,12 +12,15 @@ import java.util.Objects;
  * @author pwaite
  */
 @Entity(name = "Users")
-@Table(name = "users") // case sensitive!
+@Table(name = "users")
 public class Users {
+    @NotNull
     private String username;
 
+    @NotNull
     private String password;
 
+    @NotNull
     private String email;
 
     @Column(name = "first_name")
@@ -25,11 +29,10 @@ public class Users {
     @Column(name = "last_name")
     private String lastName;
 
+    @NotNull
     @Column(name = "user_role")
     private String userRole;
 
-    // Every Entity must have a unique identifier which is annotated @Id
-    // Notice there is no @Column here as the column and instance variable name are the same
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
