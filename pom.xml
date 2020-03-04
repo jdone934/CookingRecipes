@@ -100,7 +100,7 @@
 
   </dependencies>
   <build>
-    <finalName>carbConscious</finalName>
+    <finalName>CookingRecipes</finalName>
     <pluginManagement>
       <plugins>
         <plugin>

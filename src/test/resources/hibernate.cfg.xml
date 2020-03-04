@@ -18,6 +18,7 @@
 
         <mapping class="edu.matc.entity.Users" />
         <mapping class="edu.matc.entity.Image" />
+        <mapping class="edu.matc.entity.Recipe" />
     </session-factory>
 
 </hibernate-configuration>

@@ -4,7 +4,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A class to represent a user.
@@ -38,6 +40,8 @@ public class Users {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
+    @OneToMany(mappedBy = "createdByUser", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Recipe> createdRecipes = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -181,6 +185,24 @@ public class Users {
      */
     public String getUserRole() {
         return userRole;
+    }
+
+    /**
+     * Gets recipes created by user.
+     *
+     * @return the created recipes
+     */
+    public Set<Recipe> getCreatedRecipes() {
+        return createdRecipes;
+    }
+
+    /**
+     * Sets recipes created by user.
+     *
+     * @param createdRecipes the created recipes
+     */
+    public void setCreatedRecipes(Set<Recipe> createdRecipes) {
+        this.createdRecipes = createdRecipes;
     }
 
     /**

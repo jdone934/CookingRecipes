@@ -28,7 +28,7 @@ CREATE TABLE recipe (
     `name` varchar(100) NOT NULL,
     `description` varchar(300),
     `category` varchar(50),
-    `users_id` int(10) NOT NULL,
+    `created_by_user_id` int(10) NOT NULL,
     `image_id` int(10),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`users_id`)
