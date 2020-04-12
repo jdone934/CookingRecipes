@@ -20,7 +20,9 @@ public class Instruction {
     private String description;
     @Column(name = "image_id")
     private int imageId;
-    @Column(name = "recipe_id")
+
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
     private int recipeId;
 
     @Id
