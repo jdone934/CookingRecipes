@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * A class to represent a user.
  *
- * @author pwaite
+ * @author Jacob Doney
  */
 @Entity(name = "Users")
 @Table(name = "users")
