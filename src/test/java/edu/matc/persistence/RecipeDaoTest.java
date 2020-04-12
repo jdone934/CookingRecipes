@@ -2,6 +2,7 @@ package edu.matc.persistence;
 
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
+import edu.matc.entity.Instruction;
 import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RecipeDaoTest {
     GenericDao recipeDao;
     GenericDao userDao;
+    GenericDao instructionDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -35,6 +37,7 @@ public class RecipeDaoTest {
 
         recipeDao = new GenericDao(Recipe.class);
         userDao = new GenericDao(Users.class);
+        instructionDao = new GenericDao(Instruction.class);
     }
 
     /**
@@ -91,5 +94,15 @@ public class RecipeDaoTest {
     void getAllSuccess() {
         List<Recipe> recipes = recipeDao.getAll();
         assertEquals(2, recipes.size());
+    }
+
+    /**
+     * Verify Instruction deletion on deletion of Recipe
+     */
+    @Test
+    void deleteInstructionSuccess() {
+        recipeDao.delete(recipeDao.getById(1));
+        assertNull(instructionDao.getById(1));
+        assertNull(instructionDao.getById(2));
     }
 }

@@ -45,7 +45,7 @@ public class InstructionDaoTest {
     void getByIdSuccess() {
         Instruction retrievedInstruction = (Instruction) instructionDao.getById(1);
         Recipe recipe = (Recipe) recipeDao.getById(1);
-        Instruction expectedInstruction = new Instruction(1, "First, place the roast in the roaster and fill iwth water until the water covers about half the pork. Cook on LOW for about 10 hours.",
+        Instruction expectedInstruction = new Instruction(1, "First, place the roast in the roaster and fill with water until the water covers about half the pork. Cook on LOW for about 10 hours.",
                                                             recipe, 1);
         assertEquals(expectedInstruction, retrievedInstruction);
     }
@@ -62,36 +62,37 @@ public class InstructionDaoTest {
         Instruction insertedInstruction = (Instruction) instructionDao.getById(id);
         assertEquals(newInstruction, insertedInstruction);
     }
-//
-//    /**
-//     * Verify successful update of a Recipe
-//     */
-//    @Test
-//    void updateSuccess() {
-//        Instruction instructionToUpdate = (Instruction) recipeDao.getById(2);
-//        Recipe newRecipe = recipeDao.getById(2)
-//        instructionToUpdate.setRecipe(newRecipe);
-//        Recipe recipeAfterUpdate = (Recipe) recipeDao.getById(1);
-//        Users createdByUser = (Users) userDao.getById(1);
-//        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser, 1);
-//        assertEquals(expectedRecipe, recipeAfterUpdate);
-//    }
-//
-//    /**
-//     * Verify successful delete of Recipe
-//     */
-//    @Test
-//    void deleteSuccess() {
-//        recipeDao.delete(recipeDao.getById(2));
-//        assertNull(recipeDao.getById(2));
-//    }
-//
-//    /**
-//     * Verify successful retrieval of all Recipes
-//     */
-//    @Test
-//    void getAllSuccess() {
-//        List<Recipe> recipes = recipeDao.getAll();
-//        assertEquals(2, recipes.size());
-//    }
+
+    /**
+     * Verify successful update of a Recipe
+     */
+    @Test
+    void updateSuccess() {
+        Instruction instructionToUpdate = (Instruction) instructionDao.getById(2);
+        Recipe newRecipe = (Recipe) recipeDao.getById(2);
+        instructionToUpdate.setRecipe(newRecipe);
+        instructionDao.saveOrUpdate(instructionToUpdate);
+        Instruction instructionAfterUpdate = (Instruction) instructionDao.getById(2);
+        Instruction expectedInstruction = new Instruction(2, "Then, remove the roast form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster.",
+                                                            newRecipe, 2);
+        assertEquals(expectedInstruction, instructionAfterUpdate);
+    }
+
+    /**
+     * Verify successful delete of Instruction
+     */
+    @Test
+    void deleteSuccess() {
+        instructionDao.delete(instructionDao.getById(2));
+        assertNull(instructionDao.getById(2));
+    }
+
+    /**
+     * Verify successful retrieval of all Instructions
+     */
+    @Test
+    void getAllSuccess() {
+        List<Instruction> instructions = instructionDao.getAll();
+        assertEquals(2, instructions.size());
+    }
 }
