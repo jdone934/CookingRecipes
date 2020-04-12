@@ -44,7 +44,7 @@ public class RecipeDaoTest {
     void getByIdSuccess() {
         Recipe retrievedRecipe = (Recipe) recipeDao.getById(1);
         Users createdByUser = (Users) userDao.getById(1);
-        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser);
+        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser, 1);
         assertEquals(expectedRecipe, retrievedRecipe);
     }
 
@@ -70,7 +70,7 @@ public class RecipeDaoTest {
         recipeToUpdate.setName("Not Doney's BBQ Pork");
         Recipe recipeAfterUpdate = (Recipe) recipeDao.getById(1);
         Users createdByUser = (Users) userDao.getById(1);
-        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser);
+        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser, 1);
         assertEquals(expectedRecipe, recipeAfterUpdate);
     }
 

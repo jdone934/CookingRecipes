@@ -51,6 +51,19 @@ public class Recipe {
      * Instantiates a new Recipe.
      *
      * @param name          the name
+     * @param createdByUser the created by user
+     * @param id            the recipe id
+     */
+    public Recipe(String name, Users createdByUser, int id) {
+        this.name = name;
+        this.createdByUser = createdByUser;
+        this.id = id;
+    }
+
+    /**
+     * Instantiates a new Recipe.
+     *
+     * @param name          the name
      * @param description   the description
      * @param category      the category
      * @param createdByUser the created by user
@@ -181,7 +194,7 @@ public class Recipe {
                 name.equals(recipe.name) &&
                 Objects.equals(description, recipe.description) &&
                 Objects.equals(category, recipe.category) &&
-                createdByUser.equals(recipe.createdByUser) &&
+                createdByUser.getId() == recipe.createdByUser.getId() &&
                 Objects.equals(image, recipe.image);
     }
 
