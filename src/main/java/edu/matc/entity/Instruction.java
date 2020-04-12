@@ -15,15 +15,16 @@ import java.util.Objects;
 @Table(name = "instruction")
 public class Instruction {
     @NotNull
-    private int rank;
+    private int recipeRank;
     @NotNull
     private String description;
-    @Column(name = "image_id")
-    private int imageId;
+
+    @OneToOne
+    @JoinColumn(name = "image_id")
+    private Image image;
 
     @ManyToOne
-    @JoinColumn(name = "recipe_id")
-    private int recipeId;
+    private Recipe recipe;
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
@@ -40,47 +41,79 @@ public class Instruction {
     /**
      * Instantiates a new Instruction.
      *
-     * @param rank        the rank
+     * @param recipeRank        the recipeRank
      * @param description the description
-     * @param recipeId    the recipe id
+     * @param recipe      the recipe
      */
-    public Instruction(int rank, String description, int recipeId) {
-        this.rank = rank;
+    public Instruction(int recipeRank, String description, Recipe recipe) {
+        this.recipeRank = recipeRank;
         this.description = description;
-        this.recipeId = recipeId;
+        this.recipe = recipe;
     }
 
     /**
      * Instantiates a new Instruction.
      *
-     * @param rank        the rank
+     * @param recipeRank        the recipeRank
      * @param description the description
-     * @param imageId     the image id
-     * @param recipeId    the recipe id
+     * @param recipe      the recipe
+     * @param id          the id
      */
-    public Instruction(int rank, String description, int imageId, int recipeId) {
-        this.rank = rank;
+    public Instruction(int recipeRank, String description, Recipe recipe, int id) {
+        this.recipeRank = recipeRank;
         this.description = description;
-        this.imageId = imageId;
-        this.recipeId = recipeId;
+        this.recipe = recipe;
+        this.id = id;
     }
 
     /**
-     * Gets rank.
+     * Instantiates a new Instruction.
      *
-     * @return the rank
+     * @param recipeRank        the recipeRank
+     * @param description the description
+     * @param image     the image
+     * @param recipe      the recipe
      */
-    public int getRank() {
-        return rank;
+    public Instruction(int recipeRank, String description, Image image, Recipe recipe) {
+        this.recipeRank = recipeRank;
+        this.description = description;
+        this.image = image;
+        this.recipe = recipe;
     }
 
     /**
-     * Sets rank.
+     * Instantiates a new Instruction.
      *
-     * @param rank the rank
+     * @param recipeRank        the recipeRank
+     * @param description the description
+     * @param image     the image
+     * @param recipe      the recipe
+     * @param id          the id
      */
-    public void setRank(int rank) {
-        this.rank = rank;
+    public Instruction(int recipeRank, String description, Image image, Recipe recipe, int id) {
+        this.recipeRank = recipeRank;
+        this.description = description;
+        this.image = image;
+        this.recipe = recipe;
+        this.id = id;
+    }
+
+    /**
+     * Gets recipeRank.
+     *
+     * @return the recipeRank
+     */
+    public int getRecipeRank() {
+        return recipeRank;
+    }
+
+    /**
+     * Sets recipeRank.
+     *
+     * @param recipeRank the recipeRank
+     */
+    public void setRecipeRank(int recipeRank) {
+        this.recipeRank = recipeRank;
     }
 
     /**
@@ -106,35 +139,35 @@ public class Instruction {
      *
      * @return the image id
      */
-    public int getImageId() {
-        return imageId;
+    public Image getImage() {
+        return image;
     }
 
     /**
      * Sets image id.
      *
-     * @param imageId the image id
+     * @param image the image id
      */
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     /**
-     * Gets recipe id.
+     * Gets recipe.
      *
-     * @return the recipe id
+     * @return the recipe
      */
-    public int getRecipeId() {
-        return recipeId;
+    public Recipe getRecipe() {
+        return recipe;
     }
 
     /**
-     * Sets recipe id.
+     * Sets recipe.
      *
-     * @param recipeId the recipe id
+     * @param recipe the recipe
      */
-    public void setRecipeId(int recipeId) {
-        this.recipeId = recipeId;
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
     /**
@@ -158,10 +191,10 @@ public class Instruction {
     @Override
     public String toString() {
         return "Instruction{" +
-                "rank=" + rank +
+                "recipeRank=" + recipeRank +
                 ", description='" + description + '\'' +
-                ", imageId=" + imageId +
-                ", recipeId=" + recipeId +
+                ", imageId=" + image +
+                ", recipeId=" + recipe +
                 ", id=" + id +
                 '}';
     }
@@ -171,15 +204,15 @@ public class Instruction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Instruction that = (Instruction) o;
-        return rank == that.rank &&
-                imageId == that.imageId &&
-                recipeId == that.recipeId &&
+        return recipeRank == that.recipeRank &&
+                image == that.image &&
+                recipe.getId() == that.recipe.getId() &&
                 id == that.id &&
                 description.equals(that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rank, description, imageId, recipeId, id);
+        return Objects.hash(recipeRank, description, image, recipe, id);
     }
 }

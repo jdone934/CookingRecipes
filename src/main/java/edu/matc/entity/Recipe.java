@@ -32,8 +32,8 @@ public class Recipe {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
-    @OneToMany(mappedBy = "recipeId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Recipe> recipeInstructions = new HashSet<>();
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Instruction> recipeInstructions = new HashSet<>();
 
     /**
      * Instantiates a new Recipe.
@@ -188,6 +188,24 @@ public class Recipe {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * Gets recipe instructions.
+     *
+     * @return the recipe instructions
+     */
+    public Set<Instruction> getRecipeInstructions() {
+        return recipeInstructions;
+    }
+
+    /**
+     * Sets recipe instructions.
+     *
+     * @param recipeInstructions the recipe instructions
+     */
+    public void setRecipeInstructions(Set<Instruction> recipeInstructions) {
+        this.recipeInstructions = recipeInstructions;
     }
 
     @Override

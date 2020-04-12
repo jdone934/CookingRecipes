@@ -68,9 +68,10 @@ public class RecipeDaoTest {
     void updateSuccess() {
         Recipe recipeToUpdate = (Recipe) recipeDao.getById(1);
         recipeToUpdate.setName("Not Doney's BBQ Pork");
+        recipeDao.saveOrUpdate(recipeToUpdate);
         Recipe recipeAfterUpdate = (Recipe) recipeDao.getById(1);
         Users createdByUser = (Users) userDao.getById(1);
-        Recipe expectedRecipe = new Recipe("Doney's BBQ Pork", createdByUser, 1);
+        Recipe expectedRecipe = new Recipe("Not Doney's BBQ Pork", createdByUser, 1);
         assertEquals(expectedRecipe, recipeAfterUpdate);
     }
 

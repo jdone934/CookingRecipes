@@ -12,17 +12,16 @@ CREATE TABLE ingredient (`id` int(10) NOT NULL AUTO_INCREMENT, `name` varchar(25
 
 create table instruction
 (
-    id          int auto_increment
-        primary key,
-    `rank`      int          not null,
+    id          int auto_increment primary key,
+    recipeRank      int          not null,
     description varchar(500) not null,
     image_id    int          null,
     recipe_id   int          not null,
-    constraint rank_recipeId_unique
-        unique (`rank`, recipe_id),
+    constraint recipeRank_recipeId_unique
+        unique (recipeRank, recipe_id),
     constraint instruction_ibfk_1
         foreign key (image_id) references image (id)
-            on update cascade,
+            on update cascade on delete cascade,
     constraint instruction_ibfk_2
         foreign key (recipe_id) references recipe (id)
             on update cascade on delete cascade);
@@ -30,3 +29,5 @@ create table instruction
 INSERT INTO users (id, username, password, email, first_name, last_name, user_role) VALUES (1, 'jdone934', 'AWESOME PASSWORD', 'jdone934@hotmail.com', 'Jacob', 'Doney', 'admin'), (2, 'lktucker', 'SUPER AWESOME PASSWORD', 'lktucker@gmail.com', 'Laura', 'Tucker', 'user'), (3, 'zfabry', 'KINDA LAME PASSWORD', 'zfabry@gmail.com', 'Zach', 'Fabry', 'user'), (4, 'acollegnon', 'BEST PASSWORD', 'acollegnon@gmail.com', 'Ashley', 'Fabry', 'user');
 INSERT INTO image (id, filepath, description) VALUES (1, 'catLightning.png', 'cat shooting lightning from his paws'), (2, 'waterfall.png', 'waterfall from Grand Portage');
 INSERT INTO recipe (id, name, created_by_user_id) VALUES (1, "Doney's BBQ Pork", 1), (2, "Laura's Panag Curry", 2);
+INSERT INTO instruction (id, recipeRank, description, image_id, recipe_id) VALUES (1, 1, 'First, place the roast in the roaster and fill iwth water until the water covers about half the pork. Cook on LOW for about 10 hours.', null, 1);
+INSERT INTO instruction (id, recipeRank, description, image_id, recipe_id) VALUES (2, 2, 'Then, remove the raost form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster.', null, 1);

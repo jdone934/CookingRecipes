@@ -1,0 +1,1290 @@
+[DEBUG] 2020-04-12 00:12:18.767 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+[DEBUG] 2020-04-12 00:12:18.839 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+[DEBUG] 2020-04-12 00:12:18.886 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[INFO ] 2020-04-12 00:12:19.529 [main] Version - HHH000412: Hibernate Core {5.4.4.Final}
+[DEBUG] 2020-04-12 00:12:19.559 [main] Environment - HHH000206: hibernate.properties not found
+[DEBUG] 2020-04-12 00:12:21.329 [main] LocalXmlResourceResolver - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+[DEBUG] 2020-04-12 00:12:21.350 [main] LocalXmlResourceResolver - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+[DEBUG] 2020-04-12 00:12:21.418 [main] JaxbCfgProcessor - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+[DEBUG] 2020-04-12 00:12:23.908 [main] ServiceBinding - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+[DEBUG] 2020-04-12 00:12:24.053 [main] RegionFactoryInitiator - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+[DEBUG] 2020-04-12 00:12:24.057 [main] RegionFactoryInitiator - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+[INFO ] 2020-04-12 00:12:24.259 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[DEBUG] 2020-04-12 00:12:24.541 [main] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@70325d20
+[DEBUG] 2020-04-12 00:12:24.546 [main] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@70325d20
+[DEBUG] 2020-04-12 00:12:24.547 [main] BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@70325d20
+[DEBUG] 2020-04-12 00:12:24.554 [main] BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3d7fa3ae
+[DEBUG] 2020-04-12 00:12:24.558 [main] BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@187eb9a8
+[DEBUG] 2020-04-12 00:12:24.564 [main] BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@3ff57625
+[DEBUG] 2020-04-12 00:12:24.565 [main] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@18fdb6cf
+[DEBUG] 2020-04-12 00:12:24.566 [main] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@18fdb6cf
+[DEBUG] 2020-04-12 00:12:24.571 [main] BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@18fdb6cf
+[DEBUG] 2020-04-12 00:12:24.577 [main] BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@6ad5923a
+[DEBUG] 2020-04-12 00:12:24.583 [main] BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@6ad5923a
+[DEBUG] 2020-04-12 00:12:24.583 [main] BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6ad5923a
+[DEBUG] 2020-04-12 00:12:24.586 [main] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@6f6962ba
+[DEBUG] 2020-04-12 00:12:24.590 [main] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@6f6962ba
+[DEBUG] 2020-04-12 00:12:24.595 [main] BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@6f6962ba
+[DEBUG] 2020-04-12 00:12:24.602 [main] BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@3fbfa96
+[DEBUG] 2020-04-12 00:12:24.603 [main] BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@3fbfa96
+[DEBUG] 2020-04-12 00:12:24.603 [main] BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3fbfa96
+[DEBUG] 2020-04-12 00:12:24.609 [main] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@301d8120
+[DEBUG] 2020-04-12 00:12:24.609 [main] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@301d8120
+[DEBUG] 2020-04-12 00:12:24.614 [main] BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@301d8120
+[DEBUG] 2020-04-12 00:12:24.619 [main] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@3e134896
+[DEBUG] 2020-04-12 00:12:24.619 [main] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@3e134896
+[DEBUG] 2020-04-12 00:12:24.620 [main] BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3e134896
+[DEBUG] 2020-04-12 00:12:24.621 [main] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@2d0bfb24
+[DEBUG] 2020-04-12 00:12:24.622 [main] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@2d0bfb24
+[DEBUG] 2020-04-12 00:12:24.631 [main] BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@2d0bfb24
+[DEBUG] 2020-04-12 00:12:24.639 [main] BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1136b469
+[DEBUG] 2020-04-12 00:12:24.639 [main] BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1136b469
+[DEBUG] 2020-04-12 00:12:24.641 [main] BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@5432050b
+[DEBUG] 2020-04-12 00:12:24.642 [main] BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@5432050b
+[DEBUG] 2020-04-12 00:12:24.646 [main] BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@2c779e5
+[DEBUG] 2020-04-12 00:12:24.647 [main] BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@2c779e5
+[DEBUG] 2020-04-12 00:12:24.647 [main] BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@682c1e93
+[DEBUG] 2020-04-12 00:12:24.649 [main] BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5b78fdb1
+[DEBUG] 2020-04-12 00:12:24.651 [main] BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@3e9803c2
+[DEBUG] 2020-04-12 00:12:24.652 [main] BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@3e9803c2
+[DEBUG] 2020-04-12 00:12:24.654 [main] BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.DurationType@7808fb9
+[DEBUG] 2020-04-12 00:12:24.655 [main] BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@7808fb9
+[DEBUG] 2020-04-12 00:12:24.663 [main] BasicTypeRegistry - Adding type registration Instant -> org.hibernate.type.InstantType@2d84cb86
+[DEBUG] 2020-04-12 00:12:24.665 [main] BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2d84cb86
+[DEBUG] 2020-04-12 00:12:24.668 [main] BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@4482469c
+[DEBUG] 2020-04-12 00:12:24.669 [main] BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@4482469c
+[DEBUG] 2020-04-12 00:12:24.671 [main] BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@4b1abd11
+[DEBUG] 2020-04-12 00:12:24.672 [main] BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@4b1abd11
+[DEBUG] 2020-04-12 00:12:24.674 [main] BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@1b32cd16
+[DEBUG] 2020-04-12 00:12:24.675 [main] BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@1b32cd16
+[DEBUG] 2020-04-12 00:12:24.677 [main] BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@19593091
+[DEBUG] 2020-04-12 00:12:24.678 [main] BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@19593091
+[DEBUG] 2020-04-12 00:12:24.680 [main] BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@4e868ef5
+[DEBUG] 2020-04-12 00:12:24.681 [main] BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@4e868ef5
+[DEBUG] 2020-04-12 00:12:24.684 [main] BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@afb5821
+[DEBUG] 2020-04-12 00:12:24.687 [main] BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@afb5821
+[DEBUG] 2020-04-12 00:12:24.689 [main] BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@1d207fad
+[DEBUG] 2020-04-12 00:12:24.690 [main] BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@1d207fad
+[DEBUG] 2020-04-12 00:12:24.692 [main] BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@18a645fd
+[DEBUG] 2020-04-12 00:12:24.695 [main] BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@18a645fd
+[DEBUG] 2020-04-12 00:12:24.700 [main] BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@5e3a39cd
+[DEBUG] 2020-04-12 00:12:24.700 [main] BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5e3a39cd
+[DEBUG] 2020-04-12 00:12:24.701 [main] BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5e3a39cd
+[DEBUG] 2020-04-12 00:12:24.705 [main] BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@52a36910
+[DEBUG] 2020-04-12 00:12:24.706 [main] BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@7e8a46b7
+[DEBUG] 2020-04-12 00:12:24.707 [main] BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@7e8a46b7
+[DEBUG] 2020-04-12 00:12:24.707 [main] BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@7e8a46b7
+[DEBUG] 2020-04-12 00:12:24.709 [main] BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@21fff664
+[DEBUG] 2020-04-12 00:12:24.712 [main] BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@1440c311
+[DEBUG] 2020-04-12 00:12:24.714 [main] BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1440c311
+[DEBUG] 2020-04-12 00:12:24.717 [main] BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@37c5fc56
+[DEBUG] 2020-04-12 00:12:24.717 [main] BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@37c5fc56
+[DEBUG] 2020-04-12 00:12:24.720 [main] BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@5ecba515
+[DEBUG] 2020-04-12 00:12:24.721 [main] BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5ecba515
+[DEBUG] 2020-04-12 00:12:24.723 [main] BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@18324f97
+[DEBUG] 2020-04-12 00:12:24.724 [main] BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@18324f97
+[DEBUG] 2020-04-12 00:12:24.726 [main] BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@72209d93
+[DEBUG] 2020-04-12 00:12:24.732 [main] BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@72209d93
+[DEBUG] 2020-04-12 00:12:24.734 [main] BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5f84abe8
+[DEBUG] 2020-04-12 00:12:24.745 [main] BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@aced190
+[DEBUG] 2020-04-12 00:12:24.746 [main] BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@aced190
+[DEBUG] 2020-04-12 00:12:24.746 [main] BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@aced190
+[DEBUG] 2020-04-12 00:12:24.752 [main] BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@2d6aca33
+[DEBUG] 2020-04-12 00:12:24.752 [main] BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@2d6aca33
+[DEBUG] 2020-04-12 00:12:24.752 [main] BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@2d6aca33
+[DEBUG] 2020-04-12 00:12:24.755 [main] BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.RowVersionType@63e5e5b4
+[DEBUG] 2020-04-12 00:12:24.756 [main] BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@5e840abf
+[DEBUG] 2020-04-12 00:12:24.770 [main] BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@749f539e
+[DEBUG] 2020-04-12 00:12:24.772 [main] BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@749f539e
+[DEBUG] 2020-04-12 00:12:24.772 [main] BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@749f539e
+[DEBUG] 2020-04-12 00:12:24.775 [main] BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@273842a6
+[DEBUG] 2020-04-12 00:12:24.776 [main] BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@273842a6
+[DEBUG] 2020-04-12 00:12:24.776 [main] BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@273842a6
+[DEBUG] 2020-04-12 00:12:24.777 [main] BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@5560bcdf
+[DEBUG] 2020-04-12 00:12:24.778 [main] BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@27aae97b
+[DEBUG] 2020-04-12 00:12:24.783 [main] BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@5467eea4
+[DEBUG] 2020-04-12 00:12:24.783 [main] BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@5467eea4
+[DEBUG] 2020-04-12 00:12:24.785 [main] BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6ff37443
+[DEBUG] 2020-04-12 00:12:24.789 [main] BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@12a160c2
+[DEBUG] 2020-04-12 00:12:24.795 [main] BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@12a160c2
+[DEBUG] 2020-04-12 00:12:24.801 [main] BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@30b2b76f
+[DEBUG] 2020-04-12 00:12:24.803 [main] BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@30b2b76f
+[DEBUG] 2020-04-12 00:12:24.804 [main] BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@340b7ef6
+[DEBUG] 2020-04-12 00:12:24.806 [main] BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@231baf51
+[DEBUG] 2020-04-12 00:12:24.808 [main] BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@4e8e8621
+[DEBUG] 2020-04-12 00:12:24.825 [main] BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@79a1728c
+[DEBUG] 2020-04-12 00:12:24.825 [main] BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@79a1728c
+[DEBUG] 2020-04-12 00:12:24.832 [main] BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@3005db4a
+[DEBUG] 2020-04-12 00:12:24.838 [main] BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@425d5d46
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@198ef2ce
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@4cbd03e7
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@52fc5eb1
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7a639ec5
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@14151bc5
+[DEBUG] 2020-04-12 00:12:24.839 [main] BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@3013909b
+[DEBUG] 2020-04-12 00:12:24.958 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+[DEBUG] 2020-04-12 00:12:24.960 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+[DEBUG] 2020-04-12 00:12:24.961 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2020-04-12 00:12:24.961 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2020-04-12 00:12:24.967 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+[DEBUG] 2020-04-12 00:12:24.970 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+[DEBUG] 2020-04-12 00:12:24.971 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+[DEBUG] 2020-04-12 00:12:24.973 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2020-04-12 00:12:24.975 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+[DEBUG] 2020-04-12 00:12:24.976 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+[DEBUG] 2020-04-12 00:12:24.977 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+[DEBUG] 2020-04-12 00:12:24.977 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+[DEBUG] 2020-04-12 00:12:24.977 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2020-04-12 00:12:24.979 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+[INFO ] 2020-04-12 00:12:24.990 [main] C3P0ConnectionProvider - HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/test_cooking_recipes
+[INFO ] 2020-04-12 00:12:24.991 [main] C3P0ConnectionProvider - HHH10001001: Connection properties: {password=****, user=root}
+[INFO ] 2020-04-12 00:12:24.992 [main] C3P0ConnectionProvider - HHH10001003: Autocommit mode: false
+[INFO ] 2020-04-12 00:12:25.709 [main] C3P0ConnectionProvider - HHH10001007: JDBC isolation level: <unknown>
+[DEBUG] 2020-04-12 00:12:28.240 [main] JdbcEnvironmentInitiator - Database ->
+       name : MySQL
+    version : 8.0.19
+      major : 8
+      minor : 0
+[DEBUG] 2020-04-12 00:12:28.241 [main] JdbcEnvironmentInitiator - Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.16 (Revision: 34cbc6bc61f72836e26327537a432d6db7c77de6)
+      major : 8
+      minor : 0
+[DEBUG] 2020-04-12 00:12:28.241 [main] JdbcEnvironmentInitiator - JDBC version : 4.2
+[INFO ] 2020-04-12 00:12:28.465 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[DEBUG] 2020-04-12 00:12:28.496 [main] IdentifierHelperBuilder - JDBC driver metadata reported database stores quoted identifiers in more than one case
+[DEBUG] 2020-04-12 00:12:28.613 [main] IdentifierHelperBuilder - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+[DEBUG] 2020-04-12 00:12:28.799 [main] Namespace - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+[DEBUG] 2020-04-12 00:12:28.816 [main] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@61f39bb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@249e0271]
+[DEBUG] 2020-04-12 00:12:28.998 [main] AnnotationBinder - Binding entity from annotated class: edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:29.076 [main] Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[DEBUG] 2020-04-12 00:12:29.094 [main] EntityBinder - Import with entity name Users
+[DEBUG] 2020-04-12 00:12:29.105 [main] EntityBinder - Bind entity edu.matc.entity.Users on table users
+[DEBUG] 2020-04-12 00:12:29.222 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=id, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.231 [main] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2020-04-12 00:12:29.245 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:id]
+[DEBUG] 2020-04-12 00:12:29.273 [main] SimpleValueBinder - building SimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.285 [main] PropertyBinder - Building property id
+[DEBUG] 2020-04-12 00:12:29.304 [main] BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2020-04-12 00:12:29.318 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='createdByUser'}
+[DEBUG] 2020-04-12 00:12:29.319 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=createdRecipes, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.331 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=null, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.359 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=element, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.360 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=createdRecipes_KEY, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.361 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='createdRecipes_KEY', referencedColumn='null', mappedBy='null'}
+[DEBUG] 2020-04-12 00:12:29.368 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='createdByUser'}
+[DEBUG] 2020-04-12 00:12:29.368 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='createdByUser'}
+[DEBUG] 2020-04-12 00:12:29.376 [main] CollectionBinder - Collection role: edu.matc.entity.Users.createdRecipes
+[DEBUG] 2020-04-12 00:12:29.380 [main] PropertyBinder - Building property createdRecipes
+[DEBUG] 2020-04-12 00:12:29.384 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=email, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.389 [main] PropertyBinder - MetadataSourceProcessor property email with lazy=false
+[DEBUG] 2020-04-12 00:12:29.389 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:email]
+[DEBUG] 2020-04-12 00:12:29.391 [main] SimpleValueBinder - building SimpleValue for email
+[DEBUG] 2020-04-12 00:12:29.392 [main] PropertyBinder - Building property email
+[DEBUG] 2020-04-12 00:12:29.400 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=first_name, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.403 [main] PropertyBinder - MetadataSourceProcessor property firstName with lazy=false
+[DEBUG] 2020-04-12 00:12:29.404 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:firstName]
+[DEBUG] 2020-04-12 00:12:29.404 [main] SimpleValueBinder - building SimpleValue for firstName
+[DEBUG] 2020-04-12 00:12:29.404 [main] PropertyBinder - Building property firstName
+[DEBUG] 2020-04-12 00:12:29.408 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=last_name, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.411 [main] PropertyBinder - MetadataSourceProcessor property lastName with lazy=false
+[DEBUG] 2020-04-12 00:12:29.411 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:lastName]
+[DEBUG] 2020-04-12 00:12:29.411 [main] SimpleValueBinder - building SimpleValue for lastName
+[DEBUG] 2020-04-12 00:12:29.412 [main] PropertyBinder - Building property lastName
+[DEBUG] 2020-04-12 00:12:29.412 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=password, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.415 [main] PropertyBinder - MetadataSourceProcessor property password with lazy=false
+[DEBUG] 2020-04-12 00:12:29.416 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:password]
+[DEBUG] 2020-04-12 00:12:29.416 [main] SimpleValueBinder - building SimpleValue for password
+[DEBUG] 2020-04-12 00:12:29.416 [main] PropertyBinder - Building property password
+[DEBUG] 2020-04-12 00:12:29.416 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=user_role, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.416 [main] PropertyBinder - MetadataSourceProcessor property userRole with lazy=false
+[DEBUG] 2020-04-12 00:12:29.417 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:userRole]
+[DEBUG] 2020-04-12 00:12:29.417 [main] SimpleValueBinder - building SimpleValue for userRole
+[DEBUG] 2020-04-12 00:12:29.417 [main] PropertyBinder - Building property userRole
+[DEBUG] 2020-04-12 00:12:29.417 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=username, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.420 [main] PropertyBinder - MetadataSourceProcessor property username with lazy=false
+[DEBUG] 2020-04-12 00:12:29.421 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Users:username]
+[DEBUG] 2020-04-12 00:12:29.421 [main] SimpleValueBinder - building SimpleValue for username
+[DEBUG] 2020-04-12 00:12:29.421 [main] PropertyBinder - Building property username
+[DEBUG] 2020-04-12 00:12:29.428 [main] AnnotationBinder - Binding entity from annotated class: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:29.430 [main] Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[DEBUG] 2020-04-12 00:12:29.433 [main] EntityBinder - Import with entity name Image
+[DEBUG] 2020-04-12 00:12:29.434 [main] EntityBinder - Bind entity edu.matc.entity.Image on table image
+[DEBUG] 2020-04-12 00:12:29.438 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(image), mappingColumn=id, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.439 [main] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2020-04-12 00:12:29.441 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Image:id]
+[DEBUG] 2020-04-12 00:12:29.442 [main] SimpleValueBinder - building SimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.446 [main] PropertyBinder - Building property id
+[DEBUG] 2020-04-12 00:12:29.449 [main] BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2020-04-12 00:12:29.449 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(image), mappingColumn=description, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.450 [main] PropertyBinder - MetadataSourceProcessor property description with lazy=false
+[DEBUG] 2020-04-12 00:12:29.450 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Image:description]
+[DEBUG] 2020-04-12 00:12:29.450 [main] SimpleValueBinder - building SimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.450 [main] PropertyBinder - Building property description
+[DEBUG] 2020-04-12 00:12:29.450 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(image), mappingColumn=filepath, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.450 [main] PropertyBinder - MetadataSourceProcessor property filepath with lazy=false
+[DEBUG] 2020-04-12 00:12:29.450 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Image:filepath]
+[DEBUG] 2020-04-12 00:12:29.450 [main] SimpleValueBinder - building SimpleValue for filepath
+[DEBUG] 2020-04-12 00:12:29.450 [main] PropertyBinder - Building property filepath
+[DEBUG] 2020-04-12 00:12:29.459 [main] AnnotationBinder - Binding entity from annotated class: edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:29.460 [main] Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[DEBUG] 2020-04-12 00:12:29.460 [main] EntityBinder - Import with entity name Recipe
+[DEBUG] 2020-04-12 00:12:29.460 [main] EntityBinder - Bind entity edu.matc.entity.Recipe on table recipe
+[DEBUG] 2020-04-12 00:12:29.487 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=id, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.490 [main] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2020-04-12 00:12:29.490 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Recipe:id]
+[DEBUG] 2020-04-12 00:12:29.491 [main] SimpleValueBinder - building SimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.492 [main] PropertyBinder - Building property id
+[DEBUG] 2020-04-12 00:12:29.493 [main] BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2020-04-12 00:12:29.495 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=category, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.499 [main] PropertyBinder - MetadataSourceProcessor property category with lazy=false
+[DEBUG] 2020-04-12 00:12:29.500 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Recipe:category]
+[DEBUG] 2020-04-12 00:12:29.500 [main] SimpleValueBinder - building SimpleValue for category
+[DEBUG] 2020-04-12 00:12:29.500 [main] PropertyBinder - Building property category
+[DEBUG] 2020-04-12 00:12:29.500 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='created_by_user_id', referencedColumn='', mappedBy=''}
+[DEBUG] 2020-04-12 00:12:29.501 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=createdByUser, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.507 [main] PropertyBinder - Building property createdByUser
+[DEBUG] 2020-04-12 00:12:29.508 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=description, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.509 [main] PropertyBinder - MetadataSourceProcessor property description with lazy=false
+[DEBUG] 2020-04-12 00:12:29.512 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Recipe:description]
+[DEBUG] 2020-04-12 00:12:29.512 [main] SimpleValueBinder - building SimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.513 [main] PropertyBinder - Building property description
+[DEBUG] 2020-04-12 00:12:29.513 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='image_id', referencedColumn='', mappedBy=''}
+[DEBUG] 2020-04-12 00:12:29.516 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=image, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.518 [main] PropertyBinder - Building property image
+[DEBUG] 2020-04-12 00:12:29.519 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=name, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.519 [main] PropertyBinder - MetadataSourceProcessor property name with lazy=false
+[DEBUG] 2020-04-12 00:12:29.519 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Recipe:name]
+[DEBUG] 2020-04-12 00:12:29.519 [main] SimpleValueBinder - building SimpleValue for name
+[DEBUG] 2020-04-12 00:12:29.519 [main] PropertyBinder - Building property name
+[DEBUG] 2020-04-12 00:12:29.520 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='recipe'}
+[DEBUG] 2020-04-12 00:12:29.520 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=recipeInstructions, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.527 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=null, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.530 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=element, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.533 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(recipe), mappingColumn=recipeInstructions_KEY, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.533 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='recipeInstructions_KEY', referencedColumn='null', mappedBy='null'}
+[DEBUG] 2020-04-12 00:12:29.533 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='recipe'}
+[DEBUG] 2020-04-12 00:12:29.534 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='recipe'}
+[DEBUG] 2020-04-12 00:12:29.534 [main] CollectionBinder - Collection role: edu.matc.entity.Recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:29.536 [main] PropertyBinder - Building property recipeInstructions
+[DEBUG] 2020-04-12 00:12:29.537 [main] AnnotationBinder - Binding entity from annotated class: edu.matc.entity.Instruction
+[DEBUG] 2020-04-12 00:12:29.539 [main] Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[DEBUG] 2020-04-12 00:12:29.540 [main] EntityBinder - Import with entity name Instruction
+[DEBUG] 2020-04-12 00:12:29.540 [main] EntityBinder - Bind entity edu.matc.entity.Instruction on table instruction
+[DEBUG] 2020-04-12 00:12:29.546 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(instruction), mappingColumn=id, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.546 [main] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2020-04-12 00:12:29.547 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Instruction:id]
+[DEBUG] 2020-04-12 00:12:29.555 [main] SimpleValueBinder - building SimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.556 [main] PropertyBinder - Building property id
+[DEBUG] 2020-04-12 00:12:29.559 [main] BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2020-04-12 00:12:29.560 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(instruction), mappingColumn=description, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.560 [main] PropertyBinder - MetadataSourceProcessor property description with lazy=false
+[DEBUG] 2020-04-12 00:12:29.560 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Instruction:description]
+[DEBUG] 2020-04-12 00:12:29.560 [main] SimpleValueBinder - building SimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.560 [main] PropertyBinder - Building property description
+[DEBUG] 2020-04-12 00:12:29.561 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='image_id', referencedColumn='', mappedBy=''}
+[DEBUG] 2020-04-12 00:12:29.561 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(instruction), mappingColumn=image, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.561 [main] PropertyBinder - Building property image
+[DEBUG] 2020-04-12 00:12:29.561 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(instruction), mappingColumn=rank, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.561 [main] PropertyBinder - MetadataSourceProcessor property rank with lazy=false
+[DEBUG] 2020-04-12 00:12:29.562 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [edu.matc.entity.Instruction:rank]
+[DEBUG] 2020-04-12 00:12:29.562 [main] SimpleValueBinder - building SimpleValue for rank
+[DEBUG] 2020-04-12 00:12:29.562 [main] PropertyBinder - Building property rank
+[DEBUG] 2020-04-12 00:12:29.562 [main] Ejb3Column - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='null'}
+[DEBUG] 2020-04-12 00:12:29.562 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(instruction), mappingColumn=recipe, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-04-12 00:12:29.562 [main] PropertyBinder - Building property recipe
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for email
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for firstName
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for lastName
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for password
+[DEBUG] 2020-04-12 00:12:29.572 [main] SimpleValueBinder - Starting fillSimpleValue for userRole
+[DEBUG] 2020-04-12 00:12:29.573 [main] SimpleValueBinder - Starting fillSimpleValue for username
+[DEBUG] 2020-04-12 00:12:29.573 [main] SimpleValueBinder - Starting fillSimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.579 [main] SimpleValueBinder - Starting fillSimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for filepath
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for category
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for name
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for id
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for description
+[DEBUG] 2020-04-12 00:12:29.580 [main] SimpleValueBinder - Starting fillSimpleValue for rank
+[DEBUG] 2020-04-12 00:12:29.603 [main] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [users]
+[DEBUG] 2020-04-12 00:12:29.603 [main] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [image]
+[DEBUG] 2020-04-12 00:12:29.604 [main] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [recipe]
+[DEBUG] 2020-04-12 00:12:29.604 [main] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [instruction]
+[DEBUG] 2020-04-12 00:12:29.604 [main] CollectionSecondPass - Second pass for collection: edu.matc.entity.Users.createdRecipes
+[DEBUG] 2020-04-12 00:12:29.605 [main] CollectionBinder - Binding a OneToMany: edu.matc.entity.Users.createdRecipes through a foreign key
+[DEBUG] 2020-04-12 00:12:29.607 [main] CollectionBinder - Mapping collection: edu.matc.entity.Users.createdRecipes -> recipe
+[DEBUG] 2020-04-12 00:12:29.613 [main] TableBinder - Retrieving property edu.matc.entity.Recipe.createdByUser
+[DEBUG] 2020-04-12 00:12:29.613 [main] CollectionSecondPass - Mapped collection key: created_by_user_id, one-to-many: edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:29.618 [main] CollectionSecondPass - Second pass for collection: edu.matc.entity.Recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:29.618 [main] CollectionBinder - Binding a OneToMany: edu.matc.entity.Recipe.recipeInstructions through a foreign key
+[DEBUG] 2020-04-12 00:12:29.618 [main] CollectionBinder - Mapping collection: edu.matc.entity.Recipe.recipeInstructions -> instruction
+[DEBUG] 2020-04-12 00:12:29.618 [main] TableBinder - Retrieving property edu.matc.entity.Instruction.recipe
+[DEBUG] 2020-04-12 00:12:29.622 [main] CollectionSecondPass - Mapped collection key: recipe_id, one-to-many: edu.matc.entity.Instruction
+[DEBUG] 2020-04-12 00:12:29.623 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:29.632 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:29.632 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:29.633 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:29.636 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:29.637 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:29.637 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:29.642 [main] InFlightMetadataCollectorImpl - Resolving reference to class: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:29.797 [main] SessionFactoryImpl - Building session factory
+[DEBUG] 2020-04-12 00:12:29.799 [main] Settings - SessionFactory name : null
+[DEBUG] 2020-04-12 00:12:29.800 [main] Settings - Automatic flush during beforeCompletion(): enabled
+[DEBUG] 2020-04-12 00:12:29.800 [main] Settings - Automatic session close at end of transaction: disabled
+[DEBUG] 2020-04-12 00:12:29.800 [main] Settings - Statistics: disabled
+[DEBUG] 2020-04-12 00:12:29.803 [main] Settings - Deleted entity synthetic identifier rollback: disabled
+[DEBUG] 2020-04-12 00:12:29.803 [main] Settings - Default entity-mode: pojo
+[DEBUG] 2020-04-12 00:12:29.803 [main] Settings - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+[DEBUG] 2020-04-12 00:12:29.806 [main] Settings - Allow initialization of lazy state outside session : disabled
+[DEBUG] 2020-04-12 00:12:29.807 [main] Settings - Using BatchFetchStyle : LEGACY
+[DEBUG] 2020-04-12 00:12:29.807 [main] Settings - Default batch fetch size: -1
+[DEBUG] 2020-04-12 00:12:29.807 [main] Settings - Maximum outer join fetch depth: 2
+[DEBUG] 2020-04-12 00:12:29.814 [main] Settings - Default null ordering: NONE
+[DEBUG] 2020-04-12 00:12:29.814 [main] Settings - Order SQL updates by primary key: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Order SQL inserts for batching: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - multi-tenancy strategy : NONE
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - JTA Track by Thread: enabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Query language substitutions: {}
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Named query checking : enabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Second-level cache: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Second-level query cache: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Second-level query cache factory: null
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Second-level cache region prefix: null
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Optimize second-level cache for minimal puts: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Structured second-level cache entries: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Second-level cache direct-reference entries: disabled
+[DEBUG] 2020-04-12 00:12:29.815 [main] Settings - Automatic eviction of collection cache: disabled
+[DEBUG] 2020-04-12 00:12:29.816 [main] Settings - JDBC batch size: 15
+[DEBUG] 2020-04-12 00:12:29.819 [main] Settings - JDBC batch updates for versioned data: enabled
+[DEBUG] 2020-04-12 00:12:29.820 [main] Settings - Scrollable result sets: enabled
+[DEBUG] 2020-04-12 00:12:29.820 [main] Settings - Wrap result sets: disabled
+[DEBUG] 2020-04-12 00:12:29.820 [main] Settings - JDBC3 getGeneratedKeys(): enabled
+[DEBUG] 2020-04-12 00:12:29.820 [main] Settings - JDBC result set fetch size: null
+[DEBUG] 2020-04-12 00:12:29.823 [main] Settings - Connection release mode: AFTER_TRANSACTION
+[DEBUG] 2020-04-12 00:12:29.824 [main] Settings - Generate SQL with comments: disabled
+[DEBUG] 2020-04-12 00:12:29.824 [main] Settings - JPA compliance - query : 
+[DEBUG] 2020-04-12 00:12:29.824 [main] Settings - JPA compliance - closed-handling : 
+[DEBUG] 2020-04-12 00:12:29.824 [main] Settings - JPA compliance - lists : 
+[DEBUG] 2020-04-12 00:12:29.824 [main] Settings - JPA compliance - transactions : 
+[INFO ] 2020-04-12 00:12:30.049 [main] beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+[DEBUG] 2020-04-12 00:12:30.153 [main] SessionFactoryImpl - Session factory constructed with filter configurations : {}
+[DEBUG] 2020-04-12 00:12:30.157 [main] SessionFactoryImpl - Instantiating session factory with properties: {sun.desktop=gnome, awt.toolkit=sun.awt.X11.XToolkit, java.specification.version=11, sun.cpu.isalist=, hibernate.c3p0.idle_test_period=3000, sun.jnu.encoding=UTF-8, hibernate.c3p0.min_size=5, java.class.path=/home/student/intellij/lib/idea_rt.jar:/home/student/intellij/plugins/junit/lib/junit5-rt.jar:/home/student/intellij/plugins/junit/lib/junit-rt.jar:/home/student/IdeaProjects/CookingRecipes/target/test-classes:/home/student/IdeaProjects/CookingRecipes/target/classes:/home/student/.m2/repository/org/hibernate/hibernate-core/5.4.4.Final/hibernate-core-5.4.4.Final.jar:/home/student/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/home/student/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/student/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/home/student/.m2/repository/net/bytebuddy/byte-buddy/1.9.11/byte-buddy-1.9.11.jar:/home/student/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/student/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar:/home/student/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/home/student/.m2/repository/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar:/home/student/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/student/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/home/student/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar:/home/student/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar:/home/student/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/home/student/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/home/student/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/home/student/.m2/repository/org/hibernate/hibernate-c3p0/5.4.4.Final/hibernate-c3p0-5.4.4.Final.jar:/home/student/.m2/repository/com/mchange/c3p0/0.9.5.3/c3p0-0.9.5.3.jar:/home/student/.m2/repository/com/mchange/mchange-commons-java/0.2.15/mchange-commons-java-0.2.15.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-runner/1.0.0/junit-platform-runner-1.0.0.jar:/home/student/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-launcher/1.0.0/junit-platform-launcher-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-suite-api/1.0.0/junit-platform-suite-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar:/home/student/.m2/repository/org/junit/vintage/junit-vintage-engine/4.12.0/junit-vintage-engine-4.12.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-engine/1.0.0/junit-platform-engine-1.0.0.jar:/home/student/.m2/repository/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.0.0/junit-jupiter-engine-5.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar:/home/student/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/student/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/student/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar:/home/student/.m2/repository/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar:/home/student/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/home/student/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-api/2.10.0/log4j-api-2.10.0.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-core/2.10.0/log4j-core-2.10.0.jar, java.vm.vendor=Ubuntu, sun.arch.data.model=64, idea.test.cyclic.buffer.size=1048576, java.vendor.url=https://ubuntu.com/, user.timezone=America/Chicago, os.name=Linux, java.vm.specification.version=11, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=/usr/lib/jvm/java-11-openjdk-amd64/lib, sun.java.command=com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 edu.matc.persistence.RecipeDaoTest,updateSuccess, jdk.debug=release, sun.cpu.endian=little, user.home=/home/student, hibernate.c3p0.max_statements=50, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2020-01-14, java.home=/usr/lib/jvm/java-11-openjdk-amd64, file.separator=/, java.vm.compressedOopsMode=32-bit, line.separator=
+, hibernate.c3p0.timeout=300, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, connection.password=student, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.c3p0.max_size=20, java.runtime.version=11.0.6+10-post-Ubuntu-1ubuntu118.04.1, user.name=student, path.separator=:, hibernate.connection.username=****, os.version=5.3.0-46-generic, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/test_cooking_recipes, file.encoding=UTF-8, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.vendor.url.bug=https://bugs.launchpad.net/ubuntu/+source/openjdk-lts, java.io.tmpdir=/tmp, java.version=11.0.6, user.dir=/home/student/IdeaProjects/CookingRecipes, os.arch=amd64, connection.username=root, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.print.PSPrinterJob, hibernate.connection.password=****, sun.os.patch.level=unknown, connection.driver_class=com.mysql.cj.jdbc.Driver, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@370c1968, java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, java.vendor=Ubuntu, java.vm.info=mixed mode, sharing, java.vm.version=11.0.6+10-post-Ubuntu-1ubuntu118.04.1, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, connection.url=jdbc:mysql://localhost:3306/test_cooking_recipes, java.class.version=55.0}
+[DEBUG] 2020-04-12 00:12:30.244 [main] TypeSafeActivator - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+[DEBUG] 2020-04-12 00:12:30.245 [main] JaccIntegrator - Skipping JACC integration as it was not enabled
+[DEBUG] 2020-04-12 00:12:30.246 [main] SessionFactoryImpl - Instantiated session factory
+[DEBUG] 2020-04-12 00:12:30.256 [main] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@61f39bb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@194d329e]
+[DEBUG] 2020-04-12 00:12:30.898 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Instruction] is safe
+[DEBUG] 2020-04-12 00:12:30.899 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Instruction
+[DEBUG] 2020-04-12 00:12:30.992 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Instruction] is safe
+[DEBUG] 2020-04-12 00:12:30.992 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Instruction
+[DEBUG] 2020-04-12 00:12:32.240 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Recipe] is safe
+[DEBUG] 2020-04-12 00:12:32.241 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:32.243 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Recipe] is safe
+[DEBUG] 2020-04-12 00:12:32.244 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:32.428 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Users] is safe
+[DEBUG] 2020-04-12 00:12:32.430 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:32.438 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Users] is safe
+[DEBUG] 2020-04-12 00:12:32.440 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:32.577 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Image] is safe
+[DEBUG] 2020-04-12 00:12:32.579 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:32.579 [main] ClassLoaderAccessImpl - Not known whether passed class name [edu.matc.entity.Image] is safe
+[DEBUG] 2020-04-12 00:12:32.583 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:32.689 [main] AbstractCollectionPersister - Static SQL for collection: edu.matc.entity.Recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.690 [main] AbstractCollectionPersister -  Row insert: update instruction set recipe_id=? where id=?
+[DEBUG] 2020-04-12 00:12:32.690 [main] AbstractCollectionPersister -  Row update: update instruction set  where id=?
+[DEBUG] 2020-04-12 00:12:32.690 [main] AbstractCollectionPersister -  Row delete: update instruction set recipe_id=null where recipe_id=? and id=?
+[DEBUG] 2020-04-12 00:12:32.691 [main] AbstractCollectionPersister -  One-shot delete: update instruction set recipe_id=null where recipe_id=?
+[DEBUG] 2020-04-12 00:12:32.693 [main] AbstractCollectionPersister - Static SQL for collection: edu.matc.entity.Users.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.694 [main] AbstractCollectionPersister -  Row insert: update recipe set created_by_user_id=? where id=?
+[DEBUG] 2020-04-12 00:12:32.695 [main] AbstractCollectionPersister -  Row update: update recipe set  where id=?
+[DEBUG] 2020-04-12 00:12:32.695 [main] AbstractCollectionPersister -  Row delete: update recipe set created_by_user_id=null where created_by_user_id=? and id=?
+[DEBUG] 2020-04-12 00:12:32.695 [main] AbstractCollectionPersister -  One-shot delete: update recipe set created_by_user_id=null where created_by_user_id=?
+[DEBUG] 2020-04-12 00:12:32.705 [main] AbstractEntityPersister - Static SQL for entity: edu.matc.entity.Instruction
+[DEBUG] 2020-04-12 00:12:32.705 [main] AbstractEntityPersister -  Version select: select id from instruction where id =?
+[DEBUG] 2020-04-12 00:12:32.705 [main] AbstractEntityPersister -  Snapshot select: select instructio_.id, instructio_.description as descript2_1_, instructio_.image_id as image_id4_1_, instructio_.rank as rank3_1_, instructio_.recipe_id as recipe_i5_1_ from instruction instructio_ where instructio_.id=?
+[DEBUG] 2020-04-12 00:12:32.705 [main] AbstractEntityPersister -  Insert 0: insert into instruction (description, image_id, rank, recipe_id, id) values (?, ?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:32.705 [main] AbstractEntityPersister -  Update 0: update instruction set description=?, image_id=?, rank=?, recipe_id=? where id=?
+[DEBUG] 2020-04-12 00:12:32.710 [main] AbstractEntityPersister -  Delete 0: delete from instruction where id=?
+[DEBUG] 2020-04-12 00:12:32.711 [main] AbstractEntityPersister -  Identity insert: insert into instruction (description, image_id, rank, recipe_id) values (?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:32.799 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6518fdfd]
+[DEBUG] 2020-04-12 00:12:32.805 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:32.805 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:32.818 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@12219f6a]
+[DEBUG] 2020-04-12 00:12:32.828 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:32.828 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:32.829 [main] MetamodelGraphWalker - Visiting attribute path : rank
+[DEBUG] 2020-04-12 00:12:32.829 [main] MetamodelGraphWalker - Visiting attribute path : recipe
+[DEBUG] 2020-04-12 00:12:32.830 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@77cb452c]
+[DEBUG] 2020-04-12 00:12:32.830 [main] MetamodelGraphWalker - Visiting attribute path : recipe.category
+[DEBUG] 2020-04-12 00:12:32.831 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser
+[DEBUG] 2020-04-12 00:12:32.831 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2c26ba07]
+[DEBUG] 2020-04-12 00:12:32.832 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.835 [main] MetamodelGraphWalker - Property path deemed to be circular : recipe.createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.835 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.email
+[DEBUG] 2020-04-12 00:12:32.835 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.firstName
+[DEBUG] 2020-04-12 00:12:32.835 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.lastName
+[DEBUG] 2020-04-12 00:12:32.836 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.password
+[DEBUG] 2020-04-12 00:12:32.836 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.userRole
+[DEBUG] 2020-04-12 00:12:32.836 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.username
+[DEBUG] 2020-04-12 00:12:32.836 [main] MetamodelGraphWalker - Visiting attribute path : recipe.description
+[DEBUG] 2020-04-12 00:12:32.838 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image
+[DEBUG] 2020-04-12 00:12:32.839 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@42ea7565]
+[DEBUG] 2020-04-12 00:12:32.839 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image.description
+[DEBUG] 2020-04-12 00:12:32.839 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image.filepath
+[DEBUG] 2020-04-12 00:12:32.839 [main] MetamodelGraphWalker - Visiting attribute path : recipe.name
+[DEBUG] 2020-04-12 00:12:32.839 [main] MetamodelGraphWalker - Visiting attribute path : recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.839 [main] MetamodelGraphWalker - Property path deemed to be circular : recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.840 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:32.882 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:32.902 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Instruction)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:0>, path=edu.matc.entity.Instruction)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:1>, path=edu.matc.entity.Instruction.image)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:2>, path=edu.matc.entity.Instruction.recipe)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:3>, path=edu.matc.entity.Instruction.recipe.createdByUser)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:4>, path=edu.matc.entity.Instruction.recipe.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Instruction)
+          - SQL table alias mapping - instructio0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(image)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Image)
+                - SQL table alias mapping - image1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+          - JOIN (JoinDefinedByMetadata(recipe)) : <gen:0> -> <gen:2>
+             - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Recipe)
+                - SQL table alias mapping - recipe2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_2_2_}
+                - JOIN (JoinDefinedByMetadata(createdByUser)) : <gen:2> -> <gen:3>
+                   - EntityQuerySpaceImpl(uid=<gen:3>, entity=edu.matc.entity.Users)
+                      - SQL table alias mapping - users3_
+                      - alias suffix - 3_
+                      - suffixed key columns - {id1_3_3_}
+                - JOIN (JoinDefinedByMetadata(image)) : <gen:2> -> <gen:4>
+                   - EntityQuerySpaceImpl(uid=<gen:4>, entity=edu.matc.entity.Image)
+                      - SQL table alias mapping - image4_
+                      - alias suffix - 4_
+                      - suffixed key columns - {id1_0_4_}
+
+[DEBUG] 2020-04-12 00:12:32.917 [main] EntityLoader - Static select for entity edu.matc.entity.Instruction [NONE]: select instructio0_.id as id1_1_0_, instructio0_.description as descript2_1_0_, instructio0_.image_id as image_id4_1_0_, instructio0_.rank as rank3_1_0_, instructio0_.recipe_id as recipe_i5_1_0_, image1_.id as id1_0_1_, image1_.description as descript2_0_1_, image1_.filepath as filepath3_0_1_, recipe2_.id as id1_2_2_, recipe2_.category as category2_2_2_, recipe2_.created_by_user_id as created_5_2_2_, recipe2_.description as descript3_2_2_, recipe2_.image_id as image_id6_2_2_, recipe2_.name as name4_2_2_, users3_.id as id1_3_3_, users3_.email as email2_3_3_, users3_.first_name as first_na3_3_3_, users3_.last_name as last_nam4_3_3_, users3_.password as password5_3_3_, users3_.user_role as user_rol6_3_3_, users3_.username as username7_3_3_, image4_.id as id1_0_4_, image4_.description as descript2_0_4_, image4_.filepath as filepath3_0_4_ from instruction instructio0_ left outer join image image1_ on instructio0_.image_id=image1_.id left outer join recipe recipe2_ on instructio0_.recipe_id=recipe2_.id left outer join users users3_ on recipe2_.created_by_user_id=users3_.id left outer join image image4_ on recipe2_.image_id=image4_.id where instructio0_.id=?
+[DEBUG] 2020-04-12 00:12:32.918 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d508d22]
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:32.919 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2bb41f5c]
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : rank
+[DEBUG] 2020-04-12 00:12:32.919 [main] MetamodelGraphWalker - Visiting attribute path : recipe
+[DEBUG] 2020-04-12 00:12:32.922 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7da635c0]
+[DEBUG] 2020-04-12 00:12:32.927 [main] MetamodelGraphWalker - Visiting attribute path : recipe.category
+[DEBUG] 2020-04-12 00:12:32.927 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser
+[DEBUG] 2020-04-12 00:12:32.927 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@251c4280]
+[DEBUG] 2020-04-12 00:12:32.927 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.927 [main] MetamodelGraphWalker - Property path deemed to be circular : recipe.createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.email
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.firstName
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.lastName
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.password
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.userRole
+[DEBUG] 2020-04-12 00:12:32.928 [main] MetamodelGraphWalker - Visiting attribute path : recipe.createdByUser.username
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.description
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image
+[DEBUG] 2020-04-12 00:12:32.929 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79a13920]
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image.description
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.image.filepath
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.name
+[DEBUG] 2020-04-12 00:12:32.929 [main] MetamodelGraphWalker - Visiting attribute path : recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.930 [main] MetamodelGraphWalker - Property path deemed to be circular : recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.930 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:32.930 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:32.938 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Instruction)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:0>, path=edu.matc.entity.Instruction)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:1>, path=edu.matc.entity.Instruction.image)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:2>, path=edu.matc.entity.Instruction.recipe)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:3>, path=edu.matc.entity.Instruction.recipe.createdByUser)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:4>, path=edu.matc.entity.Instruction.recipe.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Instruction)
+          - SQL table alias mapping - instructio0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(image)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Image)
+                - SQL table alias mapping - image1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+          - JOIN (JoinDefinedByMetadata(recipe)) : <gen:0> -> <gen:2>
+             - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Recipe)
+                - SQL table alias mapping - recipe2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_2_2_}
+                - JOIN (JoinDefinedByMetadata(createdByUser)) : <gen:2> -> <gen:3>
+                   - EntityQuerySpaceImpl(uid=<gen:3>, entity=edu.matc.entity.Users)
+                      - SQL table alias mapping - users3_
+                      - alias suffix - 3_
+                      - suffixed key columns - {id1_3_3_}
+                - JOIN (JoinDefinedByMetadata(image)) : <gen:2> -> <gen:4>
+                   - EntityQuerySpaceImpl(uid=<gen:4>, entity=edu.matc.entity.Image)
+                      - SQL table alias mapping - image4_
+                      - alias suffix - 4_
+                      - suffixed key columns - {id1_0_4_}
+
+[DEBUG] 2020-04-12 00:12:32.939 [main] EntityLoader - Static select for entity edu.matc.entity.Instruction [READ]: select instructio0_.id as id1_1_0_, instructio0_.description as descript2_1_0_, instructio0_.image_id as image_id4_1_0_, instructio0_.rank as rank3_1_0_, instructio0_.recipe_id as recipe_i5_1_0_, image1_.id as id1_0_1_, image1_.description as descript2_0_1_, image1_.filepath as filepath3_0_1_, recipe2_.id as id1_2_2_, recipe2_.category as category2_2_2_, recipe2_.created_by_user_id as created_5_2_2_, recipe2_.description as descript3_2_2_, recipe2_.image_id as image_id6_2_2_, recipe2_.name as name4_2_2_, users3_.id as id1_3_3_, users3_.email as email2_3_3_, users3_.first_name as first_na3_3_3_, users3_.last_name as last_nam4_3_3_, users3_.password as password5_3_3_, users3_.user_role as user_rol6_3_3_, users3_.username as username7_3_3_, image4_.id as id1_0_4_, image4_.description as descript2_0_4_, image4_.filepath as filepath3_0_4_ from instruction instructio0_ left outer join image image1_ on instructio0_.image_id=image1_.id left outer join recipe recipe2_ on instructio0_.recipe_id=recipe2_.id left outer join users users3_ on recipe2_.created_by_user_id=users3_.id left outer join image image4_ on recipe2_.image_id=image4_.id where instructio0_.id=?
+[DEBUG] 2020-04-12 00:12:32.980 [main] Loader - Static select for action ACTION_MERGE on entity edu.matc.entity.Instruction: select instructio0_.id as id1_1_0_, instructio0_.description as descript2_1_0_, instructio0_.image_id as image_id4_1_0_, instructio0_.rank as rank3_1_0_, instructio0_.recipe_id as recipe_i5_1_0_ from instruction instructio0_ where instructio0_.id=?
+[DEBUG] 2020-04-12 00:12:32.986 [main] Loader - Static select for action ACTION_REFRESH on entity edu.matc.entity.Instruction: select instructio0_.id as id1_1_0_, instructio0_.description as descript2_1_0_, instructio0_.image_id as image_id4_1_0_, instructio0_.rank as rank3_1_0_, instructio0_.recipe_id as recipe_i5_1_0_ from instruction instructio0_ where instructio0_.id=?
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister - Static SQL for entity: edu.matc.entity.Recipe
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Version select: select id from recipe where id =?
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Snapshot select: select recipe_.id, recipe_.category as category2_2_, recipe_.created_by_user_id as created_5_2_, recipe_.description as descript3_2_, recipe_.image_id as image_id6_2_, recipe_.name as name4_2_ from recipe recipe_ where recipe_.id=?
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Insert 0: insert into recipe (category, created_by_user_id, description, image_id, name, id) values (?, ?, ?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Update 0: update recipe set category=?, created_by_user_id=?, description=?, image_id=?, name=? where id=?
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Delete 0: delete from recipe where id=?
+[DEBUG] 2020-04-12 00:12:32.988 [main] AbstractEntityPersister -  Identity insert: insert into recipe (category, created_by_user_id, description, image_id, name) values (?, ?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:32.988 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2a4f8009]
+[DEBUG] 2020-04-12 00:12:32.989 [main] MetamodelGraphWalker - Visiting attribute path : category
+[DEBUG] 2020-04-12 00:12:32.989 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser
+[DEBUG] 2020-04-12 00:12:32.990 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@8054fe2]
+[DEBUG] 2020-04-12 00:12:32.990 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Property path deemed to be circular : createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.email
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.firstName
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.lastName
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.password
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.userRole
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.username
+[DEBUG] 2020-04-12 00:12:32.991 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:32.993 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:32.994 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@48268eec]
+[DEBUG] 2020-04-12 00:12:32.994 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:32.994 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:32.994 [main] MetamodelGraphWalker - Visiting attribute path : name
+[DEBUG] 2020-04-12 00:12:32.994 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions
+[DEBUG] 2020-04-12 00:12:32.996 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@2e71240b]
+[DEBUG] 2020-04-12 00:12:32.997 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@365afe87]
+[DEBUG] 2020-04-12 00:12:33.004 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.description
+[DEBUG] 2020-04-12 00:12:33.007 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image
+[DEBUG] 2020-04-12 00:12:33.007 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@9b47400]
+[DEBUG] 2020-04-12 00:12:33.009 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image.description
+[DEBUG] 2020-04-12 00:12:33.009 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image.filepath
+[DEBUG] 2020-04-12 00:12:33.009 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.rank
+[DEBUG] 2020-04-12 00:12:33.009 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.009 [main] MetamodelGraphWalker - Property path deemed to be circular : recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.010 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.014 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.031 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Recipe)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:0>, path=edu.matc.entity.Recipe)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:1>, path=edu.matc.entity.Recipe.createdByUser)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:2>, path=edu.matc.entity.Recipe.image)
+          - CollectionAttributeFetchImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:3>, path=edu.matc.entity.Recipe.recipeInstructions)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:4>, path=edu.matc.entity.Recipe.recipeInstructions.<elements>)
+                - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:5>, path=edu.matc.entity.Recipe.recipeInstructions.<elements>.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Recipe)
+          - SQL table alias mapping - recipe0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+          - JOIN (JoinDefinedByMetadata(createdByUser)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Users)
+                - SQL table alias mapping - users1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_3_1_}
+          - JOIN (JoinDefinedByMetadata(image)) : <gen:0> -> <gen:2>
+             - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Image)
+                - SQL table alias mapping - image2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_0_2_}
+          - JOIN (JoinDefinedByMetadata(recipeInstructions)) : <gen:0> -> <gen:3>
+             - CollectionQuerySpaceImpl(uid=<gen:3>, collection=edu.matc.entity.Recipe.recipeInstructions)
+                - SQL table alias mapping - recipeinst3_
+                - alias suffix - 3_
+                - suffixed key columns - {recipe_i5_1_3_}
+                - entity-element alias suffix - 4_
+                - 4_entity-element suffixed key columns - id1_1_4_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:3> -> <gen:4>
+                   - EntityQuerySpaceImpl(uid=<gen:4>, entity=edu.matc.entity.Instruction)
+                      - SQL table alias mapping - recipeinst3_
+                      - alias suffix - 4_
+                      - suffixed key columns - {id1_1_4_}
+                      - JOIN (JoinDefinedByMetadata(image)) : <gen:4> -> <gen:5>
+                         - EntityQuerySpaceImpl(uid=<gen:5>, entity=edu.matc.entity.Image)
+                            - SQL table alias mapping - image4_
+                            - alias suffix - 5_
+                            - suffixed key columns - {id1_0_5_}
+
+[DEBUG] 2020-04-12 00:12:33.032 [main] EntityLoader - Static select for entity edu.matc.entity.Recipe [NONE]: select recipe0_.id as id1_2_0_, recipe0_.category as category2_2_0_, recipe0_.created_by_user_id as created_5_2_0_, recipe0_.description as descript3_2_0_, recipe0_.image_id as image_id6_2_0_, recipe0_.name as name4_2_0_, users1_.id as id1_3_1_, users1_.email as email2_3_1_, users1_.first_name as first_na3_3_1_, users1_.last_name as last_nam4_3_1_, users1_.password as password5_3_1_, users1_.user_role as user_rol6_3_1_, users1_.username as username7_3_1_, image2_.id as id1_0_2_, image2_.description as descript2_0_2_, image2_.filepath as filepath3_0_2_, recipeinst3_.recipe_id as recipe_i5_1_3_, recipeinst3_.id as id1_1_3_, recipeinst3_.id as id1_1_4_, recipeinst3_.description as descript2_1_4_, recipeinst3_.image_id as image_id4_1_4_, recipeinst3_.rank as rank3_1_4_, recipeinst3_.recipe_id as recipe_i5_1_4_, image4_.id as id1_0_5_, image4_.description as descript2_0_5_, image4_.filepath as filepath3_0_5_ from recipe recipe0_ left outer join users users1_ on recipe0_.created_by_user_id=users1_.id left outer join image image2_ on recipe0_.image_id=image2_.id left outer join instruction recipeinst3_ on recipe0_.id=recipeinst3_.recipe_id left outer join image image4_ on recipeinst3_.image_id=image4_.id where recipe0_.id=?
+[DEBUG] 2020-04-12 00:12:33.033 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@52f6900a]
+[DEBUG] 2020-04-12 00:12:33.039 [main] MetamodelGraphWalker - Visiting attribute path : category
+[DEBUG] 2020-04-12 00:12:33.039 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser
+[DEBUG] 2020-04-12 00:12:33.041 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2b80e5a9]
+[DEBUG] 2020-04-12 00:12:33.041 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:33.041 [main] MetamodelGraphWalker - Property path deemed to be circular : createdByUser.createdRecipes
+[DEBUG] 2020-04-12 00:12:33.041 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.email
+[DEBUG] 2020-04-12 00:12:33.041 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.firstName
+[DEBUG] 2020-04-12 00:12:33.041 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.lastName
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.password
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.userRole
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser.username
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:33.042 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2a50b32d]
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:33.042 [main] MetamodelGraphWalker - Visiting attribute path : name
+[DEBUG] 2020-04-12 00:12:33.047 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions
+[DEBUG] 2020-04-12 00:12:33.047 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1ac6dd3d]
+[DEBUG] 2020-04-12 00:12:33.047 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@562919fe]
+[DEBUG] 2020-04-12 00:12:33.047 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.description
+[DEBUG] 2020-04-12 00:12:33.047 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image
+[DEBUG] 2020-04-12 00:12:33.047 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d5c41e5]
+[DEBUG] 2020-04-12 00:12:33.048 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image.description
+[DEBUG] 2020-04-12 00:12:33.048 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.image.filepath
+[DEBUG] 2020-04-12 00:12:33.048 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.rank
+[DEBUG] 2020-04-12 00:12:33.048 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.048 [main] MetamodelGraphWalker - Property path deemed to be circular : recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.048 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.048 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.050 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Recipe)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:0>, path=edu.matc.entity.Recipe)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:1>, path=edu.matc.entity.Recipe.createdByUser)
+          - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:2>, path=edu.matc.entity.Recipe.image)
+          - CollectionAttributeFetchImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:3>, path=edu.matc.entity.Recipe.recipeInstructions)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:4>, path=edu.matc.entity.Recipe.recipeInstructions.<elements>)
+                - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:5>, path=edu.matc.entity.Recipe.recipeInstructions.<elements>.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Recipe)
+          - SQL table alias mapping - recipe0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+          - JOIN (JoinDefinedByMetadata(createdByUser)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Users)
+                - SQL table alias mapping - users1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_3_1_}
+          - JOIN (JoinDefinedByMetadata(image)) : <gen:0> -> <gen:2>
+             - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Image)
+                - SQL table alias mapping - image2_
+                - alias suffix - 2_
+                - suffixed key columns - {id1_0_2_}
+          - JOIN (JoinDefinedByMetadata(recipeInstructions)) : <gen:0> -> <gen:3>
+             - CollectionQuerySpaceImpl(uid=<gen:3>, collection=edu.matc.entity.Recipe.recipeInstructions)
+                - SQL table alias mapping - recipeinst3_
+                - alias suffix - 3_
+                - suffixed key columns - {recipe_i5_1_3_}
+                - entity-element alias suffix - 4_
+                - 4_entity-element suffixed key columns - id1_1_4_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:3> -> <gen:4>
+                   - EntityQuerySpaceImpl(uid=<gen:4>, entity=edu.matc.entity.Instruction)
+                      - SQL table alias mapping - recipeinst3_
+                      - alias suffix - 4_
+                      - suffixed key columns - {id1_1_4_}
+                      - JOIN (JoinDefinedByMetadata(image)) : <gen:4> -> <gen:5>
+                         - EntityQuerySpaceImpl(uid=<gen:5>, entity=edu.matc.entity.Image)
+                            - SQL table alias mapping - image4_
+                            - alias suffix - 5_
+                            - suffixed key columns - {id1_0_5_}
+
+[DEBUG] 2020-04-12 00:12:33.061 [main] EntityLoader - Static select for entity edu.matc.entity.Recipe [READ]: select recipe0_.id as id1_2_0_, recipe0_.category as category2_2_0_, recipe0_.created_by_user_id as created_5_2_0_, recipe0_.description as descript3_2_0_, recipe0_.image_id as image_id6_2_0_, recipe0_.name as name4_2_0_, users1_.id as id1_3_1_, users1_.email as email2_3_1_, users1_.first_name as first_na3_3_1_, users1_.last_name as last_nam4_3_1_, users1_.password as password5_3_1_, users1_.user_role as user_rol6_3_1_, users1_.username as username7_3_1_, image2_.id as id1_0_2_, image2_.description as descript2_0_2_, image2_.filepath as filepath3_0_2_, recipeinst3_.recipe_id as recipe_i5_1_3_, recipeinst3_.id as id1_1_3_, recipeinst3_.id as id1_1_4_, recipeinst3_.description as descript2_1_4_, recipeinst3_.image_id as image_id4_1_4_, recipeinst3_.rank as rank3_1_4_, recipeinst3_.recipe_id as recipe_i5_1_4_, image4_.id as id1_0_5_, image4_.description as descript2_0_5_, image4_.filepath as filepath3_0_5_ from recipe recipe0_ left outer join users users1_ on recipe0_.created_by_user_id=users1_.id left outer join image image2_ on recipe0_.image_id=image2_.id left outer join instruction recipeinst3_ on recipe0_.id=recipeinst3_.recipe_id left outer join image image4_ on recipeinst3_.image_id=image4_.id where recipe0_.id=?
+[DEBUG] 2020-04-12 00:12:33.069 [main] Loader - Static select for action ACTION_MERGE on entity edu.matc.entity.Recipe: select recipe0_.id as id1_2_1_, recipe0_.category as category2_2_1_, recipe0_.created_by_user_id as created_5_2_1_, recipe0_.description as descript3_2_1_, recipe0_.image_id as image_id6_2_1_, recipe0_.name as name4_2_1_, recipeinst1_.recipe_id as recipe_i5_1_3_, recipeinst1_.id as id1_1_3_, recipeinst1_.id as id1_1_0_, recipeinst1_.description as descript2_1_0_, recipeinst1_.image_id as image_id4_1_0_, recipeinst1_.rank as rank3_1_0_, recipeinst1_.recipe_id as recipe_i5_1_0_ from recipe recipe0_ left outer join instruction recipeinst1_ on recipe0_.id=recipeinst1_.recipe_id where recipe0_.id=?
+[DEBUG] 2020-04-12 00:12:33.075 [main] Loader - Static select for action ACTION_REFRESH on entity edu.matc.entity.Recipe: select recipe0_.id as id1_2_1_, recipe0_.category as category2_2_1_, recipe0_.created_by_user_id as created_5_2_1_, recipe0_.description as descript3_2_1_, recipe0_.image_id as image_id6_2_1_, recipe0_.name as name4_2_1_, recipeinst1_.recipe_id as recipe_i5_1_3_, recipeinst1_.id as id1_1_3_, recipeinst1_.id as id1_1_0_, recipeinst1_.description as descript2_1_0_, recipeinst1_.image_id as image_id4_1_0_, recipeinst1_.rank as rank3_1_0_, recipeinst1_.recipe_id as recipe_i5_1_0_ from recipe recipe0_ left outer join instruction recipeinst1_ on recipe0_.id=recipeinst1_.recipe_id where recipe0_.id=?
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister - Static SQL for entity: edu.matc.entity.Users
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Version select: select id from users where id =?
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Snapshot select: select users_.id, users_.email as email2_3_, users_.first_name as first_na3_3_, users_.last_name as last_nam4_3_, users_.password as password5_3_, users_.user_role as user_rol6_3_, users_.username as username7_3_ from users users_ where users_.id=?
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Insert 0: insert into users (email, first_name, last_name, password, user_role, username, id) values (?, ?, ?, ?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Update 0: update users set email=?, first_name=?, last_name=?, password=?, user_role=?, username=? where id=?
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Delete 0: delete from users where id=?
+[DEBUG] 2020-04-12 00:12:33.076 [main] AbstractEntityPersister -  Identity insert: insert into users (email, first_name, last_name, password, user_role, username) values (?, ?, ?, ?, ?, ?)
+[DEBUG] 2020-04-12 00:12:33.076 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@171dc7c3]
+[DEBUG] 2020-04-12 00:12:33.076 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes
+[DEBUG] 2020-04-12 00:12:33.076 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4cdba2ed]
+[DEBUG] 2020-04-12 00:12:33.076 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2c1f8dbd]
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.category
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.createdByUser
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Property path deemed to be circular : createdRecipes.createdByUser
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.description
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image
+[DEBUG] 2020-04-12 00:12:33.077 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@335f5c69]
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image.description
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image.filepath
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.name
+[DEBUG] 2020-04-12 00:12:33.077 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions
+[DEBUG] 2020-04-12 00:12:33.077 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1d6751e3]
+[DEBUG] 2020-04-12 00:12:33.077 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2d258eff]
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.description
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.image
+[DEBUG] 2020-04-12 00:12:33.078 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a058df8]
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.rank
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Property path deemed to be circular : createdRecipes.recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : email
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : firstName
+[DEBUG] 2020-04-12 00:12:33.078 [main] MetamodelGraphWalker - Visiting attribute path : lastName
+[DEBUG] 2020-04-12 00:12:33.082 [main] MetamodelGraphWalker - Visiting attribute path : password
+[DEBUG] 2020-04-12 00:12:33.082 [main] MetamodelGraphWalker - Visiting attribute path : userRole
+[DEBUG] 2020-04-12 00:12:33.084 [main] MetamodelGraphWalker - Visiting attribute path : username
+[DEBUG] 2020-04-12 00:12:33.084 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.084 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.095 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Users)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:0>, path=edu.matc.entity.Users)
+          - CollectionAttributeFetchImpl(collection=edu.matc.entity.Users.createdRecipes, querySpaceUid=<gen:1>, path=edu.matc.entity.Users.createdRecipes)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:2>, path=edu.matc.entity.Users.createdRecipes.<elements>)
+                - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:3>, path=edu.matc.entity.Users.createdRecipes.<elements>.image)
+                - CollectionAttributeFetchImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:4>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:5>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions.<elements>)
+                      - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:6>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions.<elements>.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Users)
+          - SQL table alias mapping - users0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_3_0_}
+          - JOIN (JoinDefinedByMetadata(createdRecipes)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=edu.matc.entity.Users.createdRecipes)
+                - SQL table alias mapping - createdrec1_
+                - alias suffix - 1_
+                - suffixed key columns - {created_5_2_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_2_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Recipe)
+                      - SQL table alias mapping - createdrec1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_2_2_}
+                      - JOIN (JoinDefinedByMetadata(image)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=edu.matc.entity.Image)
+                            - SQL table alias mapping - image2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_0_3_}
+                      - JOIN (JoinDefinedByMetadata(recipeInstructions)) : <gen:2> -> <gen:4>
+                         - CollectionQuerySpaceImpl(uid=<gen:4>, collection=edu.matc.entity.Recipe.recipeInstructions)
+                            - SQL table alias mapping - recipeinst3_
+                            - alias suffix - 4_
+                            - suffixed key columns - {recipe_i5_1_4_}
+                            - entity-element alias suffix - 5_
+                            - 5_entity-element suffixed key columns - id1_1_5_
+                            - JOIN (JoinDefinedByMetadata(elements)) : <gen:4> -> <gen:5>
+                               - EntityQuerySpaceImpl(uid=<gen:5>, entity=edu.matc.entity.Instruction)
+                                  - SQL table alias mapping - recipeinst3_
+                                  - alias suffix - 5_
+                                  - suffixed key columns - {id1_1_5_}
+
+[DEBUG] 2020-04-12 00:12:33.095 [main] EntityLoader - Static select for entity edu.matc.entity.Users [NONE]: select users0_.id as id1_3_0_, users0_.email as email2_3_0_, users0_.first_name as first_na3_3_0_, users0_.last_name as last_nam4_3_0_, users0_.password as password5_3_0_, users0_.user_role as user_rol6_3_0_, users0_.username as username7_3_0_, createdrec1_.created_by_user_id as created_5_2_1_, createdrec1_.id as id1_2_1_, createdrec1_.id as id1_2_2_, createdrec1_.category as category2_2_2_, createdrec1_.created_by_user_id as created_5_2_2_, createdrec1_.description as descript3_2_2_, createdrec1_.image_id as image_id6_2_2_, createdrec1_.name as name4_2_2_, image2_.id as id1_0_3_, image2_.description as descript2_0_3_, image2_.filepath as filepath3_0_3_, recipeinst3_.recipe_id as recipe_i5_1_4_, recipeinst3_.id as id1_1_4_, recipeinst3_.id as id1_1_5_, recipeinst3_.description as descript2_1_5_, recipeinst3_.image_id as image_id4_1_5_, recipeinst3_.rank as rank3_1_5_, recipeinst3_.recipe_id as recipe_i5_1_5_ from users users0_ left outer join recipe createdrec1_ on users0_.id=createdrec1_.created_by_user_id left outer join image image2_ on createdrec1_.image_id=image2_.id left outer join instruction recipeinst3_ on createdrec1_.id=recipeinst3_.recipe_id where users0_.id=?
+[DEBUG] 2020-04-12 00:12:33.096 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b56b031]
+[DEBUG] 2020-04-12 00:12:33.096 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes
+[DEBUG] 2020-04-12 00:12:33.097 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@1283ca23]
+[DEBUG] 2020-04-12 00:12:33.098 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@740fefc6]
+[DEBUG] 2020-04-12 00:12:33.100 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.category
+[DEBUG] 2020-04-12 00:12:33.100 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.createdByUser
+[DEBUG] 2020-04-12 00:12:33.100 [main] MetamodelGraphWalker - Property path deemed to be circular : createdRecipes.createdByUser
+[DEBUG] 2020-04-12 00:12:33.100 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.description
+[DEBUG] 2020-04-12 00:12:33.100 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image
+[DEBUG] 2020-04-12 00:12:33.103 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7fe07361]
+[DEBUG] 2020-04-12 00:12:33.104 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image.description
+[DEBUG] 2020-04-12 00:12:33.104 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.image.filepath
+[DEBUG] 2020-04-12 00:12:33.105 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.name
+[DEBUG] 2020-04-12 00:12:33.105 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions
+[DEBUG] 2020-04-12 00:12:33.105 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4ef4f627]
+[DEBUG] 2020-04-12 00:12:33.106 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:5> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4ea56bdb]
+[DEBUG] 2020-04-12 00:12:33.107 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.description
+[DEBUG] 2020-04-12 00:12:33.107 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.image
+[DEBUG] 2020-04-12 00:12:33.107 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:6> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79a201cf]
+[DEBUG] 2020-04-12 00:12:33.107 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.rank
+[DEBUG] 2020-04-12 00:12:33.107 [main] MetamodelGraphWalker - Visiting attribute path : createdRecipes.recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.107 [main] MetamodelGraphWalker - Property path deemed to be circular : createdRecipes.recipeInstructions.recipe
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : email
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : firstName
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : lastName
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : password
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : userRole
+[DEBUG] 2020-04-12 00:12:33.111 [main] MetamodelGraphWalker - Visiting attribute path : username
+[DEBUG] 2020-04-12 00:12:33.111 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.112 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.122 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Users)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Users, querySpaceUid=<gen:0>, path=edu.matc.entity.Users)
+          - CollectionAttributeFetchImpl(collection=edu.matc.entity.Users.createdRecipes, querySpaceUid=<gen:1>, path=edu.matc.entity.Users.createdRecipes)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:2>, path=edu.matc.entity.Users.createdRecipes.<elements>)
+                - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:3>, path=edu.matc.entity.Users.createdRecipes.<elements>.image)
+                - CollectionAttributeFetchImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:4>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions)
+                   - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:5>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions.<elements>)
+                      - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:6>, path=edu.matc.entity.Users.createdRecipes.<elements>.recipeInstructions.<elements>.image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Users)
+          - SQL table alias mapping - users0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_3_0_}
+          - JOIN (JoinDefinedByMetadata(createdRecipes)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=edu.matc.entity.Users.createdRecipes)
+                - SQL table alias mapping - createdrec1_
+                - alias suffix - 1_
+                - suffixed key columns - {created_5_2_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - id1_2_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Recipe)
+                      - SQL table alias mapping - createdrec1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_2_2_}
+                      - JOIN (JoinDefinedByMetadata(image)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=edu.matc.entity.Image)
+                            - SQL table alias mapping - image2_
+                            - alias suffix - 3_
+                            - suffixed key columns - {id1_0_3_}
+                      - JOIN (JoinDefinedByMetadata(recipeInstructions)) : <gen:2> -> <gen:4>
+                         - CollectionQuerySpaceImpl(uid=<gen:4>, collection=edu.matc.entity.Recipe.recipeInstructions)
+                            - SQL table alias mapping - recipeinst3_
+                            - alias suffix - 4_
+                            - suffixed key columns - {recipe_i5_1_4_}
+                            - entity-element alias suffix - 5_
+                            - 5_entity-element suffixed key columns - id1_1_5_
+                            - JOIN (JoinDefinedByMetadata(elements)) : <gen:4> -> <gen:5>
+                               - EntityQuerySpaceImpl(uid=<gen:5>, entity=edu.matc.entity.Instruction)
+                                  - SQL table alias mapping - recipeinst3_
+                                  - alias suffix - 5_
+                                  - suffixed key columns - {id1_1_5_}
+
+[DEBUG] 2020-04-12 00:12:33.124 [main] EntityLoader - Static select for entity edu.matc.entity.Users [READ]: select users0_.id as id1_3_0_, users0_.email as email2_3_0_, users0_.first_name as first_na3_3_0_, users0_.last_name as last_nam4_3_0_, users0_.password as password5_3_0_, users0_.user_role as user_rol6_3_0_, users0_.username as username7_3_0_, createdrec1_.created_by_user_id as created_5_2_1_, createdrec1_.id as id1_2_1_, createdrec1_.id as id1_2_2_, createdrec1_.category as category2_2_2_, createdrec1_.created_by_user_id as created_5_2_2_, createdrec1_.description as descript3_2_2_, createdrec1_.image_id as image_id6_2_2_, createdrec1_.name as name4_2_2_, image2_.id as id1_0_3_, image2_.description as descript2_0_3_, image2_.filepath as filepath3_0_3_, recipeinst3_.recipe_id as recipe_i5_1_4_, recipeinst3_.id as id1_1_4_, recipeinst3_.id as id1_1_5_, recipeinst3_.description as descript2_1_5_, recipeinst3_.image_id as image_id4_1_5_, recipeinst3_.rank as rank3_1_5_, recipeinst3_.recipe_id as recipe_i5_1_5_ from users users0_ left outer join recipe createdrec1_ on users0_.id=createdrec1_.created_by_user_id left outer join image image2_ on createdrec1_.image_id=image2_.id left outer join instruction recipeinst3_ on createdrec1_.id=recipeinst3_.recipe_id where users0_.id=?
+[DEBUG] 2020-04-12 00:12:33.133 [main] Loader - Static select for action ACTION_MERGE on entity edu.matc.entity.Users: select users0_.id as id1_3_1_, users0_.email as email2_3_1_, users0_.first_name as first_na3_3_1_, users0_.last_name as last_nam4_3_1_, users0_.password as password5_3_1_, users0_.user_role as user_rol6_3_1_, users0_.username as username7_3_1_, createdrec1_.created_by_user_id as created_5_2_3_, createdrec1_.id as id1_2_3_, createdrec1_.id as id1_2_0_, createdrec1_.category as category2_2_0_, createdrec1_.created_by_user_id as created_5_2_0_, createdrec1_.description as descript3_2_0_, createdrec1_.image_id as image_id6_2_0_, createdrec1_.name as name4_2_0_ from users users0_ left outer join recipe createdrec1_ on users0_.id=createdrec1_.created_by_user_id where users0_.id=?
+[DEBUG] 2020-04-12 00:12:33.135 [main] Loader - Static select for action ACTION_REFRESH on entity edu.matc.entity.Users: select users0_.id as id1_3_1_, users0_.email as email2_3_1_, users0_.first_name as first_na3_3_1_, users0_.last_name as last_nam4_3_1_, users0_.password as password5_3_1_, users0_.user_role as user_rol6_3_1_, users0_.username as username7_3_1_, createdrec1_.created_by_user_id as created_5_2_3_, createdrec1_.id as id1_2_3_, createdrec1_.id as id1_2_0_, createdrec1_.category as category2_2_0_, createdrec1_.created_by_user_id as created_5_2_0_, createdrec1_.description as descript3_2_0_, createdrec1_.image_id as image_id6_2_0_, createdrec1_.name as name4_2_0_ from users users0_ left outer join recipe createdrec1_ on users0_.id=createdrec1_.created_by_user_id where users0_.id=?
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister - Static SQL for entity: edu.matc.entity.Image
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Version select: select id from image where id =?
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Snapshot select: select image_.id, image_.description as descript2_0_, image_.filepath as filepath3_0_ from image image_ where image_.id=?
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Insert 0: insert into image (description, filepath, id) values (?, ?, ?)
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Update 0: update image set description=?, filepath=? where id=?
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Delete 0: delete from image where id=?
+[DEBUG] 2020-04-12 00:12:33.136 [main] AbstractEntityPersister -  Identity insert: insert into image (description, filepath) values (?, ?)
+[DEBUG] 2020-04-12 00:12:33.136 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1cbc5693]
+[DEBUG] 2020-04-12 00:12:33.137 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:33.137 [main] MetamodelGraphWalker - Visiting attribute path : filepath
+[DEBUG] 2020-04-12 00:12:33.137 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.137 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.137 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Image)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:0>, path=edu.matc.entity.Image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Image)
+          - SQL table alias mapping - image0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[DEBUG] 2020-04-12 00:12:33.137 [main] EntityLoader - Static select for entity edu.matc.entity.Image [NONE]: select image0_.id as id1_0_0_, image0_.description as descript2_0_0_, image0_.filepath as filepath3_0_0_ from image image0_ where image0_.id=?
+[DEBUG] 2020-04-12 00:12:33.137 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@59845579]
+[DEBUG] 2020-04-12 00:12:33.138 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:33.138 [main] MetamodelGraphWalker - Visiting attribute path : filepath
+[DEBUG] 2020-04-12 00:12:33.138 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.138 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.142 [main] LoadPlanTreePrinter - LoadPlan(entity=edu.matc.entity.Image)
+    - Returns
+       - EntityReturnImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:0>, path=edu.matc.entity.Image)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=edu.matc.entity.Image)
+          - SQL table alias mapping - image0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[DEBUG] 2020-04-12 00:12:33.146 [main] EntityLoader - Static select for entity edu.matc.entity.Image [READ]: select image0_.id as id1_0_0_, image0_.description as descript2_0_0_, image0_.filepath as filepath3_0_0_ from image image0_ where image0_.id=?
+[DEBUG] 2020-04-12 00:12:33.148 [main] Loader - Static select for action ACTION_MERGE on entity edu.matc.entity.Image: select image0_.id as id1_0_0_, image0_.description as descript2_0_0_, image0_.filepath as filepath3_0_0_ from image image0_ where image0_.id=?
+[DEBUG] 2020-04-12 00:12:33.149 [main] Loader - Static select for action ACTION_REFRESH on entity edu.matc.entity.Image: select image0_.id as id1_0_0_, image0_.description as descript2_0_0_, image0_.filepath as filepath3_0_0_ from image image0_ where image0_.id=?
+[DEBUG] 2020-04-12 00:12:33.174 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@481b2f10]
+[DEBUG] 2020-04-12 00:12:33.182 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2b6c7012]
+[DEBUG] 2020-04-12 00:12:33.183 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:33.183 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:33.183 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4e80a001]
+[DEBUG] 2020-04-12 00:12:33.183 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:33.184 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:33.184 [main] MetamodelGraphWalker - Visiting attribute path : rank
+[DEBUG] 2020-04-12 00:12:33.184 [main] MetamodelGraphWalker - Visiting attribute path : recipe
+[DEBUG] 2020-04-12 00:12:33.184 [main] MetamodelGraphWalker - Property path deemed to be circular : recipe
+[DEBUG] 2020-04-12 00:12:33.185 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.193 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.200 [main] LoadPlanTreePrinter - LoadPlan(collection=edu.matc.entity.Recipe.recipeInstructions)
+    - Returns
+       - CollectionReturnImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:0>, path=[edu.matc.entity.Recipe.recipeInstructions])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:1>, path=[edu.matc.entity.Recipe.recipeInstructions].<elements>)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:2>, path=[edu.matc.entity.Recipe.recipeInstructions].<elements>.image)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=edu.matc.entity.Recipe.recipeInstructions)
+          - SQL table alias mapping - recipeinst0_
+          - alias suffix - 0_
+          - suffixed key columns - {recipe_i5_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Instruction)
+                - SQL table alias mapping - recipeinst0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_1_1_}
+                - JOIN (JoinDefinedByMetadata(image)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Image)
+                      - SQL table alias mapping - image1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_0_2_}
+
+[DEBUG] 2020-04-12 00:12:33.201 [main] CollectionLoader - Static select for collection edu.matc.entity.Recipe.recipeInstructions: select recipeinst0_.recipe_id as recipe_i5_1_0_, recipeinst0_.id as id1_1_0_, recipeinst0_.id as id1_1_1_, recipeinst0_.description as descript2_1_1_, recipeinst0_.image_id as image_id4_1_1_, recipeinst0_.rank as rank3_1_1_, recipeinst0_.recipe_id as recipe_i5_1_1_, image1_.id as id1_0_2_, image1_.description as descript2_0_2_, image1_.filepath as filepath3_0_2_ from instruction recipeinst0_ left outer join image image1_ on recipeinst0_.image_id=image1_.id where recipeinst0_.recipe_id=?
+[DEBUG] 2020-04-12 00:12:33.202 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7459a21e]
+[DEBUG] 2020-04-12 00:12:33.202 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7eeb38b2]
+[DEBUG] 2020-04-12 00:12:33.203 [main] MetamodelGraphWalker - Visiting attribute path : category
+[DEBUG] 2020-04-12 00:12:33.203 [main] MetamodelGraphWalker - Visiting attribute path : createdByUser
+[DEBUG] 2020-04-12 00:12:33.206 [main] MetamodelGraphWalker - Property path deemed to be circular : createdByUser
+[DEBUG] 2020-04-12 00:12:33.207 [main] MetamodelGraphWalker - Visiting attribute path : description
+[DEBUG] 2020-04-12 00:12:33.207 [main] MetamodelGraphWalker - Visiting attribute path : image
+[DEBUG] 2020-04-12 00:12:33.208 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@541bf968]
+[DEBUG] 2020-04-12 00:12:33.208 [main] MetamodelGraphWalker - Visiting attribute path : image.description
+[DEBUG] 2020-04-12 00:12:33.208 [main] MetamodelGraphWalker - Visiting attribute path : image.filepath
+[DEBUG] 2020-04-12 00:12:33.208 [main] MetamodelGraphWalker - Visiting attribute path : name
+[DEBUG] 2020-04-12 00:12:33.208 [main] MetamodelGraphWalker - Visiting attribute path : recipeInstructions
+[DEBUG] 2020-04-12 00:12:33.208 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@58eac00e]
+[DEBUG] 2020-04-12 00:12:33.208 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6acffb2d]
+[DEBUG] 2020-04-12 00:12:33.210 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-04-12 00:12:33.211 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-04-12 00:12:33.215 [main] LoadPlanTreePrinter - LoadPlan(collection=edu.matc.entity.Users.createdRecipes)
+    - Returns
+       - CollectionReturnImpl(collection=edu.matc.entity.Users.createdRecipes, querySpaceUid=<gen:0>, path=[edu.matc.entity.Users.createdRecipes])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Recipe, querySpaceUid=<gen:1>, path=[edu.matc.entity.Users.createdRecipes].<elements>)
+             - EntityAttributeFetchImpl(entity=edu.matc.entity.Image, querySpaceUid=<gen:2>, path=[edu.matc.entity.Users.createdRecipes].<elements>.image)
+             - CollectionAttributeFetchImpl(collection=edu.matc.entity.Recipe.recipeInstructions, querySpaceUid=<gen:3>, path=[edu.matc.entity.Users.createdRecipes].<elements>.recipeInstructions)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=edu.matc.entity.Instruction, querySpaceUid=<gen:4>, path=[edu.matc.entity.Users.createdRecipes].<elements>.recipeInstructions.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=edu.matc.entity.Users.createdRecipes)
+          - SQL table alias mapping - createdrec0_
+          - alias suffix - 0_
+          - suffixed key columns - {created_5_2_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=edu.matc.entity.Recipe)
+                - SQL table alias mapping - createdrec0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(image)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=edu.matc.entity.Image)
+                      - SQL table alias mapping - image1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_0_2_}
+
+[DEBUG] 2020-04-12 00:12:33.216 [main] CollectionLoader - Static select for collection edu.matc.entity.Users.createdRecipes: select createdrec0_.created_by_user_id as created_5_2_0_, createdrec0_.id as id1_2_0_, createdrec0_.id as id1_2_1_, createdrec0_.category as category2_2_1_, createdrec0_.created_by_user_id as created_5_2_1_, createdrec0_.description as descript3_2_1_, createdrec0_.image_id as image_id6_2_1_, createdrec0_.name as name4_2_1_, image1_.id as id1_0_2_, image1_.description as descript2_0_2_, image1_.filepath as filepath3_0_2_ from recipe createdrec0_ left outer join image image1_ on createdrec0_.image_id=image1_.id where createdrec0_.created_by_user_id=?
+[DEBUG] 2020-04-12 00:12:33.350 [main] SchemaManagementToolCoordinator - No actions specified; doing nothing
+[DEBUG] 2020-04-12 00:12:33.354 [main] JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+[DEBUG] 2020-04-12 00:12:33.355 [main] JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+[DEBUG] 2020-04-12 00:12:33.388 [main] StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2020-04-12 00:12:33.389 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[DEBUG] 2020-04-12 00:12:33.390 [main] NamedQueryRepository - Checking 0 named HQL queries
+[DEBUG] 2020-04-12 00:12:33.390 [main] NamedQueryRepository - Checking 0 named SQL queries
+[DEBUG] 2020-04-12 00:12:33.399 [main] SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@3fdcde7a
+[DEBUG] 2020-04-12 00:12:33.411 [main] SessionFactoryRegistry - Registering SessionFactory: 821b25d9-760f-405f-8c17-a7656bdb9cb3 (<unnamed>)
+[DEBUG] 2020-04-12 00:12:33.411 [main] SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+[DEBUG] 2020-04-12 00:12:34.379 [main] StatisticsInitiator - Statistics initialized [enabled=false]
+[DEBUG] 2020-04-12 00:12:34.423 [main] SQL - select recipe0_.id as id1_2_0_, recipe0_.category as category2_2_0_, recipe0_.created_by_user_id as created_5_2_0_, recipe0_.description as descript3_2_0_, recipe0_.image_id as image_id6_2_0_, recipe0_.name as name4_2_0_, users1_.id as id1_3_1_, users1_.email as email2_3_1_, users1_.first_name as first_na3_3_1_, users1_.last_name as last_nam4_3_1_, users1_.password as password5_3_1_, users1_.user_role as user_rol6_3_1_, users1_.username as username7_3_1_, image2_.id as id1_0_2_, image2_.description as descript2_0_2_, image2_.filepath as filepath3_0_2_, recipeinst3_.recipe_id as recipe_i5_1_3_, recipeinst3_.id as id1_1_3_, recipeinst3_.id as id1_1_4_, recipeinst3_.description as descript2_1_4_, recipeinst3_.image_id as image_id4_1_4_, recipeinst3_.rank as rank3_1_4_, recipeinst3_.recipe_id as recipe_i5_1_4_, image4_.id as id1_0_5_, image4_.description as descript2_0_5_, image4_.filepath as filepath3_0_5_ from recipe recipe0_ left outer join users users1_ on recipe0_.created_by_user_id=users1_.id left outer join image image2_ on recipe0_.image_id=image2_.id left outer join instruction recipeinst3_ on recipe0_.id=recipeinst3_.recipe_id left outer join image image4_ on recipeinst3_.image_id=image4_.id where recipe0_.id=?
+[DEBUG] 2020-04-12 00:12:34.498 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-04-12 00:12:34.511 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-04-12 00:12:34.554 [main] CollectionReferenceInitializerImpl - Found row of collection: [edu.matc.entity.Recipe.recipeInstructions#1]
+[DEBUG] 2020-04-12 00:12:34.611 [main] ResultSetProcessorImpl - Starting ResultSet row #1
+[DEBUG] 2020-04-12 00:12:34.611 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-04-12 00:12:34.614 [main] CollectionReferenceInitializerImpl - Found row of collection: [edu.matc.entity.Recipe.recipeInstructions#1]
+[DEBUG] 2020-04-12 00:12:34.616 [main] TwoPhaseLoad - Resolving attributes for [edu.matc.entity.Recipe#1]
+[DEBUG] 2020-04-12 00:12:34.619 [main] TwoPhaseLoad - Processing attribute `category` : value = null
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`category`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Processing attribute `createdByUser` : value = 1
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`createdByUser`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Processing attribute `description` : value = null
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`description`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Processing attribute `image` : value = null
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`image`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Processing attribute `name` : value = Doney's BBQ Pork
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`name`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Processing attribute `recipeInstructions` : value = NOT NULL COLLECTION
+[DEBUG] 2020-04-12 00:12:34.620 [main] TwoPhaseLoad - Attribute (`recipeInstructions`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.623 [main] TwoPhaseLoad - Done materializing entity [edu.matc.entity.Recipe#1]
+[DEBUG] 2020-04-12 00:12:34.625 [main] TwoPhaseLoad - Resolving attributes for [edu.matc.entity.Users#1]
+[DEBUG] 2020-04-12 00:12:34.625 [main] TwoPhaseLoad - Processing attribute `createdRecipes` : value = NOT NULL COLLECTION
+[DEBUG] 2020-04-12 00:12:34.628 [main] TwoPhaseLoad - Attribute (`createdRecipes`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.633 [main] TwoPhaseLoad - Processing attribute `email` : value = jdone934@hotmail.com
+[DEBUG] 2020-04-12 00:12:34.633 [main] TwoPhaseLoad - Attribute (`email`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Processing attribute `firstName` : value = Jacob
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Attribute (`firstName`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Processing attribute `lastName` : value = Doney
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Attribute (`lastName`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Processing attribute `password` : value = AWESOME PASSWORD
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.639 [main] TwoPhaseLoad - Processing attribute `userRole` : value = admin
+[DEBUG] 2020-04-12 00:12:34.640 [main] TwoPhaseLoad - Attribute (`userRole`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.640 [main] TwoPhaseLoad - Processing attribute `username` : value = jdone934
+[DEBUG] 2020-04-12 00:12:34.640 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Done materializing entity [edu.matc.entity.Users#1]
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Resolving attributes for [edu.matc.entity.Instruction#1]
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Processing attribute `description` : value = First, place the roast in the roaster and fill iwth water until the water covers about half the pork. Cook on LOW for about 10 hours.
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Attribute (`description`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Processing attribute `image` : value = null
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Attribute (`image`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Processing attribute `rank` : value = 1
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Attribute (`rank`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Processing attribute `recipe` : value = 1
+[DEBUG] 2020-04-12 00:12:34.641 [main] TwoPhaseLoad - Attribute (`recipe`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Done materializing entity [edu.matc.entity.Instruction#1]
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Resolving attributes for [edu.matc.entity.Instruction#2]
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Processing attribute `description` : value = Then, remove the raost form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster.
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Attribute (`description`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Processing attribute `image` : value = null
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Attribute (`image`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Processing attribute `rank` : value = 2
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Attribute (`rank`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Processing attribute `recipe` : value = 1
+[DEBUG] 2020-04-12 00:12:34.642 [main] TwoPhaseLoad - Attribute (`recipe`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-04-12 00:12:34.645 [main] TwoPhaseLoad - Done materializing entity [edu.matc.entity.Instruction#2]
+[DEBUG] 2020-04-12 00:12:34.645 [main] CollectionLoadContext - 1 collections were found in result set for role: edu.matc.entity.Recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:34.651 [main] CollectionLoadContext - Collection fully initialized: [edu.matc.entity.Recipe.recipeInstructions#1]
+[DEBUG] 2020-04-12 00:12:34.651 [main] CollectionLoadContext - 1 collections initialized for role: edu.matc.entity.Recipe.recipeInstructions
+[DEBUG] 2020-04-12 00:12:34.654 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-04-12 00:12:34.657 [main] AbstractLoadPlanBasedCollectionInitializer - Loading collection: [edu.matc.entity.Users.createdRecipes#1]
+[DEBUG] 2020-04-12 00:12:34.660 [main] SQL - select createdrec0_.created_by_user_id as created_5_2_0_, createdrec0_.id as id1_2_0_, createdrec0_.id as id1_2_1_, createdrec0_.category as category2_2_1_, createdrec0_.created_by_user_id as created_5_2_1_, createdrec0_.description as descript3_2_1_, createdrec0_.image_id as image_id6_2_1_, createdrec0_.name as name4_2_1_, image1_.id as id1_0_2_, image1_.description as descript2_0_2_, image1_.filepath as filepath3_0_2_ from recipe createdrec0_ left outer join image image1_ on createdrec0_.image_id=image1_.id where createdrec0_.created_by_user_id=?
+[DEBUG] 2020-04-12 00:12:34.668 [main] ResultSetProcessorImpl - Preparing collection initializer : [edu.matc.entity.Users.createdRecipes#1]
+[DEBUG] 2020-04-12 00:12:34.669 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-04-12 00:12:34.671 [main] CollectionReferenceInitializerImpl - Found row of collection: [edu.matc.entity.Users.createdRecipes#1]
+[DEBUG] 2020-04-12 00:12:34.671 [main] CollectionLoadContext - 1 collections were found in result set for role: edu.matc.entity.Users.createdRecipes
+[DEBUG] 2020-04-12 00:12:34.672 [main] CollectionLoadContext - Collection fully initialized: [edu.matc.entity.Users.createdRecipes#1]
+[DEBUG] 2020-04-12 00:12:34.672 [main] CollectionLoadContext - 1 collections initialized for role: edu.matc.entity.Users.createdRecipes
+[DEBUG] 2020-04-12 00:12:34.672 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-04-12 00:12:34.673 [main] AbstractLoadPlanBasedCollectionInitializer - Done loading collection
+[DEBUG] 2020-04-12 00:12:34.673 [main] AbstractLoadPlanBasedEntityLoader - Done entity load : edu.matc.entity.Recipe#1
+[DEBUG] 2020-04-12 00:12:34.673 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-04-12 00:12:34.696 [main] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2020-04-12 00:12:34.696 [main] TransactionImpl - begin
+[DEBUG] 2020-04-12 00:12:34.724 [main] TransactionImpl - committing
+[DEBUG] 2020-04-12 00:12:34.725 [main] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2020-04-12 00:12:34.726 [main] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2020-04-12 00:12:34.737 [main] Collections - Collection found: [edu.matc.entity.Recipe.recipeInstructions#1], was: [edu.matc.entity.Recipe.recipeInstructions#1] (initialized)
+[DEBUG] 2020-04-12 00:12:34.737 [main] AbstractFlushingEventListener - Flushed: 0 insertions, 3 updates, 0 deletions to 3 objects
+[DEBUG] 2020-04-12 00:12:34.737 [main] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+[DEBUG] 2020-04-12 00:12:34.740 [main] EntityPrinter - Listing entities:
+[DEBUG] 2020-04-12 00:12:34.741 [main] EntityPrinter - edu.matc.entity.Instruction{image=null, recipe=edu.matc.entity.Recipe#1, description=First, place the roast in the roaster and fill iwth water until the water covers about half the pork. Cook on LOW for about 10 hours., rank=1, id=1}
+[DEBUG] 2020-04-12 00:12:34.746 [main] EntityPrinter - edu.matc.entity.Instruction{image=null, recipe=edu.matc.entity.Recipe#1, description=Then, remove the raost form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster., rank=2, id=2}
+[DEBUG] 2020-04-12 00:12:34.749 [main] EntityPrinter - edu.matc.entity.Recipe{image=null, createdByUser=edu.matc.entity.Users#1, name=Not Doney's BBQ Pork, description=null, id=1, category=null, recipeInstructions=[edu.matc.entity.Instruction#1, edu.matc.entity.Instruction#2]}
+[DEBUG] 2020-04-12 00:12:34.754 [main] SQL - update recipe set category=?, created_by_user_id=?, description=?, image_id=?, name=? where id=?
+[DEBUG] 2020-04-12 00:12:34.770 [main] SQL - update instruction set description=?, image_id=?, rank=?, recipe_id=? where id=?
+[DEBUG] 2020-04-12 00:12:34.809 [main] SqlExceptionHelper - could not execute statement [n/a]
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank=1, recipe_id=1 where id=1' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:955) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1094) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1042) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1345) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1027) ~[mysql-connector-java-8.0.16.jar:8.0.16]
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:410) ~[c3p0-0.9.5.3.jar:0.9.5.3]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3398) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.updateOrInsert(AbstractEntityPersister.java:3271) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3672) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:149) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:361) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1493) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3371) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2540) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at edu.matc.persistence.GenericDao.saveOrUpdate(GenericDao.java:104) [classes/:?]
+	at edu.matc.persistence.RecipeDaoTest.updateSuccess(RecipeDaoTest.java:71) [test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:389) [junit-platform-commons-1.0.0.jar:1.0.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:167) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.execution.ThrowableCollector.execute(ThrowableCollector.java:40) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:163) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:110) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:57) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:83) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:51) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:43) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58) [junit-rt.jar:?]
+[WARN ] 2020-04-12 00:12:34.827 [main] SqlExceptionHelper - SQL Error: 1064, SQLState: 42000
+[ERROR] 2020-04-12 00:12:34.827 [main] SqlExceptionHelper - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank=1, recipe_id=1 where id=1' at line 1
+[DEBUG] 2020-04-12 00:12:34.829 [main] JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.markRollbackOnly(TransactionImpl.java:206) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.markForRollbackOnly(AbstractSharedSessionContract.java:392) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.handlePersistenceException(ExceptionConverterImpl.java:297) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:155) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1499) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:496) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3371) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2540) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at edu.matc.persistence.GenericDao.saveOrUpdate(GenericDao.java:104) [classes/:?]
+	at edu.matc.persistence.RecipeDaoTest.updateSuccess(RecipeDaoTest.java:71) [test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:389) [junit-platform-commons-1.0.0.jar:1.0.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:167) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.execution.ThrowableCollector.execute(ThrowableCollector.java:40) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:163) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:110) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:57) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:83) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:51) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:43) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58) [junit-rt.jar:?]
+[DEBUG] 2020-04-12 00:12:34.834 [main] JdbcResourceLocalTransactionCoordinatorImpl - JDBC transaction marked for rollback-only (exception provided for stack trace)
+java.lang.Exception: exception just for purpose of providing stack trace
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.markRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:314) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:187) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) [hibernate-core-5.4.4.Final.jar:5.4.4.Final]
+	at edu.matc.persistence.GenericDao.saveOrUpdate(GenericDao.java:104) [classes/:?]
+	at edu.matc.persistence.RecipeDaoTest.updateSuccess(RecipeDaoTest.java:71) [test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:389) [junit-platform-commons-1.0.0.jar:1.0.0]
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:167) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.execution.ThrowableCollector.execute(ThrowableCollector.java:40) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:163) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:110) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:57) [junit-jupiter-engine-5.0.0.jar:5.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:83) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$null$2(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) [?:?]
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) [?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) [?:?]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.lambda$execute$3(HierarchicalTestExecutor.java:92) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.SingleTestExecutor.executeSafely(SingleTestExecutor.java:66) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:77) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:51) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:43) [junit-platform-engine-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:170) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:154) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:90) [junit-platform-launcher-1.0.0.jar:1.0.0]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:69) [junit5-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58) [junit-rt.jar:?]
+[DEBUG] 2020-04-12 00:12:34.841 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-04-12 00:12:34.843 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction

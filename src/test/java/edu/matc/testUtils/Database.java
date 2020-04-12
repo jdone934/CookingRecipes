@@ -1,5 +1,4 @@
 package edu.matc.testUtils;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,53 +13,48 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * Provides access the database
+ * Provides access to the database
  * Created on 8/31/16.
  *
  * @author pwaite
+ * @author Alex M - Fall 2019 - added multi-line sql capability
  */
-
 public class Database {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
-
+    // create an object of the class Database
     private static Database instance = new Database();
 
     private Properties properties;
-
     private Connection connection;
 
-    private static final String DATABASE_PROPERTIES_FILE = "/database.properties";
-
-    /**
-     * Create the database class
-     */
+    // private constructor prevents instantiating this class anywhere else
     private Database() {
         loadProperties();
 
     }
 
-    /**
-     * Load up properties for connection info
-     */
-
+    // TODO use properties loader (interface from adv java)
     private void loadProperties() {
         properties = new Properties();
         try {
-            properties.load (this.getClass().getResourceAsStream(DATABASE_PROPERTIES_FILE));
+            properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
+            System.out.println("Database.loadProperties()...Cannot load the properties file");
+            ioe.printStackTrace();
         } catch (Exception e) {
-            logger.error("Database.loadProperties()...", e);
+            System.out.println("Database.loadProperties()..." + e);
+            e.printStackTrace();
         }
 
     }
 
     /**
-     * Gets instance - singleton pattern usage.
+     * Gets instance.
      *
      * @return the instance
      */
+// get the only Database object available
     public static Database getInstance() {
         return instance;
     }
@@ -101,7 +95,7 @@ public class Database {
             try {
                 connection.close();
             } catch (SQLException e) {
-                logger.error("Cannot close connection", e);
+                System.out.println("Cannot close connection" + e);
             }
         }
 
@@ -117,20 +111,23 @@ public class Database {
 
         Statement stmt = null;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        InputStream inputStream = classloader.getResourceAsStream(sqlFile);
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(classloader.getResourceAsStream(sqlFile))))  {
 
-            Class.forName("com.mysql.cj.jdbc.Driver");
             connect();
             stmt = connection.createStatement();
 
-            while (true) {
-                String sql = br.readLine();
-                if (sql == null) {
-                    break;
-                }
-                stmt.executeUpdate(sql);
+            String sql = "";
+            while (br.ready())
+            {
+                char inputValue = (char)br.read();
 
+                if(inputValue == ';')
+                {
+                    stmt.executeUpdate(sql);
+                    sql = "";
+                }
+                else
+                    sql += inputValue;
             }
 
         } catch (SQLException se) {
