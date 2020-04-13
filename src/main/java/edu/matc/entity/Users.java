@@ -44,7 +44,7 @@ public class Users {
     private Set<Recipe> createdRecipes = new HashSet<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<FavoriteRecipesUsers> favoriteRecipes = new HashSet<>();
+    private Set<FavoritedRecipe> favoriteRecipes = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -222,7 +222,7 @@ public class Users {
      *
      * @return the favorite recipes
      */
-    public Set<FavoriteRecipesUsers> getFavoriteRecipes() {
+    public Set<FavoritedRecipe> getFavoriteRecipes() {
         return favoriteRecipes;
     }
 
@@ -231,7 +231,7 @@ public class Users {
      *
      * @param favoriteRecipes the favorite recipes
      */
-    public void setFavoriteRecipes(Set<FavoriteRecipesUsers> favoriteRecipes) {
+    public void setFavoriteRecipes(Set<FavoritedRecipe> favoriteRecipes) {
         this.favoriteRecipes = favoriteRecipes;
     }
 

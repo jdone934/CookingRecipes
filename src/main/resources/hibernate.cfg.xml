@@ -23,7 +23,7 @@
         <mapping class="edu.matc.entity.Recipe" />
         <mapping class="edu.matc.entity.Instruction" />
         <mapping class="edu.matc.entity.Ingredient" />
-        <mapping class="edu.matc.entity.FavoriteRecipesUsers" />
+        <mapping class="edu.matc.entity.FavoritedRecipe" />
     </session-factory>
 
 </hibernate-configuration>

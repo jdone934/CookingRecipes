@@ -64,7 +64,8 @@ CREATE TABLE favorite_recipes_users
     `recipe_id` int(10) NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    unique key (users_id, recipe_id)
 );
 
 CREATE TABLE ingredient
@@ -107,3 +108,11 @@ INSERT INTO
            (2, 'BBQ Sauce', 'oz', 18, 1, 1),
            (3, 'Medium Onion', 'qty', 1, 1, 1),
            (4, 'Lemon Juice', 'tbsp', 3, 1, 1);
+
+INSERT INTO
+    favorite_recipes_users (id, users_id, recipe_id)
+    VALUES (1, 1, 1),
+           (2, 4, 1),
+           (3, 3, 1),
+           (4, 1, 2),
+           (5, 2, 2);

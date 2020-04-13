@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.FavoritedRecipe;
 import edu.matc.entity.Users;
 import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UsersDaoTest {
-    GenericDao dao;
+    GenericDao userDao;
+    GenericDao favoriteDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -30,7 +32,8 @@ public class UsersDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new GenericDao(Users.class);
+        userDao = new GenericDao(Users.class);
+        favoriteDao = new GenericDao(FavoritedRecipe.class);
     }
 
     /**
@@ -38,7 +41,7 @@ public class UsersDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Users retrievedUser = (Users) dao.getById(1);
+        Users retrievedUser = (Users) userDao.getById(1);
         Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
                             "Jacob", "Doney", "admin");
 
@@ -51,9 +54,9 @@ public class UsersDaoTest {
     @Test
     void insertSuccess() {
         Users newUser = new Users("myhero34", "IM A SAILOR", "sdoney@gmail.com", "Sam", "Doney", "user");
-        int id = dao.insert(newUser);
+        int id = userDao.insert(newUser);
         assertNotEquals(0,id);
-        Users insertedUser = (Users) dao.getById(id);
+        Users insertedUser = (Users) userDao.getById(id);
         assertEquals(newUser, insertedUser);
     }
 
@@ -64,10 +67,10 @@ public class UsersDaoTest {
     void updateSuccess() {
         Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
                 "Joseph", "Doney", "admin");
-        Users userToUpdate = (Users) dao.getById(1);
+        Users userToUpdate = (Users) userDao.getById(1);
         userToUpdate.setFirstName(expectedUser.getFirstName());
-        dao.saveOrUpdate(userToUpdate);
-        Users userAfterUpdate = (Users) dao.getById(1);
+        userDao.saveOrUpdate(userToUpdate);
+        Users userAfterUpdate = (Users) userDao.getById(1);
         assertEquals(expectedUser, userAfterUpdate);
     }
 
@@ -76,8 +79,8 @@ public class UsersDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(3));
-        assertNull(dao.getById(3));
+        userDao.delete(userDao.getById(3));
+        assertNull(userDao.getById(3));
     }
 
     /**
@@ -85,7 +88,18 @@ public class UsersDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Users> users = dao.getAll();
+        List<Users> users = userDao.getAll();
         assertEquals(4, users.size());
+    }
+
+    /**
+     * Verify Favorite deletion on deletion of Recipe
+     */
+    @Test
+    void deleteFavoriteSuccess() {
+        Users userToDelete = (Users) userDao.getById(1);
+        userDao.delete(userToDelete);
+        FavoritedRecipe fav = (FavoritedRecipe) favoriteDao.getById(1);
+        assertNull(favoriteDao.getById(1));
     }
 }

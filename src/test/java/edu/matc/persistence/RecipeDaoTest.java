@@ -1,9 +1,6 @@
 package edu.matc.persistence;
 
-import edu.matc.entity.Image;
-import edu.matc.entity.Recipe;
-import edu.matc.entity.Users;
-import edu.matc.entity.Instruction;
+import edu.matc.entity.*;
 import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +18,7 @@ public class RecipeDaoTest {
     GenericDao userDao;
     GenericDao instructionDao;
     GenericDao imageDao;
+    GenericDao favoriteDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -41,6 +39,7 @@ public class RecipeDaoTest {
         userDao = new GenericDao(Users.class);
         instructionDao = new GenericDao(Instruction.class);
         imageDao = new GenericDao(Image.class);
+        favoriteDao = new GenericDao(FavoritedRecipe.class);
     }
 
     /**
@@ -120,5 +119,16 @@ public class RecipeDaoTest {
         recipeDao.saveOrUpdate(recipeToDelete);
         recipeDao.delete(recipeToDelete);
         assertNull(imageDao.getById(1));
+    }
+
+    /**
+     * Verify Favorite deletion on deletion of Recipe
+     */
+    @Test
+    void deleteFavoriteSuccess() {
+        Recipe recipeToDelete = (Recipe) recipeDao.getById(1);
+        recipeDao.delete(recipeToDelete);
+        FavoritedRecipe fav = (FavoritedRecipe) favoriteDao.getById(1);
+        assertNull(favoriteDao.getById(1));
     }
 }

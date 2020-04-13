@@ -8,9 +8,9 @@ import java.util.Objects;
 /**
  * The type Favorite recipes users.
  */
-@Entity(name = "FavoriteRecipesUsers")
+@Entity(name = "FavoritedRecipe")
 @Table(name = "favorite_recipes_users")
-public class FavoriteRecipesUsers {
+public class FavoritedRecipe {
 
     @ManyToOne
     @JoinColumn(name = "users_id")
@@ -23,33 +23,33 @@ public class FavoriteRecipesUsers {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
-    private long id;
+    private int id;
 
     /**
-     * Instantiates a new Favorite recipes users.
+     * Instantiates a new Favorited recipe.
      */
-    public FavoriteRecipesUsers() {
+    public FavoritedRecipe() {
     }
 
     /**
-     * Instantiates a new Favorite recipes users.
+     * Instantiates a new Favorited recipe.
      *
      * @param user   the user
      * @param recipe the recipe
      */
-    public FavoriteRecipesUsers(Users user, Recipe recipe) {
+    public FavoritedRecipe(Users user, Recipe recipe) {
         this.user = user;
         this.recipe = recipe;
     }
 
     /**
-     * Instantiates a new Favorite recipes users.
+     * Instantiates a new Favorited recipe.
      *
      * @param user   the user
      * @param recipe the recipe
      * @param id     the id
      */
-    public FavoriteRecipesUsers(Users user, Recipe recipe, int id) {
+    public FavoritedRecipe(Users user, Recipe recipe, int id) {
         this.user = user;
         this.recipe = recipe;
         this.id = id;
@@ -60,7 +60,7 @@ public class FavoriteRecipesUsers {
      *
      * @return the id
      */
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -69,7 +69,7 @@ public class FavoriteRecipesUsers {
      *
      * @param id the id
      */
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -113,7 +113,7 @@ public class FavoriteRecipesUsers {
 
     @Override
     public String toString() {
-        return "FavoriteRecipesUsers{" +
+        return "FavoritedRecipe{" +
                 "user=" + user +
                 ", recipe=" + recipe +
                 ", id=" + id +
@@ -124,7 +124,7 @@ public class FavoriteRecipesUsers {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FavoriteRecipesUsers that = (FavoriteRecipesUsers) o;
+        FavoritedRecipe that = (FavoritedRecipe) o;
         return id == that.id &&
                 user.getId() == that.user.getId() &&
                 recipe.getId() ==that.recipe.getId();
