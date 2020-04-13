@@ -19,10 +19,6 @@ public class Instruction {
     @NotNull
     private String description;
 
-    @OneToOne
-    @JoinColumn(name = "image_id")
-    private Image image;
-
     @ManyToOne
     private Recipe recipe;
 
@@ -67,38 +63,6 @@ public class Instruction {
     }
 
     /**
-     * Instantiates a new Instruction.
-     *
-     * @param recipeRank        the recipeRank
-     * @param description the description
-     * @param image     the image
-     * @param recipe      the recipe
-     */
-    public Instruction(int recipeRank, String description, Image image, Recipe recipe) {
-        this.recipeRank = recipeRank;
-        this.description = description;
-        this.image = image;
-        this.recipe = recipe;
-    }
-
-    /**
-     * Instantiates a new Instruction.
-     *
-     * @param recipeRank        the recipeRank
-     * @param description the description
-     * @param image     the image
-     * @param recipe      the recipe
-     * @param id          the id
-     */
-    public Instruction(int recipeRank, String description, Image image, Recipe recipe, int id) {
-        this.recipeRank = recipeRank;
-        this.description = description;
-        this.image = image;
-        this.recipe = recipe;
-        this.id = id;
-    }
-
-    /**
      * Gets recipeRank.
      *
      * @return the recipeRank
@@ -132,24 +96,6 @@ public class Instruction {
      */
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    /**
-     * Gets image id.
-     *
-     * @return the image id
-     */
-    public Image getImage() {
-        return image;
-    }
-
-    /**
-     * Sets image id.
-     *
-     * @param image the image id
-     */
-    public void setImage(Image image) {
-        this.image = image;
     }
 
     /**
@@ -193,7 +139,6 @@ public class Instruction {
         return "Instruction{" +
                 "recipeRank=" + recipeRank +
                 ", description='" + description + '\'' +
-                ", imageId=" + image +
                 ", recipeId=" + recipe +
                 ", id=" + id +
                 '}';
@@ -205,7 +150,6 @@ public class Instruction {
         if (o == null || getClass() != o.getClass()) return false;
         Instruction that = (Instruction) o;
         return recipeRank == that.recipeRank &&
-                image == that.image &&
                 recipe.getId() == that.recipe.getId() &&
                 id == that.id &&
                 description.equals(that.description);
@@ -213,6 +157,6 @@ public class Instruction {
 
     @Override
     public int hashCode() {
-        return Objects.hash(recipeRank, description, image, recipe, id);
+        return Objects.hash(recipeRank, description, recipe, id);
     }
 }

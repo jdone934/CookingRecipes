@@ -1,6 +1,8 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.Image;
+import edu.matc.entity.Instruction;
+import edu.matc.entity.Recipe;
 import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ImageDaoTest {
-    GenericDao dao;
+    GenericDao imageDao;
+    GenericDao recipeDao;
+    GenericDao instructionDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -30,7 +34,9 @@ public class ImageDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new GenericDao(Image.class);
+        imageDao = new GenericDao(Image.class);
+        recipeDao = new GenericDao(Recipe.class);
+        instructionDao = new GenericDao(Instruction.class);
     }
 
     /**
@@ -38,8 +44,9 @@ public class ImageDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Image retrievedImage = (Image) dao.getById(1);
-        Image expectedImage = new Image("catLightning.png", "cat shooting lightning from his paws");
+        Image retrievedImage = (Image) imageDao.getById(1);
+        Recipe recipe = (Recipe) recipeDao.getById(1);
+        Image expectedImage = new Image("catLightning.png", "cat shooting lightning from his paws", recipe, 1);
         assertEquals(expectedImage, retrievedImage);
     }
 
@@ -49,9 +56,9 @@ public class ImageDaoTest {
     @Test
     void insertSuccess() {
         Image newImage = new Image("ironThrone.png", "the Iron Throne from Game of Thrones");
-        int id = dao.insert(newImage);
+        int id = imageDao.insert(newImage);
         assertNotEquals(0,id);
-        Image insertedImage = (Image) dao.getById(id);
+        Image insertedImage = (Image) imageDao.getById(id);
         assertEquals(newImage, insertedImage);
     }
 
@@ -60,12 +67,13 @@ public class ImageDaoTest {
      */
     @Test
     void updateSuccess() {
-        Image expectedImage = new Image("new filepath", "new description");
-        Image imageToUpdate = (Image) dao.getById(1);
+        Recipe recipe = (Recipe) recipeDao.getById(1);
+        Image expectedImage = new Image("new filepath", "new description", recipe, 1);
+        Image imageToUpdate = (Image) imageDao.getById(1);
         imageToUpdate.setFilepath(expectedImage.getFilepath());
         imageToUpdate.setDescription((expectedImage.getDescription()));
-        dao.saveOrUpdate(imageToUpdate);
-        Image imageAfterUpdate = (Image) dao.getById(1);
+        imageDao.saveOrUpdate(imageToUpdate);
+        Image imageAfterUpdate = (Image) imageDao.getById(1);
         assertEquals(expectedImage, imageAfterUpdate);
     }
 
@@ -74,8 +82,8 @@ public class ImageDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(2));
-        assertNull(dao.getById(2));
+        imageDao.delete(imageDao.getById(2));
+        assertNull(imageDao.getById(2));
     }
 
     /**
@@ -83,7 +91,7 @@ public class ImageDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Image> images = dao.getAll();
+        List<Image> images = imageDao.getAll();
         assertEquals(2, images.size());
     }
 }

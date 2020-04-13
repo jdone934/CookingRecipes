@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Image;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.entity.Instruction;
@@ -19,6 +20,7 @@ public class RecipeDaoTest {
     GenericDao recipeDao;
     GenericDao userDao;
     GenericDao instructionDao;
+    GenericDao imageDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -38,6 +40,7 @@ public class RecipeDaoTest {
         recipeDao = new GenericDao(Recipe.class);
         userDao = new GenericDao(Users.class);
         instructionDao = new GenericDao(Instruction.class);
+        imageDao = new GenericDao(Image.class);
     }
 
     /**
@@ -104,5 +107,18 @@ public class RecipeDaoTest {
         recipeDao.delete(recipeDao.getById(1));
         assertNull(instructionDao.getById(1));
         assertNull(instructionDao.getById(2));
+    }
+
+    /**
+     * Verify Image deletion on deletion of Recipe
+     */
+    @Test
+    void deleteImageSuccess() {
+        Recipe recipeToDelete = (Recipe) recipeDao.getById(1);
+        Image imageToInsert = (Image) imageDao.getById(1);
+        imageToInsert.setRecipe(recipeToDelete);
+        recipeDao.saveOrUpdate(recipeToDelete);
+        recipeDao.delete(recipeToDelete);
+        assertNull(imageDao.getById(1));
     }
 }

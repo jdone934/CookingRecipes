@@ -23,10 +23,6 @@ public class Recipe {
     @JoinColumn(name = "created_by_user_id")
     private Users createdByUser;
 
-    @OneToOne
-    @JoinColumn(name = "image_id")
-    private Image image;
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
@@ -72,14 +68,12 @@ public class Recipe {
      * @param description   the description
      * @param category      the category
      * @param createdByUser the created by user
-     * @param image         the image
      */
-    public Recipe(String name, String description, String category, Users createdByUser, Image image) {
+    public Recipe(String name, String description, String category, Users createdByUser) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.createdByUser = createdByUser;
-        this.image = image;
     }
 
     /**
@@ -155,24 +149,6 @@ public class Recipe {
     }
 
     /**
-     * Gets image.
-     *
-     * @return the image
-     */
-    public Image getImage() {
-        return image;
-    }
-
-    /**
-     * Sets image.
-     *
-     * @param image the image
-     */
-    public void setImage(Image image) {
-        this.image = image;
-    }
-
-    /**
      * Gets id.
      *
      * @return the id
@@ -217,12 +193,11 @@ public class Recipe {
                 name.equals(recipe.name) &&
                 Objects.equals(description, recipe.description) &&
                 Objects.equals(category, recipe.category) &&
-                createdByUser.getId() == recipe.createdByUser.getId() &&
-                Objects.equals(image, recipe.image);
+                createdByUser.getId() == recipe.createdByUser.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, category, createdByUser, image, id);
+        return Objects.hash(name, description, category, createdByUser, id);
     }
 }

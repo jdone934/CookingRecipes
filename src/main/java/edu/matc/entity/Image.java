@@ -21,6 +21,14 @@ public class Image {
     private String filepath;
     private String description;
 
+    @OneToOne
+    @JoinColumn(name="recipe_id")
+    private Recipe recipe;
+
+    @OneToOne
+    @JoinColumn(name="instruction_id")
+    private Instruction instruction;
+
     /**
      * Instantiates a new Image.
      */
@@ -36,6 +44,61 @@ public class Image {
     public Image(String filepath, String description) {
         this.filepath = filepath;
         this.description = description;
+    }
+
+    /**
+     * Instantiates a new Image.
+     *
+     * @param filepath    the filepath
+     * @param description the description
+     * @param recipe      the recipe
+     */
+    public Image(String filepath, String description, Recipe recipe) {
+        this.filepath = filepath;
+        this.description = description;
+        this.recipe = recipe;
+    }
+
+    /**
+     * Instantiates a new Image.
+     *
+     * @param filepath    the filepath
+     * @param description the description
+     * @param recipe      the recipe
+     * @param id          the id
+     */
+    public Image(String filepath, String description, Recipe recipe, int id) {
+        this.filepath = filepath;
+        this.description = description;
+        this.recipe = recipe;
+        this.id = id;
+    }
+
+    /**
+     * Instantiates a new Image.
+     *
+     * @param filepath    the filepath
+     * @param description the description
+     * @param instruction the instruction
+     */
+    public Image(String filepath, String description, Instruction instruction) {
+        this.filepath = filepath;
+        this.description = description;
+        this.instruction = instruction;
+    }
+
+    /**
+     * Instantiates a new Image.
+     *  @param filepath    the filepath
+     * @param description the description
+     * @param instruction      the instruction
+     * @param id          the id
+     */
+    public Image(String filepath, String description, Instruction instruction, int id) {
+        this.filepath = filepath;
+        this.description = description;
+        this.instruction = instruction;
+        this.id = id;
     }
 
     /**
@@ -92,17 +155,67 @@ public class Image {
         this.description = description;
     }
 
+    /**
+     * Gets recipe.
+     *
+     * @return the recipe
+     */
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    /**
+     * Sets recipe.
+     *
+     * @param recipe the recipe
+     */
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    /**
+     * Gets instruction.
+     *
+     * @return the instruction
+     */
+    public Instruction getInstruction() {
+        return instruction;
+    }
+
+    /**
+     * Sets instruction.
+     *
+     * @param instruction the instruction
+     */
+    public void setInstruction(Instruction instruction) {
+        this.instruction = instruction;
+    }
+
     @Override
     public boolean equals(Object o) {
+        int thisForeignKeyId = 0;
+        int compareForeignKeyId = 0;
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Image image = (Image) o;
-        return Objects.equals(filepath, image.filepath) &&
-                Objects.equals(description, image.description);
+
+        if (recipe != null) {
+            thisForeignKeyId = recipe.getId();
+            compareForeignKeyId = image.recipe.getId();
+        } else if (instruction != null) {
+            thisForeignKeyId = instruction.getId();
+            compareForeignKeyId = image.instruction.getId();
+        }
+
+        return id == image.id &&
+                filepath.equals(image.filepath) &&
+                Objects.equals(description, image.description) &&
+                thisForeignKeyId == compareForeignKeyId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(filepath, description);
+        return Objects.hash(id, filepath, description, recipe, instruction);
     }
 }
