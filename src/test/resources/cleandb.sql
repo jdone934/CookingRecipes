@@ -88,8 +88,8 @@ INSERT INTO
 
 INSERT INTO
     recipe (id, name, created_by_user_id)
-    VALUES (1, "Doney's BBQ Pork", 1),
-           (2, "Laura's Panag Curry", 2);
+    VALUES (1, 'Doney\'s BBQ Pork', 1),
+           (2, 'Laura\'s Panag Curry', 2);
 
 INSERT INTO
     instruction (id, recipeRank, description, recipe_id)
@@ -100,3 +100,10 @@ INSERT INTO
     image (id, filepath, description, recipe_id, instruction_id)
     VALUES (1, 'catLightning.png', 'cat shooting lightning from his paws', 1, null),
            (2, 'waterfall.png', 'waterfall from Grand Portage', null, 1);
+
+INSERT INTO
+    ingredient (id, name, unit_of_measurement, quantity_numerator, quantity_denominator, recipe_id)
+    VALUES (1, 'Pork Roast', 'lbs', 3, 1, 1),
+           (2, 'BBQ Sauce', 'oz', 18, 1, 1),
+           (3, 'Medium Onion', 'qty', 1, 1, 1),
+           (4, 'Lemon Juice', 'tbsp', 3, 1, 1);

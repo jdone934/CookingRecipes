@@ -31,6 +31,9 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Instruction> recipeInstructions = new HashSet<>();
 
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Ingredient> recipeIngredients = new HashSet<>();
+
     /**
      * Instantiates a new Recipe.
      */
