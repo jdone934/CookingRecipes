@@ -34,6 +34,9 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Ingredient> recipeIngredients = new HashSet<>();
 
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<FavoriteRecipesUsers> userFavorites = new HashSet<>();
+
     /**
      * Instantiates a new Recipe.
      */
@@ -185,6 +188,42 @@ public class Recipe {
      */
     public void setRecipeInstructions(Set<Instruction> recipeInstructions) {
         this.recipeInstructions = recipeInstructions;
+    }
+
+    /**
+     * Gets recipe ingredients.
+     *
+     * @return the recipe ingredients
+     */
+    public Set<Ingredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    /**
+     * Sets recipe ingredients.
+     *
+     * @param recipeIngredients the recipe ingredients
+     */
+    public void setRecipeIngredients(Set<Ingredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
+
+    /**
+     * Gets user favorites.
+     *
+     * @return the user favorites
+     */
+    public Set<FavoriteRecipesUsers> getUserFavorites() {
+        return userFavorites;
+    }
+
+    /**
+     * Sets user favorites.
+     *
+     * @param userFavorites the user favorites
+     */
+    public void setUserFavorites(Set<FavoriteRecipesUsers> userFavorites) {
+        this.userFavorites = userFavorites;
     }
 
     @Override

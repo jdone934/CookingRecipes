@@ -43,6 +43,9 @@ public class Users {
     @OneToMany(mappedBy = "createdByUser", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> createdRecipes = new HashSet<>();
 
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<FavoriteRecipesUsers> favoriteRecipes = new HashSet<>();
+
     /**
      * Instantiates a new User.
      */
@@ -212,6 +215,24 @@ public class Users {
      */
     public void setUserRole(String userRole) {
         this.userRole = userRole;
+    }
+
+    /**
+     * Gets favorite recipes.
+     *
+     * @return the favorite recipes
+     */
+    public Set<FavoriteRecipesUsers> getFavoriteRecipes() {
+        return favoriteRecipes;
+    }
+
+    /**
+     * Sets favorite recipes.
+     *
+     * @param favoriteRecipes the favorite recipes
+     */
+    public void setFavoriteRecipes(Set<FavoriteRecipesUsers> favoriteRecipes) {
+        this.favoriteRecipes = favoriteRecipes;
     }
 
     @Override
