@@ -1,0 +1,38 @@
+.jumbotron {
+    margin-bottom: 0;
+}
+
+.heroSection {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../img/background2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.mainPage {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#homeLink {
+    color: white;
+}
+
+a.nav-link {
+    color: white;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading {
+    margin-top: 35vh;
+}
+
+.searchingSection {
+    height: 100vh;
+}
