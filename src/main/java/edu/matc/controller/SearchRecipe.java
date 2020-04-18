@@ -12,27 +12,25 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * A simple servlet to welcome the user.
+ * A simple servlet to welcome the recipe.
  * @author pwaite
  */
 
 @WebServlet(
-        urlPatterns = {"/searchUser"}
+        urlPatterns = {"/searchRecipe"}
 )
 
 public class SearchRecipe extends HttpServlet {
-    GenericDao recipeDao = new GenericDao(Recipe.class);
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Recipe userData = new Recipe();
+        GenericDao recipeDao = new GenericDao(Recipe.class);
         String searchTerm = req.getParameter("searchTerm");
         String searchType = req.getParameter("searchType");
         if (searchTerm == null) {
             req.setAttribute("recipes", recipeDao.getAll());
         } else {
-            req.setAttribute("recipes", recipeDao.);
+            req.setAttribute("recipes", recipeDao.getByPropertyLike(searchType, searchTerm));
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");

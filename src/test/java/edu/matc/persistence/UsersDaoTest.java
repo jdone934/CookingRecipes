@@ -102,4 +102,18 @@ public class UsersDaoTest {
         FavoritedRecipe fav = (FavoritedRecipe) favoriteDao.getById(1);
         assertNull(favoriteDao.getById(1));
     }
+
+
+
+    /**
+     * Verify search by property like
+     */
+    @Test
+    void searchByLastNameLikeSuccess() {
+        List<Users> users = userDao.getByPropertyLike("lastName", "doney");
+        assertEquals(1, users.size());
+        Users retrievedUser = users.get(0);
+        Users expectedUser = (Users) userDao.getById(1);
+        assertEquals(expectedUser, retrievedUser);
+    }
 }

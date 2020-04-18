@@ -37,6 +37,27 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<FavoritedRecipe> userFavorites = new HashSet<>();
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
+    private Image image;
+
+    /**
+     * Gets image.
+     *
+     * @return the image
+     */
+    public Image getImage() {
+        return image;
+    }
+
+    /**
+     * Sets image.
+     *
+     * @param image the image
+     */
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
     /**
      * Instantiates a new Recipe.
      */

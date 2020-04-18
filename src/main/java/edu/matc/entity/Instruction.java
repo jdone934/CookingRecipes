@@ -22,6 +22,9 @@ public class Instruction {
     @ManyToOne
     private Recipe recipe;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "instruction", cascade = CascadeType.ALL)
+    private Image image;
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
@@ -37,7 +40,7 @@ public class Instruction {
     /**
      * Instantiates a new Instruction.
      *
-     * @param recipeRank        the recipeRank
+     * @param recipeRank  the recipeRank
      * @param description the description
      * @param recipe      the recipe
      */
@@ -50,7 +53,7 @@ public class Instruction {
     /**
      * Instantiates a new Instruction.
      *
-     * @param recipeRank        the recipeRank
+     * @param recipeRank  the recipeRank
      * @param description the description
      * @param recipe      the recipe
      * @param id          the id
@@ -132,6 +135,24 @@ public class Instruction {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * Gets image.
+     *
+     * @return the image
+     */
+    public Image getImage() {
+        return image;
+    }
+
+    /**
+     * Sets image.
+     *
+     * @param image the image
+     */
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     @Override
