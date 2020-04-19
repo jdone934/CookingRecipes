@@ -29,10 +29,10 @@ public class Recipe {
     private int id;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Instruction> recipeInstructions = new HashSet<>();
+    private Set<Instruction> instructions = new HashSet<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Ingredient> recipeIngredients = new HashSet<>();
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<FavoritedRecipe> userFavorites = new HashSet<>();
@@ -198,17 +198,17 @@ public class Recipe {
      *
      * @return the recipe instructions
      */
-    public Set<Instruction> getRecipeInstructions() {
-        return recipeInstructions;
+    public Set<Instruction> getInstructions() {
+        return instructions;
     }
 
     /**
      * Sets recipe instructions.
      *
-     * @param recipeInstructions the recipe instructions
+     * @param instructions the recipe instructions
      */
-    public void setRecipeInstructions(Set<Instruction> recipeInstructions) {
-        this.recipeInstructions = recipeInstructions;
+    public void setInstructions(Set<Instruction> instructions) {
+        this.instructions = instructions;
     }
 
     /**
@@ -216,17 +216,17 @@ public class Recipe {
      *
      * @return the recipe ingredients
      */
-    public Set<Ingredient> getRecipeIngredients() {
-        return recipeIngredients;
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
     }
 
     /**
      * Sets recipe ingredients.
      *
-     * @param recipeIngredients the recipe ingredients
+     * @param ingredients the recipe ingredients
      */
-    public void setRecipeIngredients(Set<Ingredient> recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     /**

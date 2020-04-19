@@ -95,7 +95,10 @@ INSERT INTO
 INSERT INTO
     instruction (id, recipeRank, description, recipe_id)
     VALUES (1, 1, 'First, place the roast in the roaster and fill with water until the water covers about half the pork. Cook on LOW for about 10 hours.', 1),
-           (2, 2, 'Then, remove the roast form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster.', 1);
+           (2, 2, 'Then, remove the roast form the heat and shred it, discarding as much fat as you can. You can then place the meat back into the roaster.', 1),
+           (3, 3, 'Next, mix the bbq sauce, lemon juice adn onion together in a mixing bowl.  The onion needs to be chopped well and sauteed on low-medium heat. When cooking the onion for the roast, make sure it doesn\'t brown (this will take about 30 minutes).', 1),
+           (4, 4, 'After mixing the bbq, lemon juice and onion together, pout into the roaster and mix thoroughly into the meat.', 1),
+           (5, 5, 'Cook the mixture on LOW for another 3 hours, stirring about once every hour to ensure the meat doesn\'t burn.', 1);
 
 INSERT INTO
     image (id, filepath, description, recipe_id, instruction_id)

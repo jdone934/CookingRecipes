@@ -56,7 +56,7 @@ public class InstructionDaoTest {
     @Test
     void insertSuccess() {
         Recipe recipe = (Recipe) recipeDao.getById(1);
-        Instruction newInstruction = new Instruction(3, "new description", recipe);
+        Instruction newInstruction = new Instruction(6, "new description", recipe);
         int id = instructionDao.insert(newInstruction);
         assertNotEquals(0,id);
         Instruction insertedInstruction = (Instruction) instructionDao.getById(id);
@@ -93,6 +93,6 @@ public class InstructionDaoTest {
     @Test
     void getAllSuccess() {
         List<Instruction> instructions = instructionDao.getAll();
-        assertEquals(2, instructions.size());
+        assertEquals(5, instructions.size());
     }
 }

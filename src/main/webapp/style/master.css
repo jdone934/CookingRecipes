@@ -43,5 +43,17 @@ body {
 }
 
 .recipeHeading {
-    margin-bottom: 10%;
+    margin-bottom: 2rem;
+}
+
+.ingredientsHeading {
+    margin-top: 5rem;
+}
+
+.recipeImage {
+    height: 40vh;
+}
+
+.instruction {
+    padding: 3rem;
 }
