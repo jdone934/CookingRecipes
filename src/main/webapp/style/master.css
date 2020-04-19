@@ -55,5 +55,14 @@ body {
 }
 
 .instruction {
-    padding: 3rem;
+    padding: .5rem;
 }
+
+.instructionImage {
+    max-height: 30rem;
+}
+
+.ingredient {
+    padding: 1rem;
+}
+

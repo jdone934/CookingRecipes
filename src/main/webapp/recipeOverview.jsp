@@ -29,20 +29,20 @@
         <div class="col">
             <ul class="list-unstyled row">
                 <c:forEach var="ingredient" items="${recipe.ingredients}">
-                    <li class="list-item col-6 text-center">${ingredient.quantityNumerator}/${ingredient.quantityDenominator}
+                    <li class="list-item col-6 text-center ingredient">${ingredient.quantityNumerator}/${ingredient.quantityDenominator}
                              ${ingredient.unitOfMeasurement} ${ingredient.name}</li>
                 </c:forEach>
             </ul>
         </div>
     </div>
 
-    <h3 class="text-center">Instructions</h3>
+    <h3 class="text-center instructionHeading">Instructions</h3>
     <ol class="list-unstyled">
         <c:forEach var="instruction" items="${recipe.instructions}">
             <li class="list-item row instruction">
-                <p class="col-8 align-self-center">${instruction.description}</p>
+                <p class="col-12 col-sm-8 align-self-sm-center">${instruction.description}</p>
                 <c:if test="${instruction.image != null}">
-                    <img src="img/${instruction.image.filepath}" alt="${instruction.image.description}" class="ml-auto img-fluid instructionImage">
+                    <img src="img/${instruction.image.filepath}" alt="${instruction.image.description}" class="ml-sm-auto img-fluid instructionImage col-6 offset-3 col-sm-4">
                 </c:if>
             </li>
         </c:forEach>

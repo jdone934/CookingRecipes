@@ -1,12 +1,16 @@
 package edu.matc.entity;
 
+import org.apache.logging.log4j.core.config.Order;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Sort;
+import org.hibernate.annotations.SortType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.SortedSet;
 
 /**
  * The type Recipe.
@@ -29,6 +33,7 @@ public class Recipe {
     private int id;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OrderBy("recipeRank ASC")
     private Set<Instruction> instructions = new HashSet<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
