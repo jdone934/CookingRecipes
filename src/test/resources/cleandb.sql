@@ -100,7 +100,7 @@ INSERT INTO
 INSERT INTO
     image (id, filepath, description, recipe_id, instruction_id)
     VALUES (1, 'catLightning.png', 'cat shooting lightning from his paws', 1, null),
-           (2, 'waterfall.png', 'waterfall from Grand Portage', null, 1);
+           (2, 'waterfall.jpeg', 'waterfall from Grand Portage', null, 1);
 
 INSERT INTO
     ingredient (id, name, unit_of_measurement, quantity_numerator, quantity_denominator, recipe_id)
