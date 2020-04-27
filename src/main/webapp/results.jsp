@@ -14,6 +14,13 @@
     <%@ include file="template/template-head.jsp"%>
 </head>
 <body>
+<div class="header">
+    <%@ include file="template/navbar.jsp"%>
+    <div class="display-4 text-center">
+        Search Results
+    </div>
+</div>
+
 <div class="container-fluid">
 <h2>Search Results: </h2>
 <c:set var="recipes" value="${recipes}"/>

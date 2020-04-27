@@ -34,6 +34,8 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+
+        <a href="search.jsp">Testing authentication</a>
     </main>
 
     <footer>

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS role;
 DROP TABLE IF EXISTS ingredient;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS instruction;
@@ -80,6 +81,17 @@ CREATE TABLE ingredient
     FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE role (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `role_name` varchar(25) NOT NULL,
+    `username` varchar(15) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `role_id_uindex` (`id`),
+    KEY `role_user_user_id_fk` (`user_id`),
+    CONSTRAINT `role_user_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 INSERT INTO
     users (id, username, password, email, first_name, last_name, user_role)
     VALUES (1, 'jdone934', 'AWESOME PASSWORD', 'jdone934@hotmail.com', 'Jacob', 'Doney', 'admin'),
@@ -119,3 +131,7 @@ INSERT INTO
            (3, 3, 1),
            (4, 1, 2),
            (5, 2, 2);
+
+INSERT INTO
+    role (id, role_name, username, user_id)
+    VALUES (1,'admin','jdone934',1);

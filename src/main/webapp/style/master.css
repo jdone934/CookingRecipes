@@ -2,13 +2,22 @@
     margin-bottom: 0;
 }
 
-.heroSection {
+.heroSection, .header {
     height: 100vh;
     background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: white;
+}
+
+.header {
+    height: 20vh;
+    background-image: url("../img/header.jpeg");
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    /*color: white;*/
 }
 
 .mainPage {
@@ -43,7 +52,12 @@ body {
 }
 
 .recipeHeading {
+    margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.recipeDescription {
+    padding: 1rem;
 }
 
 .ingredientsHeading {
@@ -66,3 +80,22 @@ body {
     padding: 1rem;
 }
 
+.startCooking {
+    height: 25%;
+}
+
+.stepByStep {
+    font-size: 24px;
+}
+
+.chevron {
+    height: 100%;
+}
+
+.stepChevron {
+    padding: 0;
+}
+
+.stepByStepInstruction {
+    height: 50vh;
+}

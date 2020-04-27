@@ -13,11 +13,22 @@
     <%@include file="template/template-head.jsp"%>
 </head>
 <body>
-<div class="container-fluid">
+<div class="header">
+    <%@ include file="template/navbar.jsp"%>
+    <div class="display-4 text-center">
+        Recipe Overview
+    </div>
+</div>
+
+<div class="container">
     <c:set var="recipe" value="${recipe}"/>
 
-    <h1 class="text-center recipeHeading">${recipe.name}</h1>
-    <div class="row">
+    <div class="recipeHeading row">
+        <h1 class="text-center col-12 col-sm-6 offset-sm-3">${recipe.name}</h1>
+        <a href="viewRecipeStepByStep?id=${recipe.id}" class="btn btn-primary col-12 col-sm-3 startCooking">Start Cooking!</a>
+    </div>
+
+    <div class="row recipeDescription">
         <p>${recipe.description}</p>
         <c:if test="${recipe.image != null}">
             <img src="img/${recipe.image.filepath}" alt="${recipe.description}" class="ml-auto img-fluid recipeImage">
