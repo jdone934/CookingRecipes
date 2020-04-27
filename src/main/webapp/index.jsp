@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <%@ include file="template/template-head.jsp"%>
+    <%@ include file="template/head.jsp"%>
 </head>
 <body>
 <div class="container-fluid mainPage">
