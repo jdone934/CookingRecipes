@@ -27,7 +27,7 @@
 <c:if test="${not empty recipes}">
     <c:forEach var ="recipe" items="${recipes}">
         <div class="card" style="width: 18rem;">
-            <c:if test="${recipe.image != null}">
+            <c:if test="${not empty recipe.image}">
                 <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
             </c:if>
 
@@ -44,6 +44,12 @@
 </c:if>
 
 <a href="index.jsp">Try Again!</a>
+
+<c:set var="user" value = "${user}" />
+<c:if test="${not empty user}">
+    <p>testing<p>
+    <p>${user.username}<p>
+</c:if>
 </div>
 </body>
 </html>

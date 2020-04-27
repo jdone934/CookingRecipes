@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,9 +34,14 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
+            <a href="search.jsp">Testing authentication</a>
 
-        <a href="search.jsp">Testing authentication</a>
+            <c:if test="${pageContext.request.isUserInRole('admin')}">
+                <p>Test Text</p>
+<%--                ${pageContext.request.getRemoteUser()}--%>
+                ${path}
+            </c:if>
+        </div>
     </main>
 
     <footer>

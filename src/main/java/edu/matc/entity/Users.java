@@ -31,10 +31,6 @@ public class Users {
     @Column(name = "last_name")
     private String lastName;
 
-    @NotNull
-    @Column(name = "user_role")
-    private String userRole;
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
@@ -64,15 +60,32 @@ public class Users {
      * @param email     the email
      * @param firstName the first name
      * @param lastName  the last name
-     * @param userRole  the user role
      */
-    public Users(String username, String password, String email, String firstName, String lastName, String userRole) {
+    public Users(String username, String password, String email, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userRole = userRole;
+    }
+
+    /**
+     * Instantiates a new Users.
+     *
+     * @param username  the user name
+     * @param password  the password
+     * @param email     the email
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param id        the id
+     */
+    public Users(String username, String password, String email, String firstName, String lastName, int id) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
     }
 
     /**
@@ -185,15 +198,6 @@ public class Users {
     }
 
     /**
-     * Gets user role.
-     *
-     * @return the user role
-     */
-    public String getUserRole() {
-        return userRole;
-    }
-
-    /**
      * Gets recipes created by user.
      *
      * @return the created recipes
@@ -209,15 +213,6 @@ public class Users {
      */
     public void setCreatedRecipes(Set<Recipe> createdRecipes) {
         this.createdRecipes = createdRecipes;
-    }
-
-    /**
-     * Sets user role.
-     *
-     * @param userRole the user role
-     */
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
     }
 
     /**
@@ -238,6 +233,24 @@ public class Users {
         this.favoriteRecipes = favoriteRecipes;
     }
 
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -246,7 +259,6 @@ public class Users {
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userRole='" + userRole + '\'' +
                 ", id=" + id +
                 '}';
     }
@@ -260,12 +272,11 @@ public class Users {
                 password.equals(users.password) &&
                 email.equals(users.email) &&
                 Objects.equals(firstName, users.firstName) &&
-                Objects.equals(lastName, users.lastName) &&
-                userRole.equals(users.userRole);
+                Objects.equals(lastName, users.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, email, firstName, lastName, userRole);
+        return Objects.hash(username, password, email, firstName, lastName);
     }
 }

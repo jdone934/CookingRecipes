@@ -42,8 +42,8 @@ public class UsersDaoTest {
     @Test
     void getByIdSuccess() {
         Users retrievedUser = (Users) userDao.getById(1);
-        Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
-                            "Jacob", "Doney", "admin");
+        Users expectedUser = new Users("jdone934", "password", "jdone934@hotmail.com",
+                            "Jacob", "Doney", 1);
 
         assertEquals(expectedUser, retrievedUser);
     }
@@ -53,9 +53,10 @@ public class UsersDaoTest {
      */
     @Test
     void insertSuccess() {
-        Users newUser = new Users("myhero34", "IM A SAILOR", "sdoney@gmail.com", "Sam", "Doney", "user");
+        Users newUser = new Users("myhero34", "IM A SAILOR", "sdoney@gmail.com", "Sam", "Doney");
         int id = userDao.insert(newUser);
         assertNotEquals(0,id);
+        newUser.setId(id);
         Users insertedUser = (Users) userDao.getById(id);
         assertEquals(newUser, insertedUser);
     }
@@ -65,8 +66,8 @@ public class UsersDaoTest {
      */
     @Test
     void updateSuccess() {
-        Users expectedUser = new Users("jdone934", "AWESOME PASSWORD", "jdone934@hotmail.com",
-                "Joseph", "Doney", "admin");
+        Users expectedUser = new Users("jdone934", "password", "jdone934@hotmail.com",
+                "Joseph", "Doney");
         Users userToUpdate = (Users) userDao.getById(1);
         userToUpdate.setFirstName(expectedUser.getFirstName());
         userDao.saveOrUpdate(userToUpdate);
@@ -111,6 +112,18 @@ public class UsersDaoTest {
     @Test
     void searchByLastNameLikeSuccess() {
         List<Users> users = userDao.getByPropertyLike("lastName", "doney");
+        assertEquals(1, users.size());
+        Users retrievedUser = users.get(0);
+        Users expectedUser = (Users) userDao.getById(1);
+        assertEquals(expectedUser, retrievedUser);
+    }
+
+    /**
+     * Verify search by property like for username
+     */
+    @Test
+    void searchByUsernameLikeSuccess() {
+        List<Users> users = userDao.getByPropertyLike("username", "jdone934");
         assertEquals(1, users.size());
         Users retrievedUser = users.get(0);
         Users expectedUser = (Users) userDao.getById(1);

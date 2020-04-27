@@ -14,8 +14,9 @@ CREATE TABLE users
     `email` varchar(320) NOT NULL,
     `first_name` varchar(50),
     `last_name` varchar(50),
-    `user_role` varchar(25) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    constraint username_unique
+        unique (username)
 );
 
 CREATE TABLE recipe
@@ -93,11 +94,11 @@ CREATE TABLE role (
 );
 
 INSERT INTO
-    users (id, username, password, email, first_name, last_name, user_role)
-    VALUES (1, 'jdone934', 'AWESOME PASSWORD', 'jdone934@hotmail.com', 'Jacob', 'Doney', 'admin'),
-           (2, 'lktucker', 'SUPER AWESOME PASSWORD', 'lktucker@gmail.com', 'Laura', 'Tucker', 'user'),
-           (3, 'zfabry', 'KINDA LAME PASSWORD', 'zfabry@gmail.com', 'Zach', 'Fabry', 'user'),
-           (4, 'acollegnon', 'BEST PASSWORD', 'acollegnon@gmail.com', 'Ashley', 'Fabry', 'user');
+    users (id, username, password, email, first_name, last_name)
+    VALUES (1, 'jdone934', 'password', 'jdone934@hotmail.com', 'Jacob', 'Doney'),
+           (2, 'lktucker', 'SUPER AWESOME PASSWORD', 'lktucker@gmail.com', 'Laura', 'Tucker'),
+           (3, 'zfabry', 'KINDA LAME PASSWORD', 'zfabry@gmail.com', 'Zach', 'Fabry'),
+           (4, 'acollegnon', 'BEST PASSWORD', 'acollegnon@gmail.com', 'Ashley', 'Fabry');
 
 INSERT INTO
     recipe (id, name, created_by_user_id)
@@ -134,4 +135,7 @@ INSERT INTO
 
 INSERT INTO
     role (id, role_name, username, user_id)
-    VALUES (1,'admin','jdone934',1);
+    VALUES (1,'admin','jdone934',1),
+           (2, 'user', 'lktucker', 2),
+           (3, 'user', 'zfabry', 3),
+           (4, 'user', 'acollegnon', 4);

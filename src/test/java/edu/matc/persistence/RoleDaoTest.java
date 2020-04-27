@@ -92,6 +92,6 @@ public class RoleDaoTest {
     @Test
     void getAllSuccess() {
         List<Role> roles = roleDao.getAll();
-        assertEquals(1, roles.size());
+        assertEquals(4, roles.size());
     }
 }

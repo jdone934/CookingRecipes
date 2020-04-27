@@ -9,7 +9,8 @@
                 <a class="nav-link" href="#">Sign Up</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login/searchRecipes">Log In</a>
+                <c:set var="path" value = "${path}" />
+                <a class="nav-link" href="login${path}" >${path}</a>
             </li>
         </ul>
     </div>
