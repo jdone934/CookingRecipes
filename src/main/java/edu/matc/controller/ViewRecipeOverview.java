@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Recipe;
+import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -24,6 +25,13 @@ public class ViewRecipeOverview extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao recipeDao = new GenericDao(Recipe.class);
+        LoggedInUser helper = new LoggedInUser();
+
+        Users loggedInUser = helper.getLoggedInUser(req);
+        req.setAttribute("user", loggedInUser);
+
+        String loginPath = "/viewRecipeOverview?" + req.getQueryString();
+        req.setAttribute("path", loginPath);
 
         int recipeId = Integer.parseInt(req.getParameter("id"));
         Recipe recipe = (Recipe) recipeDao.getById(recipeId);

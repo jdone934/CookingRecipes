@@ -10,7 +10,18 @@
             </li>
             <li class="nav-item">
                 <c:set var="path" value = "${path}" />
-                <a class="nav-link" href="login${path}" >${path}</a>
+
+                <c:if test="${empty path}">
+                    <c:set var="path" value = "/" />
+                </c:if>
+
+                <c:if test="${empty pageContext.request.getRemoteUser()}">
+                    <a class="nav-link" href="login${path}" >Login</a>
+                </c:if>
+
+                <c:if test="${not empty pageContext.request.getRemoteUser()}">
+                    <a class="nav-link" href="logout${path}" >Logout</a>
+                </c:if>
             </li>
         </ul>
     </div>

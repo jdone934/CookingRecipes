@@ -35,12 +35,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <a href="search.jsp">Testing authentication</a>
-
-            <c:if test="${pageContext.request.isUserInRole('admin')}">
-                <p>Test Text</p>
-<%--                ${pageContext.request.getRemoteUser()}--%>
-                ${path}
-            </c:if>
         </div>
     </main>
 
