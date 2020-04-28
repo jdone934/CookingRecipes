@@ -13,7 +13,7 @@
 
             <c:if test="${not empty pageContext.request.getRemoteUser()}">
                 <li class="nav-itm">
-                    <a class="nav-link" href="newRecipe">Create Recipe</a>
+                    <a class="nav-link" href="createRecipe">Create Recipe</a>
                 </li>
 
                 <li class="nav-item">
