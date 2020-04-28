@@ -14,10 +14,7 @@
 .header {
     height: 20vh;
     background-image: url("../img/header.jpeg");
-    /*background-repeat: no-repeat;*/
-    /*background-position: center;*/
-    /*background-size: cover;*/
-    /*color: white;*/
+    margin-bottom: 2rem;
 }
 
 .mainPage {
@@ -102,4 +99,8 @@ body {
 
 .signUpMain {
     padding: 1rem;
+}
+
+.material-icons {
+    color: black;
 }
