@@ -99,3 +99,7 @@ body {
 .stepByStepInstruction {
     height: 50vh;
 }
+
+.signUpMain {
+    padding: 1rem;
+}
