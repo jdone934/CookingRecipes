@@ -32,8 +32,20 @@
         </div>
         <div class="form-group">
             <label for="category">Category</label>
+            <input type="text" class="form-control" name="category" id="category">
         </div>
+        <br>
 
+        <h2>Ingredients</h2>
+        <div id="ingredientList">
+
+        </div>
+        <br>
+
+        <h2>Instructions</h2>
+        <div id="instructionList">
+
+        </div>
         <button type="submit" class="btn btn-primary">Create Recipe</button>
     </form>
 </div>
