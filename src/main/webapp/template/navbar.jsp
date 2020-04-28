@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-dark">
-    <a href="index.jsp" id="homeLink">Easy Cook</a>
+    <a href="/CookingRecipes" id="homeLink">Easy Cook</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>

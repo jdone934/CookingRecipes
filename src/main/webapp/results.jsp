@@ -46,10 +46,6 @@
 <a href="index.jsp">Try Again!</a>
 
 <c:set var="user" value = "${user}" />
-<c:if test="${not empty user}">
-    <p>testing<p>
-    <p>${user.username}<p>
-</c:if>
 </div>
 </body>
 </html>

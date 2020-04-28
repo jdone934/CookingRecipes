@@ -3,6 +3,8 @@ package edu.matc.controller;
 import edu.matc.entity.Role;
 import edu.matc.persistence.GenericDao;
 import edu.matc.entity.Users;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.SQLIntegrityConstraintViolationException;
 
 /**
  * View recipe in step by step view
@@ -23,20 +24,21 @@ import java.sql.SQLIntegrityConstraintViolationException;
 )
 
 public class SignUp extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestServlet = req.getPathInfo();
-        String loginPath = "/signUp";
+        String returnPath = "/";
 
         if (requestServlet != null) {
-            loginPath += requestServlet + "?" + req.getQueryString();
+            returnPath = requestServlet + "?" + req.getQueryString();
         }
 
-        req.setAttribute("path", loginPath);
+        req.setAttribute("path", returnPath);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/signUp.jsp");
         dispatcher.forward(req, resp);
-        //resp.sendRedirect("/CookingRecipes" + loginPath);
     }
 
     @Override
@@ -47,11 +49,11 @@ public class SignUp extends HttpServlet {
         String email = req.getParameter("email");
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
-        String path = req.getParameter("path");
+        String returnPath = req.getParameter("path");
         String errorMessage = null;
 
         if (!password.equals(confirmPassword)) {
-            req = formatRequestForReEntry(req, username, email, firstName, lastName, path,
+            req = formatRequestForReEntry(req, username, email, firstName, lastName, returnPath,
                     "Passwords do not match. Please try again.");
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("/signUp.jsp");
@@ -73,18 +75,17 @@ public class SignUp extends HttpServlet {
 
             if (id == 0) {
                 if (errorMessage.isEmpty()) {
-                    req = formatRequestForReEntry(req, username, email, firstName, lastName, path,
+                    req = formatRequestForReEntry(req, username, email, firstName, lastName, returnPath,
                             "There was an error inserting into the Database. Please try again.");
                 } else {
-                    req = formatRequestForReEntry(req, username, email, firstName, lastName, path, errorMessage);
+                    req = formatRequestForReEntry(req, username, email, firstName, lastName, returnPath, errorMessage);
                 }
 
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/signUp.jsp");
                 dispatcher.forward(req, resp);
             } else {
-                req.setAttribute("path", path);
-                req.setAttribute("id", id);
-                resp.sendRedirect("/CookingRecipes/accountCreated");
+                req.setAttribute("path", returnPath);
+                resp.sendRedirect("/CookingRecipes/accountCreated" + returnPath);
             }
         }
     }

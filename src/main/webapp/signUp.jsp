@@ -62,7 +62,7 @@
 
         <c:set var="path" value="${path}" />
         <input type="hidden" name="path" value="${path}">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Create User</button>
     </form>
 </div>
 
