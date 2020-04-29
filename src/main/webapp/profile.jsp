@@ -57,7 +57,8 @@
                 </tr>
                 <c:forEach var="recipe" items="${recipes}">
                     <tr>
-                        <td>${recipe.name}</td><td>${recipe.description}</td><td><a href="#"><i class="material-icons">edit</i></a></td>
+                        <td>${recipe.name}</td><td>${recipe.description}</td>
+                        <td><a href="#"><i class="material-icons">edit</i></a></td>
                     </tr>
                 </c:forEach>
             </table>

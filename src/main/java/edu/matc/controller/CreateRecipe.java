@@ -23,4 +23,22 @@ public class CreateRecipe extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/createRecipe.jsp");
         dispatcher.forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        String description = req.getParameter("description");
+        String category = req.getParameter("category");
+        String[] instructions = req.getParameterValues("instructions");
+
+        String firstInstruction = instructions[0];
+        int instructionSize = instructions.length;
+
+        req.setAttribute("first", firstInstruction);
+        req.setAttribute("len", instructionSize);
+
+        req.setAttribute("instructions", instructions);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/newRecipe.jsp");
+        dispatcher.forward(req, resp);
+    }
 }

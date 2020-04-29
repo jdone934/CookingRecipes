@@ -10,7 +10,9 @@
 <head>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%@ include file="template/head.jsp"%>
+    <script src="/CookingRecipes/js/createRecipe.js" charset="utf-8"></script>
 </head>
 <body>
 <div class="header">
@@ -21,7 +23,7 @@
 </div>
 
 <div class="newRecipeMain container">
-    <form method="POST" action="newRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <form method="POST" action="createRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name">
@@ -43,7 +45,12 @@
         <br>
 
         <h2>Instructions</h2>
-        <div id="instructionList">
+        <div class="addInstruction row">
+            <input type="text" class="form-control col-9" id="newInstruction" placeholder="Instruction">
+            <i class="material-icons col-2 offset-1" id="addInstruction">add_circle_outline</i>
+        </div>
+
+        <div class="addedInstructions">
 
         </div>
         <button type="submit" class="btn btn-primary">Create Recipe</button>
