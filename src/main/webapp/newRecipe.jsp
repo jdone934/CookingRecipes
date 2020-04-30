@@ -24,16 +24,3 @@
 
 </body>
 </html>
-
-<div class="row">
-    <input type="text" class="form-control col-9" name="instructions" value="first instruction">
-    <i class="material-icons col-2 offset-1">delete</i>
-</div>
-<div class="row">
-    <input type="text" class="form-control col-9" name="instructions" value="second instruction">
-    <i class="material-icons col-2 offset-1">delete</i>
-</div>
-<div class="row">
-    <input type="text" class="form-control col-9" name="instructions" value="holy crap this works!">
-    <i class="material-icons col-2 offset-1">delete</i>
-</div>

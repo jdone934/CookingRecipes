@@ -108,3 +108,15 @@ body {
 i:hover {
     cursor: pointer;
 }
+
+.addInstruction {
+    margin-left: 0;
+}
+
+#fraction {
+    font-size: 1.5em;
+}
+
+.formSubHeading {
+    margin-bottom: 1rem;
+}
