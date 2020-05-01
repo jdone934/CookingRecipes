@@ -37,6 +37,7 @@
             <a href="#step0" class="col-2 offset-4 offset-sm-2"><img src="img/downChevron.png" class="chevron img-fluid"></a>
         </div>
 
+        <h3 class="text-center">Instructions</h3>
         <div class="col">
             <ul class="list-unstyled row">
                 <c:forEach var="ingredient" items="${recipe.ingredients}">

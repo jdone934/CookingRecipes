@@ -94,7 +94,7 @@ body {
 }
 
 .stepByStepInstruction {
-    height: 50vh;
+    min-height: 50vh;
 }
 
 .signUpMain {
