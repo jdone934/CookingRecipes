@@ -23,18 +23,19 @@
 </div>
 
 <div class="newRecipeMain container">
-    <form method="POST" action="createRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <form id="newRecipe" method="POST" action="createRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3" onsubmit="return validateForm()">
+        <div id="errorMessage"></div>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" id="name">
+            <input type="text" class="form-control" name="name" id="name" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea type="text" class="form-control" name="description" id="description" rows="4"></textarea>
+            <textarea type="text" class="form-control" name="description" id="description" rows="4" required></textarea>
         </div>
         <div class="form-group">
             <label for="category">Category</label>
-            <input type="text" class="form-control" name="category" id="category">
+            <input type="text" class="form-control" name="category" id="category" required>
         </div>
         <br>
 

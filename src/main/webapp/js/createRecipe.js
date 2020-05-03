@@ -1,9 +1,18 @@
 const init = () => {
+    document.querySelector("#name").addEventListener("blur", validateField);
+    document.querySelector("#description").addEventListener("blur", validateField);
+    document.querySelector("#category").addEventListener("blur", validateField);
+    document.querySelector("#quantityTop").addEventListener("blur", validateField);
+    document.querySelector("#unit").addEventListener("blur", validateField);
+    document.querySelector("#ingredientName").addEventListener("blur", validateField);
+
     let addInstruction = document.querySelector("#addInstruction");
     let addIngredient = document.querySelector("#addIngredient");
+    let form = document.querySelector("#newRecipe");
 
     addInstruction.addEventListener("click", addNewInstruction);
     addIngredient.addEventListener("click", addNewIngredient);
+    //form.addEventListener("submit", () => {return validateForm()});
 }
 
 const addNewInstruction = () => {
@@ -11,11 +20,11 @@ const addNewInstruction = () => {
 
     let instructionText = document.createElement("input");
     instructionText.setAttribute("type", "text");
-    instructionText.setAttribute("class", "form-control col-9");
+    instructionText.setAttribute("class", "form-control col-9 newInstructionText");
     instructionText.setAttribute("name", "instruction");
     instructionText.setAttribute("value", instruction.value);
-
-    console.log(instructionText);
+    instructionText.setAttribute("required", null);
+    instructionText.addEventListener("blur", validateField)
 
     let deleteIcon = document.createElement("i");
     deleteIcon.setAttribute("class", "material-icons col-2 offset-1");
@@ -46,9 +55,11 @@ const addNewIngredient = () => {
 
     let newQuantityTop = document.createElement("input");
     newQuantityTop.setAttribute("type", "number");
-    newQuantityTop.setAttribute("class", "form-control col-3");
+    newQuantityTop.setAttribute("class", "form-control col-3 newQuantityTopField");
     newQuantityTop.setAttribute("name", "quantityTop");
     newQuantityTop.setAttribute("value", quantityTop);
+    newQuantityTop.setAttribute("required", null);
+    newQuantityTop.addEventListener("blur", validateField);
 
     let newQuantityBottom = document.createElement("input");
     newQuantityBottom.setAttribute("type", "number");
@@ -58,15 +69,19 @@ const addNewIngredient = () => {
 
     let newUnit = document.createElement("input");
     newUnit.setAttribute("type", "text");
-    newUnit.setAttribute("class", "form-control col-3 offset-1");
+    newUnit.setAttribute("class", "form-control col-3 offset-1 newUnitField");
     newUnit.setAttribute("name", "unit");
     newUnit.setAttribute("value", unitOfMeasurement);
+    newUnit.setAttribute("required", null);
+    newUnit.addEventListener("blur", validateField);
 
     let newIngredientName = document.createElement("input");
     newIngredientName.setAttribute("type", "text");
-    newIngredientName.setAttribute("class", "form-control col-9");
+    newIngredientName.setAttribute("class", "form-control col-9 newIngredientNameField");
     newIngredientName.setAttribute("name", "ingredientName");
     newIngredientName.setAttribute("value", ingredientName);
+    newIngredientName.setAttribute("required", null);
+    newIngredientName.addEventListener("blur", validateField);
 
     let deleteIcon = document.createElement("i");
     deleteIcon.setAttribute("class", "material-icons col-1 offset-2");
@@ -118,6 +133,49 @@ const deleteInputGroup = event => {
 
     if (parent.childElementCount == 1) {
         parent.innerHTML = "";
+    }
+}
+
+const validateField = event => {
+    let target = event.target;
+    let value = target.value;
+
+    if(value =="") {
+        setErrorMessage();
+    } else {
+        document.querySelector("#errorMessage").innerHTML = "";
+    }
+}
+
+const setErrorMessage = message => {
+    let errorDiv = document.querySelector("#errorMessage");
+    errorDiv.innerHTML = "";
+
+    let errorMessage = document.createElement("div");
+    errorMessage.setAttribute("class", "alert alert-danger");
+    errorMessage.setAttribute("role", "alert");
+    if (message != null) {
+        errorMessage.innerHTML = message;
+    } else {
+        errorMessage.innerHTML = "That field is required. Make sure to go back and fill it in.";
+    }
+
+    errorDiv.appendChild(errorMessage);
+}
+
+const validateForm = () => {
+    let addedIngredients = document.querySelector(".addedIngredients");
+
+    if(addedIngredients.childElementCount == 0) {
+        setErrorMessage("You need at least 1 ingredient");
+        return false;
+    }
+
+    let addedInstructions = document.querySelector(".addedInstructions");
+
+    if(addedInstructions.childElementCount == 0) {
+        setErrorMessage("You need at least 1 instruction");
+        return false;
     }
 }
 

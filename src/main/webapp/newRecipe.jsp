@@ -22,5 +22,22 @@
     </div>
 </div>
 
+<div class="alert alert-success" role="alert">
+    Recipe successfully created! View it below!
+</div>
+
+<c:set var="recipe" value="${recipe}" />
+<div class="card" style="width: 18rem;">
+    <c:if test="${not empty recipe.image}">
+        <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
+    </c:if>
+
+    <div class="card-body">
+        <h5 class="card-title">${recipe.name}</h5>
+        <p class="card-text">${recipe.description}</p>
+        <a href="viewRecipeOverview?id=${recipe.id}" class="btn btn-primary">View Recipe</a>
+    </div>
+</div>
+
 </body>
 </html>
