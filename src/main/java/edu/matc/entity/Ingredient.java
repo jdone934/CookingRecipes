@@ -1,5 +1,6 @@
 package edu.matc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class Ingredient {
     private int quantityDenominator;
 
     @ManyToOne
+    @JsonIgnore
     private Recipe recipe;
 
     @Id

@@ -53,12 +53,12 @@
         <div class="row">
             <table class="table table-striped col-12 col-sm-8 offset-sm-2">
                 <tr>
-                    <th>Name</th><th>Description</th><th>Edit</th>
+                    <th>Name</th><th>Description</th><th>Edit</th></tr>
                 </tr>
                 <c:forEach var="recipe" items="${recipes}">
                     <tr>
-                        <td>${recipe.name}</td><td>${recipe.description}</td>
-                        <td><a href="#"><i class="material-icons">edit</i></a></td>
+                        <td><a class="recipeLink" href="viewRecipeOverview?id=${recipe.id}">${recipe.name}</a></td><td>${recipe.description}</td>
+                        <td><a href="editRecipe?id=${recipe.id}"><i class="material-icons">edit</i></a></td>
                     </tr>
                 </c:forEach>
             </table>

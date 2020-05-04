@@ -1,4 +1,8 @@
 const init = () => {
+    formSetUp();
+}
+
+const formSetUp = () => {
     document.querySelector("#name").addEventListener("blur", validateField);
     document.querySelector("#description").addEventListener("blur", validateField);
     document.querySelector("#category").addEventListener("blur", validateField);
@@ -12,31 +16,13 @@ const init = () => {
 
     addInstruction.addEventListener("click", addNewInstruction);
     addIngredient.addEventListener("click", addNewIngredient);
-    //form.addEventListener("submit", () => {return validateForm()});
+    form.addEventListener("submit", () => {return validateForm()});
 }
 
 const addNewInstruction = () => {
     let instruction = document.querySelector("#newInstruction");
 
-    let instructionText = document.createElement("input");
-    instructionText.setAttribute("type", "text");
-    instructionText.setAttribute("class", "form-control col-9 newInstructionText");
-    instructionText.setAttribute("name", "instruction");
-    instructionText.setAttribute("value", instruction.value);
-    instructionText.setAttribute("required", null);
-    instructionText.addEventListener("blur", validateField)
-
-    let deleteIcon = document.createElement("i");
-    deleteIcon.setAttribute("class", "material-icons col-2 offset-1");
-    deleteIcon.innerHTML = "delete";
-    deleteIcon.addEventListener("click", deleteInputGroup);
-
-    let instructionToAdd = document.createElement("div");
-    instructionToAdd.setAttribute("class", "row form-group");
-    instructionToAdd.appendChild(instructionText);
-    instructionToAdd.appendChild(deleteIcon);
-
-    addInstructionToSet(instructionToAdd);
+    addInstructionToSet(createInstructionFormElement(instruction.value));
 
     instruction.value = "";
     instruction.focus();
@@ -53,50 +39,7 @@ const addNewIngredient = () => {
     let unitOfMeasurement = unitOfMeasurementElement.value;
     let ingredientName = ingredientNameElement.value;
 
-    let newQuantityTop = document.createElement("input");
-    newQuantityTop.setAttribute("type", "number");
-    newQuantityTop.setAttribute("class", "form-control col-3 newQuantityTopField");
-    newQuantityTop.setAttribute("name", "quantityTop");
-    newQuantityTop.setAttribute("value", quantityTop);
-    newQuantityTop.setAttribute("required", null);
-    newQuantityTop.addEventListener("blur", validateField);
-
-    let newQuantityBottom = document.createElement("input");
-    newQuantityBottom.setAttribute("type", "number");
-    newQuantityBottom.setAttribute("class", "form-control col-3 offset-1");
-    newQuantityBottom.setAttribute("name", "quantityBottom");
-    newQuantityBottom.setAttribute("value", quantityBottom);
-
-    let newUnit = document.createElement("input");
-    newUnit.setAttribute("type", "text");
-    newUnit.setAttribute("class", "form-control col-3 offset-1 newUnitField");
-    newUnit.setAttribute("name", "unit");
-    newUnit.setAttribute("value", unitOfMeasurement);
-    newUnit.setAttribute("required", null);
-    newUnit.addEventListener("blur", validateField);
-
-    let newIngredientName = document.createElement("input");
-    newIngredientName.setAttribute("type", "text");
-    newIngredientName.setAttribute("class", "form-control col-9 newIngredientNameField");
-    newIngredientName.setAttribute("name", "ingredientName");
-    newIngredientName.setAttribute("value", ingredientName);
-    newIngredientName.setAttribute("required", null);
-    newIngredientName.addEventListener("blur", validateField);
-
-    let deleteIcon = document.createElement("i");
-    deleteIcon.setAttribute("class", "material-icons col-1 offset-2");
-    deleteIcon.innerHTML = "delete";
-    deleteIcon.addEventListener("click", deleteInputGroup);
-
-    let ingredientToAdd = document.createElement("div");
-    ingredientToAdd.setAttribute("class", "row form-group");
-    ingredientToAdd.appendChild(newQuantityTop);
-    ingredientToAdd.appendChild(newQuantityBottom);
-    ingredientToAdd.appendChild(newUnit);
-    ingredientToAdd.appendChild(newIngredientName);
-    ingredientToAdd.appendChild(deleteIcon);
-
-    addIngredientToSet(ingredientToAdd);
+    addIngredientToSet(createIngredientFormElement(quantityTop, quantityBottom, unitOfMeasurement, ingredientName));
 
     quantityTopElement.value = "";
     quantityBottomElement.value = "";

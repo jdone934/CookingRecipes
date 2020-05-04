@@ -1,5 +1,6 @@
 package edu.matc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.logging.log4j.core.config.Order;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Sort;
@@ -25,6 +26,7 @@ public class Recipe {
 
     @ManyToOne
     @JoinColumn(name = "created_by_user_id")
+    @JsonIgnore
     private Users createdByUser;
 
     @Id
@@ -40,6 +42,7 @@ public class Recipe {
     private Set<Ingredient> ingredients = new HashSet<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<FavoritedRecipe> userFavorites = new HashSet<>();
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)

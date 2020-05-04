@@ -1,5 +1,6 @@
 package edu.matc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -23,10 +24,12 @@ public class Image {
 
     @OneToOne
     @JoinColumn(name="recipe_id")
+    @JsonIgnore
     private Recipe recipe;
 
     @OneToOne
     @JoinColumn(name="instruction_id")
+    @JsonIgnore
     private Instruction instruction;
 
     /**

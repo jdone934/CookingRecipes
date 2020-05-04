@@ -1,5 +1,6 @@
 package edu.matc.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Instruction {
     private String description;
 
     @ManyToOne
+    @JsonIgnore
     private Recipe recipe;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "instruction", cascade = CascadeType.ALL)

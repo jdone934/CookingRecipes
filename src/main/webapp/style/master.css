@@ -120,3 +120,8 @@ i:hover {
 .formSubHeading {
     margin-bottom: 1rem;
 }
+
+.recipeLink {
+    color: black;
+    text-decoration: underline;
+}
