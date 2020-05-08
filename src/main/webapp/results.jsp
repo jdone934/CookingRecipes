@@ -20,31 +20,32 @@
     </div>
 </div>
 
-<div class="container-fluid">
-<h2>Search Results: </h2>
+<div class="container">
+<h2 class="text-center">Search Results: </h2>
 <c:set var="recipes" value="${recipes}"/>
 <c:if test="${not empty recipes}">
-    <c:forEach var ="recipe" items="${recipes}">
-        <div class="card" style="width: 18rem;">
-            <c:if test="${not empty recipe.image}">
-                <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
-            </c:if>
+    <div class="row">
+        <c:forEach var ="recipe" items="${recipes}" varStatus="loop">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <c:if test="${not empty recipe.image}">
+                        <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
+                    </c:if>
 
-            <div class="card-body">
-                <h5 class="card-title">${recipe.name}</h5>
-                <p class="card-text">${recipe.description}</p>
-                <a href="viewRecipeOverview?id=${recipe.id}" class="btn btn-primary">View Recipe</a>
+                    <div class="card-body">
+                        <h5 class="card-title">${recipe.name}</h5>
+                        <p class="card-text">${recipe.description}</p>
+                        <a href="viewRecipeOverview?id=${recipe.id}" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </c:forEach>
+        </c:forEach>
+    </div>
 </c:if>
+
 <c:if test="${empty recipes}">
     Sorry, there were no results found
 </c:if>
-
-<a href="index.jsp">Try Again!</a>
-
-<c:set var="user" value = "${user}" />
 </div>
 </body>
 </html>

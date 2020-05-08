@@ -125,3 +125,7 @@ i:hover {
     color: black;
     text-decoration: underline;
 }
+
+.card {
+    margin-bottom: 1rem;
+}
