@@ -2,6 +2,7 @@ package edu.matc.controller;
 
 import edu.matc.entity.Recipe;
 import edu.matc.persistence.GenericDao;
+import edu.matc.utility.RecipeExtractor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,6 +35,17 @@ public class EditRecipe extends HttpServlet {
             dispatcher = req.getRequestDispatcher("/profile.jsp");
         }
 
+        dispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        RecipeExtractor recipeManager = new RecipeExtractor(req);
+        Recipe recipeToUpdate = recipeManager.updateRecipe(id);
+
+        req.setAttribute("recipeId", id);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/successfulEdit.jsp");
         dispatcher.forward(req, resp);
     }
 }

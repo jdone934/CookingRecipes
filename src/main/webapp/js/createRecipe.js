@@ -16,7 +16,7 @@ const formSetUp = () => {
 
     addInstruction.addEventListener("click", addNewInstruction);
     addIngredient.addEventListener("click", addNewIngredient);
-    form.addEventListener("submit", () => {return validateForm()});
+    form.addEventListener(" mit", () => {return validateForm()});
 }
 
 const addNewInstruction = () => {

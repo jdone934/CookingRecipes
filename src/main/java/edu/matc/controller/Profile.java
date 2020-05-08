@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Users;
+import edu.matc.utility.LoggedInUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

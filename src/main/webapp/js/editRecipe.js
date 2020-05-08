@@ -6,7 +6,7 @@ const editInit = recipeId => {
 const fillInFormDetails = async(recipeId) => {
     let form = document.querySelector("#newRecipe");
     form.setAttribute("id", "editRecipe");
-    form.setAttribute("action", "editRecipe");
+    form.setAttribute("action", `editRecipe?id=${recipeId}`);
 
     let recipe = await getRecipe(recipeId);
 
@@ -16,6 +16,8 @@ const fillInFormDetails = async(recipeId) => {
 
     createIngredientsList(recipe.ingredients);
     createInstructionsList(recipe.instructions);
+
+    document.querySelector("#submitButton").innerHTML = "Update Recipe";
 }
 
 const getRecipe = async(id) => {

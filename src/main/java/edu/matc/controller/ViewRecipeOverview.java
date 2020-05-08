@@ -3,6 +3,7 @@ package edu.matc.controller;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
+import edu.matc.utility.LoggedInUser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

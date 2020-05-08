@@ -3,6 +3,7 @@ package edu.matc.controller;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
+import edu.matc.utility.LoggedInUser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * A simple servlet to welcome the recipe.

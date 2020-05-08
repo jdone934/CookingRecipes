@@ -43,5 +43,5 @@
     <div class="addedInstructions">
 
     </div>
-    <button type="submit" class="btn btn-primary">Create Recipe</button>
+    <button type="submit" id="submitButton" class="btn btn-primary">Create Recipe</button>
 </form>
