@@ -31,7 +31,7 @@
     <div class="row recipeDescription">
         <p>${recipe.description}</p>
         <c:if test="${recipe.image != null}">
-            <img src="img/${recipe.image.filepath}" alt="${recipe.description}" class="ml-auto img-fluid recipeImage">
+            <img src="recipeImg/${recipe.image.filepath}" alt="${recipe.description}" class="ml-auto img-fluid recipeImage">
         </c:if>
     </div>
 
@@ -53,7 +53,7 @@
             <li class="list-item row instruction">
                 <p class="col-12 col-sm-8 align-self-sm-center">${instruction.description}</p>
                 <c:if test="${instruction.image != null}">
-                    <img src="img/${instruction.image.filepath}" alt="${instruction.image.description}" class="ml-sm-auto img-fluid instructionImage col-6 offset-3 col-sm-4">
+                    <img src="instructionImg/${instruction.image.filepath}" alt="${instruction.image.description}" class="ml-sm-auto img-fluid instructionImage col-6 offset-3 col-sm-4">
                 </c:if>
             </li>
         </c:forEach>

@@ -41,7 +41,7 @@ public class EditRecipe extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        RecipeExtractor recipeManager = new RecipeExtractor(req);
+        RecipeExtractor recipeManager = new RecipeExtractor(req, getServletContext());
         Recipe recipeToUpdate = recipeManager.updateRecipe(id);
 
         req.setAttribute("recipeId", id);

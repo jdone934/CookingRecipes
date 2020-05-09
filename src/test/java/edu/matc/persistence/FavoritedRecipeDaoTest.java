@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +32,18 @@ public class FavoritedRecipeDaoTest {
         dao = new GenericDao(FavoritedRecipe.class);
         recipeDao = new GenericDao(Recipe.class);
         userDao = new GenericDao(Users.class);
+    }
+
+    @Test
+    void suckBallsMountain() {
+        ArrayList<Integer> test = new ArrayList<>();
+
+        test.add(1);
+        test.add(23);
+
+        logger.info(test);
+
+        assertEquals("???", test);
     }
 
     /**

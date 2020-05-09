@@ -1,4 +1,5 @@
-<form id="newRecipe" method="POST" action="createRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3" onsubmit="return validateForm()">
+<form id="newRecipe" method="POST" action="createRecipe" class="col-md-8 offset-md-2 col-lg-6 offset-lg-3"
+      onsubmit="return validateForm()" enctype="multipart/form-data">
     <div id="errorMessage"></div>
     <div class="form-group">
         <label for="name">Name</label>
@@ -12,6 +13,15 @@
         <label for="category">Category</label>
         <input type="text" class="form-control" name="category" id="category" required>
     </div>
+    <div class="form-group">
+        <label for="recipeImage">Recipe Image</label>
+        <input type="file" class="form-control" name="recipeImage" id="recipeImage" accept="image/*">
+    </div>
+    <div class="form-group">
+        <label for="imageDescription">Image Description</label>
+        <input type="text" class="form-control" name="imageDescription" id="imageDescription">
+    </div>
+
     <br>
 
     <div class="row">

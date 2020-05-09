@@ -5,33 +5,44 @@ import edu.matc.entity.Instruction;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class RecipeExtractor {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+    private ServletContext servletContext;
+
     private HttpServletRequest request;
     private HashMap<String, Object> recipeInfo;
 
     private String name;
     private String description;
     private String category;
-    private ArrayList<Integer> quantityTops;
-    private ArrayList<Integer> quantityBottoms;
-    private String[] units;
-    private String[] ingredientNames;
-    private String[] instructions;
+    private ArrayList<Integer> quantityTops = new ArrayList<>();
+    private ArrayList<Integer> quantityBottoms = new ArrayList<>();
+    private ArrayList<String> units = new ArrayList<>();
+    private ArrayList<String> ingredientNames = new ArrayList<>();
+    private ArrayList<String> instructions = new ArrayList<>();
 
     private Users user;
 
     public RecipeExtractor() {
     }
 
-    public RecipeExtractor(HttpServletRequest request) {
+    public RecipeExtractor(HttpServletRequest request, ServletContext servletContext) {
         this.request = request;
+        this.servletContext = servletContext;
 
-        extractRecipe();
         setUser();
     }
 
@@ -41,20 +52,111 @@ public class RecipeExtractor {
     }
 
     private void extractRecipe() {
-        name = request.getParameter("name");
-        description = request.getParameter("description");
-        category = request.getParameter("category");
+        // checks if the request actually contains upload file
+        if (!ServletFileUpload.isMultipartContent(request)) {
 
-        //getting ingredients info
-        quantityTops = parseInts(request.getParameterValues("quantityTop"));
-        quantityBottoms = parseInts(request.getParameterValues("quantityBottom"));
-        units = request.getParameterValues("unit");
-        ingredientNames = request.getParameterValues("ingredientName");
+            return;
+        }
 
-        instructions = request.getParameterValues("instruction");
+        // configures upload settings
+        DiskFileItemFactory diskFactory = new DiskFileItemFactory();
+        // sets temporary location to store files
+        diskFactory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+
+        ServletFileUpload upload = new ServletFileUpload(diskFactory);
+
+        try {
+            // parses the request's content to extract file data
+            List<FileItem> formItems = upload.parseRequest(request);
+
+            if (formItems != null && formItems.size() > 0) {
+                // iterates over form's fields
+                for (FileItem item : formItems) {
+                    // processes only fields that are not form fields
+                    if (item.isFormField()) {
+                        setRecipeValue(item.getFieldName(), item.getString());
+                    } else {
+                        saveImage(item);
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            request.setAttribute("message",
+                    "There was an error: " + ex.getMessage());
+        }
+    }
+
+    private void setRecipeValue(String fieldName, String value) {
+        switch (fieldName) {
+            case "name":
+                name = value;
+                break;
+
+            case "description":
+                description = value;
+                break;
+
+            case "category":
+                category = value;
+                break;
+
+            case "imageDescription":
+                imageDescription = value;
+                break
+
+            case "quantityTop":
+                quantityTops.add(Integer.parseInt(value));
+                break;
+
+            case "quantityBottom":
+                quantityBottoms.add(Integer.parseInt(value));
+                break;
+
+            case "unit":
+                units.add(value);
+                break;
+
+            case "ingredientName":
+                ingredientNames.add(value);
+                break;
+
+            case "instruction":
+                instructions.add(value);
+        }
+    }
+
+    private void saveImage(FileItem item) throws Exception {
+        // constructs the directory path to store upload file
+        // this path is relative to application's directory
+        String webappPath = "/src/main/webapp/";
+        String uploadPath = removeTargetDirectory(servletContext.getRealPath("")) + webappPath;
+
+        // creates the directory if it does not exist
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdir();
+        }
+
+        String uploadDirectory = uploadPath;
+        if (item.getFieldName().equals("recipeImage")) {
+            uploadDirectory += "recipeImg/";
+        } else {
+            uploadDirectory += "instructionImg/";
+        }
+
+        String fileName = new File(item.getName()).getName();
+        String filePath = uploadDirectory + File.separator + fileName;
+        File storeFile = new File(filePath);
+
+        // saves the file on disk
+        item.write(storeFile);
+
+        imagePath = fileName;
     }
 
     public Recipe createRecipe() {
+        extractRecipe();
+
         Recipe recipeToInsert = new Recipe(name, description, category, user);
         GenericDao recipeDao = new GenericDao(Recipe.class);
 
@@ -62,14 +164,14 @@ public class RecipeExtractor {
         Recipe newRecipe = (Recipe) recipeDao.getById(id);
 
         GenericDao ingredientDao = new GenericDao(Ingredient.class);
-        for (int i = 0; i < ingredientNames.length; i++) {
-            ingredientDao.insert(new Ingredient(ingredientNames[i], units[i], quantityTops.get(i),
+        for (int i = 0; i < ingredientNames.size(); i++) {
+            ingredientDao.insert(new Ingredient(ingredientNames.get(i), units.get(i), quantityTops.get(i),
                     quantityBottoms.get(i), newRecipe));
         }
 
         GenericDao instructionDao = new GenericDao(Instruction.class);
-        for (int i = 0; i < instructions.length; i++) {
-            instructionDao.insert(new Instruction(i + 1, instructions[i], newRecipe));
+        for (int i = 0; i < instructions.size(); i++) {
+            instructionDao.insert(new Instruction(i + 1, instructions.get(i), newRecipe));
         }
 
         return (Recipe) recipeDao.getById(id);
@@ -89,8 +191,8 @@ public class RecipeExtractor {
             ingredientDao.delete(ingredient);
         }
 
-        for (int i = 0; i < ingredientNames.length; i++) {
-            ingredientDao.insert(new Ingredient(ingredientNames[i], units[i], quantityTops.get(i),
+        for (int i = 0; i < ingredientNames.size(); i++) {
+            ingredientDao.insert(new Ingredient(ingredientNames.get(i), units.get(i), quantityTops.get(i),
                     quantityBottoms.get(i), recipeToUpdate));
         }
 
@@ -99,8 +201,8 @@ public class RecipeExtractor {
             instructionDao.delete(instruction);
         }
 
-        for (int i = 0; i < instructions.length; i++) {
-            instructionDao.insert(new Instruction(i + 1, instructions[i], recipeToUpdate));
+        for (int i = 0; i < instructions.size(); i++) {
+            instructionDao.insert(new Instruction(i + 1, instructions.get(i), recipeToUpdate));
         }
 
         return (Recipe) recipeDao.getById(id);
@@ -112,5 +214,17 @@ public class RecipeExtractor {
             parsedInts.add(Integer.parseInt(value));
         }
         return parsedInts;
+    }
+
+    private String removeTargetDirectory(String contextPath) {
+        int index;
+        String newPath = contextPath;
+
+        for (int i = 0; i < 3; i++) {
+            index = newPath.lastIndexOf("/");
+            newPath = newPath.substring(0, index);
+        }
+
+        return newPath;
     }
 }
