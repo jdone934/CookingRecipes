@@ -51,7 +51,7 @@
     <c:if test="${not empty recipes}">
         <h2 class="text-center">My Recipes</h2>
         <div class="row">
-            <table class="table table-striped col-12 col-sm-8 offset-sm-2">
+            <table id = "myRecipes" class="table table-striped col-12 col-sm-8 offset-sm-2">
                 <tr>
                     <th>Name</th><th>Description</th><th>Edit</th></tr>
                 </tr>

@@ -32,7 +32,7 @@ const createIngredientFormElement = (quantityTop, quantityBottom, unitOfMeasurem
     let deleteIcon = document.createElement("i");
     deleteIcon.setAttribute("class", "material-icons col-1 offset-2");
     deleteIcon.innerHTML = "delete";
-    deleteIcon.addEventListener("click", deleteInputGroup);
+    deleteIcon.addEventListener("click", deleteIngredientGroup);
 
     let ingredientToAdd = document.createElement("div");
     ingredientToAdd.setAttribute("class", "row form-group");
@@ -45,49 +45,57 @@ const createIngredientFormElement = (quantityTop, quantityBottom, unitOfMeasurem
     return ingredientToAdd;
 }
 
-const createInstructionFormElement = (instruction, maxNumberOfElements) =>{
+const createInstructionFormElement = (instruction, imageFile, imageFilepath) =>{
     let instructionText = document.createElement("textarea");
     instructionText.setAttribute("type", "text");
-    instructionText.setAttribute("class", "form-control col-9 newInstructionText");
+    instructionText.setAttribute("class", "form-control newInstructionText");
     instructionText.setAttribute("name", "instruction");
     instructionText.appendChild(document.createTextNode(instruction));
     instructionText.setAttribute("rows", 3);
     instructionText.setAttribute("required", null);
-    instructionText.addEventListener("blur", validateField)
+    instructionText.addEventListener("blur", validateField);
+
+    let textDiv = document.createElement("div");
+    textDiv.setAttribute("class", "form-group col-9");
+    textDiv.appendChild(instructionText);
 
     let optionDiv = document.createElement("div");
     optionDiv.setAttribute("class", "col-2");
 
-    let deleteIcon = document.createElement("i");
-    deleteIcon.setAttribute("class", "material-icons col-12");
-    deleteIcon.innerHTML = "delete";
-    deleteIcon.addEventListener("click", deleteInputGroup);
-    optionDiv.appendChild(deleteIcon);
+    let fileInput = document.createElement("input");
+    fileInput.setAttribute("type", "file");
+    fileInput.setAttribute("class", "form-control");
+    fileInput.setAttribute("name", "instructionImage");
 
-    let numberOfChilds = document.querySelector(".addedInstructions").childElementCount;
+    let imageGroup = document.createElement("div");
+    imageGroup.setAttribute("class", "form-group col-9");
 
-    if (numberOfChilds != 0) {
-        let upIcon = document.createElement("i");
-        upIcon.setAttribute("class", "material-icons col-12");
-        upIcon.innerHTML = "keyboard_arrow_up";
-        upIcon.setAttribute("direction", "up");
-        upIcon.addEventListener("click", moveInstructionGroup);
-        optionDiv.appendChild(upIcon);
-    }
 
-    if (numberOfChilds != maxNumberOfElements) {
-        let downIcon = document.createElement("i");
-        downIcon.setAttribute("class", "material-icons col-12");
-        downIcon.innerHTML = "keyboard_arrow_down";
-        downIcon.setAttribute("direction", "down");
-        downIcon.addEventListener("click", moveInstructionGroup);
-        optionDiv.appendChild(downIcon);
+    if (imageFile !== null) {
+        fileInput.files = imageFile;
+        imageGroup.appendChild(fileInput);
+    } else if (imageFilepath !== null) {
+        imageGroup.appendChild(fileInput);
+
+        console.log(`Filepath: ${imageFilepath}`);
+        let recipeImage = document.createElement("label");
+        recipeImage.setAttribute("for", "deleteRecipeImage");
+        recipeImage.innerHTML = imageFilepath;
+        console.log(`Element: ${recipeImage}`);
+
+        let deleteIcon = document.createElement("i");
+        deleteIcon.setAttribute("class", "material-icons");
+        deleteIcon.innerHTML = "delete";
+
+        imageGroup.appendChild(recipeImage);
+        imageGroup.appendChild(deleteIcon);
     }
 
     let instructionToAdd = document.createElement("div");
     instructionToAdd.setAttribute("class", "row form-group");
-    instructionToAdd.appendChild(instructionText);
+    instructionToAdd.appendChild(textDiv);
     instructionToAdd.appendChild(optionDiv);
+    instructionToAdd.appendChild(imageGroup);
 
     return instructionToAdd;
 }
@@ -106,9 +114,43 @@ const moveInstructionGroup = event => {
         instGroupToMoveUp = instGroupToMoveDown.nextElementSibling;
     }
 
-    let textToMoveUp = instGroupToMoveUp.childNodes[0].value;
-    let textToMoveDown = instGroupToMoveDown.childNodes[0].value;
+    let tempGroupUp = instGroupToMoveUp;
 
-    instGroupToMoveUp.childNodes[0].value = textToMoveDown;
-    instGroupToMoveDown.childNodes[0].value = textToMoveUp;
+    let parentList = instGroupToMoveUp.parentNode;
+
+    let indexMoveUp = Array.prototype.indexOf.call(parentList.children, instGroupToMoveUp);
+    parentList.insertBefore(parentList.childNodes[indexMoveUp], parentList.childNodes[indexMoveUp - 1]);
+
+    redetermineOptionGroup(parentList);
 }
+
+const deleteIngredientGroup = event => {
+    let ingredientGroup = event.target.parentNode;
+    let parent = ingredientGroup.parentNode;
+    parent.removeChild(ingredientGroup);
+
+    if (parent.childElementCount == 1) {
+        parent.innerHTML = "";
+    }
+}
+
+const deleteInstructionGroup = event => {
+    let instructionGroup = event.target.parentNode;
+    let formGroup = instructionGroup.parentNode;
+    let parent = formGroup.parentNode;
+    parent.removeChild(formGroup);
+
+    if (parent.childElementCount == 1) {
+        parent.innerHTML = "";
+    }
+
+    redetermineOptionGroup(parent);
+}
+
+
+
+
+
+
+
+

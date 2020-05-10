@@ -1,9 +1,6 @@
 package edu.matc.utility;
 
-import edu.matc.entity.Ingredient;
-import edu.matc.entity.Instruction;
-import edu.matc.entity.Recipe;
-import edu.matc.entity.Users;
+import edu.matc.entity.*;
 import edu.matc.persistence.GenericDao;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -15,15 +12,14 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 public class RecipeExtractor {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private ServletContext servletContext;
 
     private HttpServletRequest request;
-    private HashMap<String, Object> recipeInfo;
 
     private String name;
     private String description;
@@ -33,6 +29,8 @@ public class RecipeExtractor {
     private ArrayList<String> units = new ArrayList<>();
     private ArrayList<String> ingredientNames = new ArrayList<>();
     private ArrayList<String> instructions = new ArrayList<>();
+    private ArrayList<String> imageDescription = new ArrayList<>();
+    private ArrayList<String> imagePath = new ArrayList<>();
 
     private Users user;
 
@@ -76,6 +74,7 @@ public class RecipeExtractor {
                     if (item.isFormField()) {
                         setRecipeValue(item.getFieldName(), item.getString());
                     } else {
+                        logger.info(item.getFieldName() + ": " + item);
                         saveImage(item);
                     }
                 }
@@ -101,8 +100,8 @@ public class RecipeExtractor {
                 break;
 
             case "imageDescription":
-                imageDescription = value;
-                break
+                imageDescription.add(value);
+                break;
 
             case "quantityTop":
                 quantityTops.add(Integer.parseInt(value));
@@ -126,32 +125,38 @@ public class RecipeExtractor {
     }
 
     private void saveImage(FileItem item) throws Exception {
-        // constructs the directory path to store upload file
-        // this path is relative to application's directory
-        String webappPath = "/src/main/webapp/";
-        String uploadPath = removeTargetDirectory(servletContext.getRealPath("")) + webappPath;
+        String fileName = "";
 
-        // creates the directory if it does not exist
-        File uploadDir = new File(uploadPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdir();
+        if (item.getSize() > 0) {
+            // constructs the directory path to store upload file
+            // this path is relative to application's directory
+            String webappPath = "/src/main/webapp/";
+            String uploadPath = removeTargetDirectory(servletContext.getRealPath("")) + webappPath;
+
+            // creates the directory if it does not exist
+            File uploadDir = new File(uploadPath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+
+            String uploadDirectory = uploadPath;
+            if (item.getFieldName().equals("recipeImage")) {
+                uploadDirectory += "recipeImg/";
+            } else {
+                uploadDirectory += "instructionImg/";
+            }
+
+            fileName = new File(item.getName()).getName();
+            String filePath = uploadDirectory + File.separator + fileName;
+            File storeFile = new File(filePath);
+
+            logger.info("Filename: " + fileName);
+
+            // saves the file on disk
+            item.write(storeFile);
         }
 
-        String uploadDirectory = uploadPath;
-        if (item.getFieldName().equals("recipeImage")) {
-            uploadDirectory += "recipeImg/";
-        } else {
-            uploadDirectory += "instructionImg/";
-        }
-
-        String fileName = new File(item.getName()).getName();
-        String filePath = uploadDirectory + File.separator + fileName;
-        File storeFile = new File(filePath);
-
-        // saves the file on disk
-        item.write(storeFile);
-
-        imagePath = fileName;
+        imagePath.add(fileName);
     }
 
     public Recipe createRecipe() {
@@ -163,30 +168,57 @@ public class RecipeExtractor {
         int id = recipeDao.insert(recipeToInsert);
         Recipe newRecipe = (Recipe) recipeDao.getById(id);
 
+        GenericDao imageDao = new GenericDao(Image.class);
+        String recipeImagePath = imagePath.get(0);
+        logger.info("Image Path: " + recipeImagePath);
+        if (recipeImagePath != null) {
+            imageDao.insert(new Image(recipeImagePath, imageDescription.get(0), newRecipe));
+        }
+
         GenericDao ingredientDao = new GenericDao(Ingredient.class);
         for (int i = 0; i < ingredientNames.size(); i++) {
             ingredientDao.insert(new Ingredient(ingredientNames.get(i), units.get(i), quantityTops.get(i),
-                    quantityBottoms.get(i), newRecipe));
+                                                quantityBottoms.get(i), newRecipe));
         }
 
         GenericDao instructionDao = new GenericDao(Instruction.class);
+        String instImagePath;
         for (int i = 0; i < instructions.size(); i++) {
-            instructionDao.insert(new Instruction(i + 1, instructions.get(i), newRecipe));
+            Instruction instToInsert = new Instruction(i + 1, instructions.get(i), newRecipe);
+            //instructionDao.insert(new Instruction(i + 1, instructions.get(i), newRecipe));
+
+            instImagePath = imagePath.get(i + 1);
+            if (instImagePath.length() > 0) {
+                imageDao.insert(new Image(instImagePath, "", instToInsert));
+            }
         }
 
         return (Recipe) recipeDao.getById(id);
     }
 
     public Recipe updateRecipe(int id){
+        extractRecipe();
+        logger.info("Imagepaths: " + imagePath);
+
         GenericDao recipeDao = new GenericDao(Recipe.class);
+        GenericDao ingredientDao = new GenericDao(Ingredient.class);
+        GenericDao instructionDao = new GenericDao(Instruction.class);
+        GenericDao imageDao = new GenericDao(Image.class);
+
         Recipe recipeToUpdate = (Recipe) recipeDao.getById(id);
+
+        ArrayList<Instruction> instructionsBeforeUpdate = new ArrayList<>();
 
         recipeToUpdate.setName(name);
         recipeToUpdate.setDescription(description);
         recipeToUpdate.setCategory(category);
         recipeDao.saveOrUpdate(recipeToUpdate);
 
-        GenericDao ingredientDao = new GenericDao(Ingredient.class);
+        String recipeImagePath = imagePath.get(0);
+        if (recipeImagePath.length() > 0) {
+            imageDao.insert(new Image(recipeImagePath, "", recipeToUpdate));
+        }
+
         for(Ingredient ingredient : recipeToUpdate.getIngredients()) {
             ingredientDao.delete(ingredient);
         }
@@ -196,13 +228,21 @@ public class RecipeExtractor {
                     quantityBottoms.get(i), recipeToUpdate));
         }
 
-        GenericDao instructionDao = new GenericDao(Instruction.class);
         for (Instruction instruction : recipeToUpdate.getInstructions()) {
+            instructionsBeforeUpdate.add(instruction);
             instructionDao.delete(instruction);
         }
 
         for (int i = 0; i < instructions.size(); i++) {
-            instructionDao.insert(new Instruction(i + 1, instructions.get(i), recipeToUpdate));
+            Instruction instructionToInsert = new Instruction(i + 1, instructions.get(i), recipeToUpdate);
+            instructionDao.insert(instructionToInsert);
+
+            Image imageBefore = instructionsBeforeUpdate.get(i).getImage();
+            if (imagePath.get(i + 1).length() > 0) {
+                imageDao.insert(new Image(imagePath.get(i + 1), "", instructionToInsert));
+            } else if (imageBefore != null) {
+                imageDao.insert(new Image(imageBefore.getFilepath(), "", instructionToInsert));
+            }
         }
 
         return (Recipe) recipeDao.getById(id);

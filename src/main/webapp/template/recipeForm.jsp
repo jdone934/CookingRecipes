@@ -46,6 +46,7 @@
     <div class="addInstruction row form-group">
         <textarea type="text" class="form-control col-9" id="newInstruction" placeholder="Instruction" rows="3"></textarea>
         <i class="material-icons col-2 offset-1" id="addInstruction">add_circle_outline</i>
+        <input type="file" class="form-control col-9" id="newInstructionImage" accept="image/*">
     </div>
 
     <br>

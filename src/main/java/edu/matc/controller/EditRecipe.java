@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(
         urlPatterns = {"/editRecipe"}
@@ -42,7 +41,7 @@ public class EditRecipe extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         RecipeExtractor recipeManager = new RecipeExtractor(req, getServletContext());
-        Recipe recipeToUpdate = recipeManager.updateRecipe(id);
+        recipeManager.updateRecipe(id);
 
         req.setAttribute("recipeId", id);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/successfulEdit.jsp");

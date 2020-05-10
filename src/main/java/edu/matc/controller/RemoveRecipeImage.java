@@ -1,6 +1,6 @@
 package edu.matc.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.matc.entity.Image;
 import edu.matc.entity.Recipe;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/getRecipe"}
+        urlPatterns = {"/removeRecipeImage"}
 )
-public class getRecipe extends HttpServlet {
+public class RemoveRecipeImage extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
@@ -24,17 +24,14 @@ public class getRecipe extends HttpServlet {
         String idString = req.getParameter("id");
 
         try {
-            int id = Integer.parseInt(idString);
+            int recipeId = Integer.parseInt(idString);
 
             GenericDao recipeDao = new GenericDao(Recipe.class);
-            ObjectMapper jsonMapper = new ObjectMapper();
+            GenericDao imageDao = new GenericDao(Image.class);
 
-            Recipe recipeToEdit = (Recipe) recipeDao.getById(id);
-            String recipeJson = jsonMapper.writeValueAsString(recipeToEdit);
-
-            resp.setContentType("application/json");
-            resp.setCharacterEncoding("UTF-8");
-            resp.getWriter().write(recipeJson);
+            Recipe recipeToDeleteFrom = (Recipe) recipeDao.getById(recipeId);
+            Image image = recipeToDeleteFrom.getImage();
+            imageDao.delete(image);
         } catch (Exception e) {
             //TODO redirect to 500 page
         }

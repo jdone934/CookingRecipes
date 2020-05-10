@@ -27,7 +27,7 @@ public class Image {
     @JsonIgnore
     private Recipe recipe;
 
-    @OneToOne
+    @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn(name="instruction_id")
     @JsonIgnore
     private Instruction instruction;

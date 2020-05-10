@@ -6,9 +6,6 @@ const formSetUp = () => {
     document.querySelector("#name").addEventListener("blur", validateField);
     document.querySelector("#description").addEventListener("blur", validateField);
     document.querySelector("#category").addEventListener("blur", validateField);
-    document.querySelector("#quantityTop").addEventListener("blur", validateField);
-    document.querySelector("#unit").addEventListener("blur", validateField);
-    document.querySelector("#ingredientName").addEventListener("blur", validateField);
 
     let addInstruction = document.querySelector("#addInstruction");
     let addIngredient = document.querySelector("#addIngredient");
@@ -16,16 +13,46 @@ const formSetUp = () => {
 
     addInstruction.addEventListener("click", addNewInstruction);
     addIngredient.addEventListener("click", addNewIngredient);
-    form.addEventListener(" mit", () => {return validateForm()});
+    form.addEventListener("submit", () => {return validateForm()});
 }
 
 const addNewInstruction = () => {
     let instruction = document.querySelector("#newInstruction");
+    let instructionImage = document.querySelector("#newInstructionImage");
+    let instructionGroup  = document.querySelector(".addInstruction");
 
-    addInstructionToSet(createInstructionFormElement(instruction.value));
+    addInstructionToSet(createInstructionFormElement(instruction.value, instructionImage.files));
+
+    instructionGroup.innerHTML = "";
+    rebuildNewInstruction(instructionGroup);
 
     instruction.value = "";
     instruction.focus();
+}
+
+const rebuildNewInstruction = inputGroup => {
+    let instructionText = document.createElement("textarea");
+    instructionText.setAttribute("type", "text");
+    instructionText.setAttribute("class", "form-control newInstructionText col-9");
+    instructionText.setAttribute("id", "newInstruction");
+    instructionText.setAttribute("placeholder", "Instruction");
+    instructionText.setAttribute("rows", 3);
+
+    let addIcon = document.createElement("i");
+    addIcon.setAttribute("class", "material-icons col-2 offset-1");
+    addIcon.setAttribute("id", "addInstruction");
+    addIcon.innerHTML = "add_circle_outline";
+    addIcon.addEventListener("click", addNewInstruction);
+
+    let fileInput = document.createElement("input");
+    fileInput.setAttribute("type", "file");
+    fileInput.setAttribute("class", "form-control col-9");
+    fileInput.setAttribute("id", "newInstructionImage");
+    fileInput.setAttribute("accept", "image/*");
+
+    inputGroup.appendChild(instructionText);
+    inputGroup.appendChild(addIcon);
+    inputGroup.appendChild(fileInput);
 }
 
 const addNewIngredient = () => {
@@ -50,13 +77,65 @@ const addNewIngredient = () => {
 }
 
 const addInstructionToSet = instructionToAdd => {
-    let instructionSet = document.querySelector(".addedInstructions");
+    let addedInstructions = document.querySelector(".addedInstructions");
 
-    if (instructionSet.childElementCount == 0) {
-        instructionSet.appendChild(document.createElement("hr"))
+    if (addedInstructions.childElementCount == 0) {
+        addedInstructions.appendChild(document.createElement("hr"))
     }
 
-    instructionSet.appendChild(instructionToAdd);
+    addedInstructions.appendChild(instructionToAdd);
+    redetermineOptionGroup(addedInstructions);
+}
+
+const redetermineOptionGroup = instructionGroup => {
+    if (instructionGroup.childElementCount > 1) {
+        if (instructionGroup.childNodes[0].nodeType === 3) {
+            instructionGroup.childNodes[0].remove();
+        }
+
+        for (let i = 1; i < instructionGroup.childElementCount; i++) {
+            setOptionGroup(instructionGroup.childNodes[i]);
+        }
+    }
+}
+
+const setOptionGroup = instruction => {
+    let parentList = instruction.parentNode;
+
+    let optionDiv = instruction.childNodes[1];
+    optionDiv.innerHTML = "";
+
+    let deleteIcon = document.createElement("i");
+    deleteIcon.setAttribute("class", "material-icons col-12");
+    deleteIcon.innerHTML = "delete";
+    deleteIcon.addEventListener("click", deleteInstructionGroup);
+    optionDiv.appendChild(deleteIcon);
+
+    let numberOfChildren = instruction.parentNode.childElementCount;
+    let indexOfInstruction = Array.prototype.indexOf.call(parentList.children, instruction);
+
+    let upIcon = document.createElement("i");
+    upIcon.setAttribute("class", "material-icons col-12");
+    upIcon.innerHTML = "keyboard_arrow_up";
+    upIcon.setAttribute("direction", "up");
+    upIcon.addEventListener("click", moveInstructionGroup);
+
+    let downIcon = document.createElement("i");
+    downIcon.setAttribute("class", "material-icons col-12");
+    downIcon.innerHTML = "keyboard_arrow_down";
+    downIcon.setAttribute("direction", "down");
+    downIcon.addEventListener("click", moveInstructionGroup);
+
+    if (numberOfChildren > 2) {
+        if (indexOfInstruction === 1) {
+            optionDiv.appendChild(downIcon);
+        } else if (indexOfInstruction === numberOfChildren - 1) {
+            optionDiv.appendChild(upIcon);
+        } else {
+            optionDiv.appendChild(upIcon);
+            optionDiv.append(downIcon);
+        }
+    }
 }
 
 const addIngredientToSet = ingredientToAdd => {
@@ -67,16 +146,6 @@ const addIngredientToSet = ingredientToAdd => {
     }
 
     ingredientSet.appendChild(ingredientToAdd);
-}
-
-const deleteInputGroup = event => {
-    let inputGroup = event.target.parentNode;
-    let parent = inputGroup.parentNode;
-    parent.removeChild(inputGroup);
-
-    if (parent.childElementCount == 1) {
-        parent.innerHTML = "";
-    }
 }
 
 const validateField = event => {
