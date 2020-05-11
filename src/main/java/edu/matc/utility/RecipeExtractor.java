@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class RecipeExtractor {
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -74,7 +73,6 @@ public class RecipeExtractor {
                     if (item.isFormField()) {
                         setRecipeValue(item.getFieldName(), item.getString());
                     } else {
-                        logger.info(item.getFieldName() + ": " + item);
                         saveImage(item);
                     }
                 }
@@ -130,8 +128,14 @@ public class RecipeExtractor {
         if (item.getSize() > 0) {
             // constructs the directory path to store upload file
             // this path is relative to application's directory
-            String webappPath = "/src/main/webapp/";
-            String uploadPath = removeTargetDirectory(servletContext.getRealPath("")) + webappPath;
+
+            //The following two lines are for local testing only
+            //String webappPath = "/src/main/webapp/";
+            //String uploadPath = removeTargetDirectory(servletContext.getRealPath("")) + webappPath;
+
+            //
+            String uploadPath = servletContext.getRealPath("");
+            logger.info("Upload Path: " + uploadPath);
 
             // creates the directory if it does not exist
             File uploadDir = new File(uploadPath);
@@ -149,8 +153,6 @@ public class RecipeExtractor {
             fileName = new File(item.getName()).getName();
             String filePath = uploadDirectory + File.separator + fileName;
             File storeFile = new File(filePath);
-
-            logger.info("Filename: " + fileName);
 
             // saves the file on disk
             item.write(storeFile);
@@ -170,7 +172,7 @@ public class RecipeExtractor {
 
         GenericDao imageDao = new GenericDao(Image.class);
         String recipeImagePath = imagePath.get(0);
-        logger.info("Image Path: " + recipeImagePath);
+
         if (recipeImagePath != null) {
             imageDao.insert(new Image(recipeImagePath, imageDescription.get(0), newRecipe));
         }
@@ -198,7 +200,6 @@ public class RecipeExtractor {
 
     public Recipe updateRecipe(int id){
         extractRecipe();
-        logger.info("Imagepaths: " + imagePath);
 
         GenericDao recipeDao = new GenericDao(Recipe.class);
         GenericDao ingredientDao = new GenericDao(Ingredient.class);
@@ -237,11 +238,13 @@ public class RecipeExtractor {
             Instruction instructionToInsert = new Instruction(i + 1, instructions.get(i), recipeToUpdate);
             instructionDao.insert(instructionToInsert);
 
-            Image imageBefore = instructionsBeforeUpdate.get(i).getImage();
-            if (imagePath.get(i + 1).length() > 0) {
-                imageDao.insert(new Image(imagePath.get(i + 1), "", instructionToInsert));
-            } else if (imageBefore != null) {
-                imageDao.insert(new Image(imageBefore.getFilepath(), "", instructionToInsert));
+            if (i < instructionsBeforeUpdate.size()) {
+                Image imageBefore = instructionsBeforeUpdate.get(i).getImage();
+                if (imagePath.get(i + 1).length() > 0) {
+                    imageDao.insert(new Image(imagePath.get(i + 1), "", instructionToInsert));
+                } else if (imageBefore != null) {
+                    imageDao.insert(new Image(imageBefore.getFilepath(), "", instructionToInsert));
+                }
             }
         }
 

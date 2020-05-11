@@ -9,8 +9,12 @@
 <html>
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@include file="template/head.jsp"%>
+    <c:if test="${not empty pageContext.request.getRemoteUser()}">
+        <script src="/CookingRecipes/js/favoriteButton.js" charset="utf-8"></script>
+    </c:if>
 </head>
 <body>
 <div class="header">
@@ -25,7 +29,13 @@
 
     <div class="recipeHeading row">
         <h1 class="text-center col-12 col-sm-6 offset-sm-3">${recipe.name}</h1>
-        <a href="viewRecipeStepByStep?id=${recipe.id}" class="btn btn-primary col-12 col-sm-3 startCooking">Start Cooking!</a>
+
+        <div class="col-12 col-sm-3">
+            <a href="viewRecipeStepByStep?id=${recipe.id}" class="btn btn-primary col-sm-12 startCooking">Start Cooking!</a>
+            <c:if test="${not empty pageContext.request.getRemoteUser()}">
+                <i class="material-icons col-sm-12 text-center favoriteIcon">favorite_border</i>
+            </c:if>
+        </div>
     </div>
 
     <div class="row recipeDescription">
