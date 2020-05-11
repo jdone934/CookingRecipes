@@ -29,7 +29,7 @@
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card">
                     <c:if test="${not empty recipe.image}">
-                        <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
+                        <img class="card-img-top" src="recipeImg/${recipe.image.filepath}">
                     </c:if>
 
                     <div class="card-body">

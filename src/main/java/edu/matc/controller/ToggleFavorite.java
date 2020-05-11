@@ -32,11 +32,8 @@ public class ToggleFavorite extends HttpServlet {
 
         if (loggedInUser != null) {
             Set<FavoritedRecipe> favoriteSet = loggedInUser.getFavoriteRecipes();
-            logger.info("Fav Set: " + favoriteSet);
-            for(FavoritedRecipe favorite : favoriteSet) {
-                logger.info("Favorite: " + favorite);
-                logger.info("Favorite recipe Id: " + favorite.getRecipe().getId());
 
+            for(FavoritedRecipe favorite : favoriteSet) {
                 if (recipeId == favorite.getRecipe().getId()) {
                     isFavorite = true;
                     logger.info("Deleted favorite: " + favorite);
