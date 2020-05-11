@@ -17,10 +17,6 @@
         <label for="recipeImage">Recipe Image</label>
         <input type="file" class="form-control" name="recipeImage" id="recipeImage" accept="image/*">
     </div>
-    <div class="form-group">
-        <label for="imageDescription">Image Description</label>
-        <input type="text" class="form-control" name="imageDescription" id="imageDescription">
-    </div>
 
     <br>
 

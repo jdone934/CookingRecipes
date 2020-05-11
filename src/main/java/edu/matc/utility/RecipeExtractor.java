@@ -28,7 +28,6 @@ public class RecipeExtractor {
     private ArrayList<String> units = new ArrayList<>();
     private ArrayList<String> ingredientNames = new ArrayList<>();
     private ArrayList<String> instructions = new ArrayList<>();
-    private ArrayList<String> imageDescription = new ArrayList<>();
     private ArrayList<String> imagePath = new ArrayList<>();
 
     private Users user;
@@ -95,10 +94,6 @@ public class RecipeExtractor {
 
             case "category":
                 category = value;
-                break;
-
-            case "imageDescription":
-                imageDescription.add(value);
                 break;
 
             case "quantityTop":
@@ -173,8 +168,8 @@ public class RecipeExtractor {
         GenericDao imageDao = new GenericDao(Image.class);
         String recipeImagePath = imagePath.get(0);
 
-        if (recipeImagePath != null) {
-            imageDao.insert(new Image(recipeImagePath, imageDescription.get(0), newRecipe));
+        if (recipeImagePath.length() > 0) {
+            imageDao.insert(new Image(recipeImagePath, newRecipe));
         }
 
         GenericDao ingredientDao = new GenericDao(Ingredient.class);
@@ -191,11 +186,13 @@ public class RecipeExtractor {
 
             instImagePath = imagePath.get(i + 1);
             if (instImagePath.length() > 0) {
-                imageDao.insert(new Image(instImagePath, "", instToInsert));
+                imageDao.insert(new Image(instImagePath, instToInsert));
             }
         }
 
-        return (Recipe) recipeDao.getById(id);
+        Recipe recipeAfterInsert = (Recipe) recipeDao.getById(id);
+        logger.info("Recipe Inserted: " + recipeAfterInsert);
+        return recipeAfterInsert;
     }
 
     public Recipe updateRecipe(int id){
@@ -217,7 +214,7 @@ public class RecipeExtractor {
 
         String recipeImagePath = imagePath.get(0);
         if (recipeImagePath.length() > 0) {
-            imageDao.insert(new Image(recipeImagePath, "", recipeToUpdate));
+            imageDao.insert(new Image(recipeImagePath, recipeToUpdate));
         }
 
         for(Ingredient ingredient : recipeToUpdate.getIngredients()) {
@@ -241,14 +238,16 @@ public class RecipeExtractor {
             if (i < instructionsBeforeUpdate.size()) {
                 Image imageBefore = instructionsBeforeUpdate.get(i).getImage();
                 if (imagePath.get(i + 1).length() > 0) {
-                    imageDao.insert(new Image(imagePath.get(i + 1), "", instructionToInsert));
+                    imageDao.insert(new Image(imagePath.get(i + 1), instructionToInsert));
                 } else if (imageBefore != null) {
-                    imageDao.insert(new Image(imageBefore.getFilepath(), "", instructionToInsert));
+                    imageDao.insert(new Image(imageBefore.getFilepath(), instructionToInsert));
                 }
             }
         }
 
-        return (Recipe) recipeDao.getById(id);
+        Recipe recipeAfterUpdate = (Recipe) recipeDao.getById(id);
+        logger.info("Recipe Updated: " + recipeAfterUpdate);
+        return recipeAfterUpdate;
     }
 
     private ArrayList<Integer> parseInts(String[] arrayOfValues) {

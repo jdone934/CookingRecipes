@@ -29,7 +29,7 @@
 <c:set var="recipe" value="${recipe}" />
 <div class="card" style="width: 18rem;">
     <c:if test="${not empty recipe.image}">
-        <img class="card-img-top" src="img/${recipe.image.filepath}" alt="${recipe.image.description}">
+        <img class="card-img-top" src="img/${recipe.image.filepath}">
     </c:if>
 
     <div class="card-body">

@@ -46,7 +46,7 @@ public class ImageDaoTest {
     void getByIdSuccess() {
         Image retrievedImage = (Image) imageDao.getById(1);
         Recipe recipe = (Recipe) recipeDao.getById(1);
-        Image expectedImage = new Image("catLightning.png", "cat shooting lightning from his paws", recipe, 1);
+        Image expectedImage = new Image("catLightning.png", recipe, 1);
         assertEquals(expectedImage, retrievedImage);
     }
 
@@ -55,7 +55,7 @@ public class ImageDaoTest {
      */
     @Test
     void insertSuccess() {
-        Image newImage = new Image("ironThrone.png", "the Iron Throne from Game of Thrones");
+        Image newImage = new Image("ironThrone.png");
         int id = imageDao.insert(newImage);
         assertNotEquals(0,id);
         Image insertedImage = (Image) imageDao.getById(id);
@@ -68,10 +68,9 @@ public class ImageDaoTest {
     @Test
     void updateSuccess() {
         Recipe recipe = (Recipe) recipeDao.getById(1);
-        Image expectedImage = new Image("new filepath", "new description", recipe, 1);
+        Image expectedImage = new Image("new filepath",recipe, 1);
         Image imageToUpdate = (Image) imageDao.getById(1);
         imageToUpdate.setFilepath(expectedImage.getFilepath());
-        imageToUpdate.setDescription((expectedImage.getDescription()));
         imageDao.saveOrUpdate(imageToUpdate);
         Image imageAfterUpdate = (Image) imageDao.getById(1);
         assertEquals(expectedImage, imageAfterUpdate);

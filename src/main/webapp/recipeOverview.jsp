@@ -71,7 +71,7 @@
             <li class="list-item row instruction">
                 <p class="col-12 col-sm-8 align-self-sm-center">${instruction.description}</p>
                 <c:if test="${instruction.image != null}">
-                    <img src="instructionImg/${instruction.image.filepath}" alt="${instruction.image.description}" class="ml-sm-auto img-fluid instructionImage col-6 offset-3 col-sm-4">
+                    <img src="instructionImg/${instruction.image.filepath}" class="ml-sm-auto img-fluid instructionImage col-6 offset-3 col-sm-4">
                 </c:if>
             </li>
         </c:forEach>

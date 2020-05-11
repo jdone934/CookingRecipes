@@ -28,7 +28,7 @@
         <div class="row recipeDescription">
             <p>${recipe.description}</p>
             <c:if test="${recipe.image != null}">
-                <img src="recipeImg/${recipe.image.filepath}" alt="${recipe.description}" class="ml-auto img-fluid recipeImage">
+                <img src="recipeImg/${recipe.image.filepath}" class="ml-auto img-fluid recipeImage">
             </c:if>
         </div>
 
@@ -53,7 +53,7 @@
                     <li id="step${loop.index}" class="list-item row instruction stepByStepInstruction">
                         <c:if test="${not empty instruction.image}">
                             <p class="col-10 col-md-5 align-self-md-center order-1">${instruction.description}</p>
-                            <img src="instructionImg/${instruction.image.filepath}" alt="${instruction.image.description}"
+                            <img src="instructionImg/${instruction.image.filepath}"
                                  class="ml-md-auto img-fluid instructionImage col-6 offset-3 col-md-3 order-3 order-md-2 align-self-center">
                         </c:if>
 

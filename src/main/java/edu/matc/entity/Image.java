@@ -20,7 +20,6 @@ public class Image {
 
     @NotNull
     private String filepath;
-    private String description;
 
     @OneToOne
     @JoinColumn(name="recipe_id")
@@ -42,23 +41,19 @@ public class Image {
      * Instantiates a new Image.
      *
      * @param filepath    the filepath
-     * @param description the description
      */
-    public Image(String filepath, String description) {
+    public Image(String filepath) {
         this.filepath = filepath;
-        this.description = description;
     }
 
     /**
      * Instantiates a new Image.
      *
      * @param filepath    the filepath
-     * @param description the description
      * @param recipe      the recipe
      */
-    public Image(String filepath, String description, Recipe recipe) {
+    public Image(String filepath, Recipe recipe) {
         this.filepath = filepath;
-        this.description = description;
         this.recipe = recipe;
     }
 
@@ -66,13 +61,11 @@ public class Image {
      * Instantiates a new Image.
      *
      * @param filepath    the filepath
-     * @param description the description
      * @param recipe      the recipe
      * @param id          the id
      */
-    public Image(String filepath, String description, Recipe recipe, int id) {
+    public Image(String filepath, Recipe recipe, int id) {
         this.filepath = filepath;
-        this.description = description;
         this.recipe = recipe;
         this.id = id;
     }
@@ -81,25 +74,21 @@ public class Image {
      * Instantiates a new Image.
      *
      * @param filepath    the filepath
-     * @param description the description
      * @param instruction the instruction
      */
-    public Image(String filepath, String description, Instruction instruction) {
+    public Image(String filepath, Instruction instruction) {
         this.filepath = filepath;
-        this.description = description;
         this.instruction = instruction;
     }
 
     /**
      * Instantiates a new Image.
      *  @param filepath    the filepath
-     * @param description the description
      * @param instruction      the instruction
      * @param id          the id
      */
-    public Image(String filepath, String description, Instruction instruction, int id) {
+    public Image(String filepath, Instruction instruction, int id) {
         this.filepath = filepath;
-        this.description = description;
         this.instruction = instruction;
         this.id = id;
     }
@@ -138,24 +127,6 @@ public class Image {
      */
     public void setFilepath(String filepath) {
         this.filepath = filepath;
-    }
-
-    /**
-     * Gets description.
-     *
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * Sets description.
-     *
-     * @param description the description
-     */
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     /**
@@ -213,12 +184,11 @@ public class Image {
 
         return id == image.id &&
                 filepath.equals(image.filepath) &&
-                Objects.equals(description, image.description) &&
                 thisForeignKeyId == compareForeignKeyId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, filepath, description, recipe, instruction);
+        return Objects.hash(id, filepath, recipe, instruction);
     }
 }
