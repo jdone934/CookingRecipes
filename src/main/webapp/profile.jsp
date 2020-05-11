@@ -24,6 +24,13 @@
 
 <div class="profileMain container">
     <c:set var="user" value="${user}" />
+    <c:set var="isAdmin" value="${false}" />
+
+    <c:forEach var="role" items="${user.role}">
+        <c:if test="${role.roleName == admin}">
+            <a href="adminOnly/home">Admin Page</a>
+        </c:if>
+    </c:forEach>
 
     <h2 class="text-center">Account Information</h2>
 

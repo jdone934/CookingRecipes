@@ -1,8 +1,11 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Recipe;
+import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
+import edu.matc.utility.LoggedInUser;
 import edu.matc.utility.RecipeExtractor;
+import net.bytebuddy.description.type.TypeList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,7 +32,19 @@ public class EditRecipe extends HttpServlet {
             int id = Integer.parseInt(idString);
             req.setAttribute("recipeId", id);
 
-            dispatcher = req.getRequestDispatcher("/editRecipe.jsp");
+            LoggedInUser helper = new LoggedInUser();
+            Users user = helper.getLoggedInUser(req);
+
+            GenericDao recipeDao = new GenericDao(Recipe.class);
+            Recipe recipe = (Recipe) recipeDao.getById(id);
+
+            if (recipe.getCreatedByUser().getId() == user.getId()) {
+                dispatcher = req.getRequestDispatcher("/editRecipe.jsp");
+            } else {
+                dispatcher = req.getRequestDispatcher("/index.jsp");
+            }
+
+
         } catch (NumberFormatException e) {
             dispatcher = req.getRequestDispatcher("/profile.jsp");
         }
