@@ -16,7 +16,7 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/getRecipe"}
 )
-public class getRecipe extends HttpServlet {
+public class GetRecipe extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override

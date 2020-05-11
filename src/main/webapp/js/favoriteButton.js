@@ -1,9 +1,6 @@
-const queryString = window.location.search;
-const recipeId = new URLSearchParams.get(queryString).get('id');
-
 const init = () => {
-    const favoriteIcon = document.querySelector(".favoriteIcon");
-
+    let favoriteIcon = document.querySelector(".favoriteIcon");
+    favoriteIcon.setAttribute("onclick", "toggleFavorite()");
 }
 
 window.onload = init;

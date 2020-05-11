@@ -34,18 +34,6 @@ public class FavoritedRecipeDaoTest {
         userDao = new GenericDao(Users.class);
     }
 
-    @Test
-    void suckBallsMountain() {
-        ArrayList<Integer> test = new ArrayList<>();
-
-        test.add(1);
-        test.add(23);
-
-        logger.info(test);
-
-        assertEquals("???", test);
-    }
-
     /**
      * Verify successful retrieval of an Favorite
      */

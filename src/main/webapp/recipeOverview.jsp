@@ -13,10 +13,12 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@include file="template/head.jsp"%>
     <c:if test="${not empty pageContext.request.getRemoteUser()}">
-        <script src="/CookingRecipes/js/favoriteButton.js" charset="utf-8"></script>
+        <script src="/CookingRecipes/js/toggleFavorite.js" charset="utf-8"></script>
     </c:if>
 </head>
+
 <body>
+
 <div class="header">
     <%@ include file="template/navbar.jsp"%>
     <div class="display-4 text-center">
@@ -33,7 +35,13 @@
         <div class="col-12 col-sm-3">
             <a href="viewRecipeStepByStep?id=${recipe.id}" class="btn btn-primary col-sm-12 startCooking">Start Cooking!</a>
             <c:if test="${not empty pageContext.request.getRemoteUser()}">
-                <i class="material-icons col-sm-12 text-center favoriteIcon">favorite_border</i>
+                <c:if test="${not empty favoriteRecipe}">
+                    <i class="material-icons col-sm-12 text-center favoriteIcon${recipe.id}" onclick="toggleFavorite(${recipe.id})">favorite</i>
+                </c:if>
+
+                <c:if test="${empty favoriteRecipe}">
+                    <i class="material-icons col-sm-12 text-center favoriteIcon${recipe.id}" onclick="toggleFavorite(${recipe.id})">favorite_border</i>
+                </c:if>
             </c:if>
         </div>
     </div>

@@ -1,5 +1,6 @@
 package edu.matc.controller;
 
+import edu.matc.entity.FavoritedRecipe;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Set;
 
 /**
  * A simple servlet to welcome the recipe.
@@ -27,14 +29,25 @@ public class ViewRecipeOverview extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao recipeDao = new GenericDao(Recipe.class);
         LoggedInUser helper = new LoggedInUser();
+        int recipeId = Integer.parseInt(req.getParameter("id"));
 
         Users loggedInUser = helper.getLoggedInUser(req);
         req.setAttribute("user", loggedInUser);
 
+        if (loggedInUser != null) {
+            Set<FavoritedRecipe> favoriteSet = loggedInUser.getFavoriteRecipes();
+
+            for(FavoritedRecipe favorite : favoriteSet) {
+                if (recipeId == favorite.getRecipe().getId()) {
+                    req.setAttribute("favoriteRecipe", "true");
+                    break;
+                }
+            }
+        }
+
         String loginPath = "/viewRecipeOverview?" + req.getQueryString();
         req.setAttribute("path", loginPath);
 
-        int recipeId = Integer.parseInt(req.getParameter("id"));
         Recipe recipe = (Recipe) recipeDao.getById(recipeId);
         req.setAttribute("recipe", recipe);
 

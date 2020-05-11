@@ -12,6 +12,7 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%@ include file="template/head.jsp"%>
+    <script src="/CookingRecipes/js/toggleFavorite.js" charset="utf-8"></script>
 </head>
 <body>
 <div class="header">
@@ -47,18 +48,36 @@
         </table>
     </div>
 
-    <c:set var="recipes" value="${user.createdRecipes}" />
-    <c:if test="${not empty recipes}">
+    <c:set var="createdRecipes" value="${user.createdRecipes}" />
+    <c:if test="${not empty createdRecipes}">
         <h2 class="text-center">My Recipes</h2>
         <div class="row">
             <table id = "myRecipes" class="table table-striped col-12 col-sm-8 offset-sm-2">
                 <tr>
                     <th>Name</th><th>Description</th><th>Edit</th></tr>
                 </tr>
-                <c:forEach var="recipe" items="${recipes}">
+                <c:forEach var="recipe" items="${createdRecipes}">
                     <tr>
                         <td><a class="recipeLink" href="viewRecipeOverview?id=${recipe.id}">${recipe.name}</a></td><td>${recipe.description}</td>
                         <td><a href="editRecipe?id=${recipe.id}"><i class="material-icons">edit</i></a></td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </c:if>
+
+    <c:if test="${not empty favoriteRecipes}">
+        <h2 class="text-center">Favorite Recipes</h2>
+        <div class="row">
+            <table id = "favoriteRecipes" class="table table-striped col-12 col-sm-8 offset-sm-2">
+                <tr>
+                    <th>Name</th><th>Description</th><th></th></tr>
+                </tr>
+                <c:forEach var="recipe" items="${favoriteRecipes}">
+                    <tr>
+                        <td><a class="recipeLink" href="viewRecipeOverview?id=${recipe.id}">${recipe.name}</a></td>
+                        <td>${recipe.description}</td>
+                        <td><i class="material-icons favoriteIcon${recipe.id}" onclick="toggleFavorite(${recipe.id})">favorite</i></td>
                     </tr>
                 </c:forEach>
             </table>
