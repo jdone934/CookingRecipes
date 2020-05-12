@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ * Pass new account info to confirmation page
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/accountCreated/*"}
 )
-
 public class AccountCreated extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

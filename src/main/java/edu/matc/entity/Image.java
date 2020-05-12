@@ -40,7 +40,7 @@ public class Image {
     /**
      * Instantiates a new Image.
      *
-     * @param filepath    the filepath
+     * @param filepath the filepath
      */
     public Image(String filepath) {
         this.filepath = filepath;
@@ -49,8 +49,8 @@ public class Image {
     /**
      * Instantiates a new Image.
      *
-     * @param filepath    the filepath
-     * @param recipe      the recipe
+     * @param filepath the filepath
+     * @param recipe   the recipe
      */
     public Image(String filepath, Recipe recipe) {
         this.filepath = filepath;
@@ -60,9 +60,9 @@ public class Image {
     /**
      * Instantiates a new Image.
      *
-     * @param filepath    the filepath
-     * @param recipe      the recipe
-     * @param id          the id
+     * @param filepath the filepath
+     * @param recipe   the recipe
+     * @param id       the id
      */
     public Image(String filepath, Recipe recipe, int id) {
         this.filepath = filepath;
@@ -83,8 +83,9 @@ public class Image {
 
     /**
      * Instantiates a new Image.
-     *  @param filepath    the filepath
-     * @param instruction      the instruction
+     *
+     * @param filepath    the filepath
+     * @param instruction the instruction
      * @param id          the id
      */
     public Image(String filepath, Instruction instruction, int id) {

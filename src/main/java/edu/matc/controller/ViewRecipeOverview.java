@@ -16,14 +16,12 @@ import java.io.IOException;
 import java.util.Set;
 
 /**
- * A simple servlet to welcome the recipe.
- * @author pwaite
+ * View an overview of the recipe
+ * @author Jacob Doney
  */
-
 @WebServlet(
         urlPatterns = {"/viewRecipeOverview"}
 )
-
 public class ViewRecipeOverview extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

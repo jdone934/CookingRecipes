@@ -15,10 +15,13 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * User profile page
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/profile"}
 )
-
 public class Profile extends HttpServlet {
     private LoggedInUser helper = new LoggedInUser();
 

@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * Toggle whether account is a favorite of user
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/toggleFavorite"}
 )

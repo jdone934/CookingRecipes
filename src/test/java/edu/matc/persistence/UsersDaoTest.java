@@ -9,7 +9,9 @@ import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -124,6 +126,32 @@ public class UsersDaoTest {
     @Test
     void searchByUsernameLikeSuccess() {
         List<Users> users = userDao.getByPropertyLike("username", "jdone934");
+        assertEquals(1, users.size());
+        Users retrievedUser = users.get(0);
+        Users expectedUser = (Users) userDao.getById(1);
+        assertEquals(expectedUser, retrievedUser);
+    }
+
+    /**
+     * Verify successful retrieval of user by property equal
+     */
+    @Test
+    void getByPropertyEqual() {
+        List<Users> users = userDao.findByPropertyEqual("username", "jdone934");
+        assertEquals(1, users.size());
+        Users retrievedUser = users.get(0);
+        Users expectedUser = (Users) userDao.getById(1);
+        assertEquals(expectedUser, retrievedUser);
+    }
+
+    /**
+     * Verify successful retrieval of user by property equal using map
+     */
+    @Test
+    void getByPropertyEqualMap() {
+        Map<String, String> searchMap = new HashMap<>();
+        searchMap.put("username", "jdone934");
+        List<Users> users = userDao.findByPropertyEqual(searchMap);
         assertEquals(1, users.size());
         Users retrievedUser = users.get(0);
         Users expectedUser = (Users) userDao.getById(1);

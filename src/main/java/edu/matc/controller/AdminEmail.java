@@ -21,6 +21,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+
+/**
+ * Mass email form
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/adminOnly/email"}
 )
@@ -107,6 +112,9 @@ public class AdminEmail extends HttpServlet {
         resp.sendRedirect("/CookingRecipes/adminOnly/email?message=" + errorMessage);
     }
 
+    /**
+     * Load email properites
+     */
     private void loadProperties() {
         properties = new Properties();
         try {

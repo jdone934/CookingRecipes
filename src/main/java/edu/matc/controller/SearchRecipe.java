@@ -16,10 +16,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * A simple servlet to welcome the recipe.
- * @author pwaite
+ * Search for recipes
+ * @author Jacob Doney
  */
-
 @WebServlet(
         urlPatterns = {"/searchRecipe"}
 )

@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * Remove image from instruction
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/removeInstructionImage"}
 )

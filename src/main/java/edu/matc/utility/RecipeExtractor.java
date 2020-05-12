@@ -14,6 +14,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Recipe extractor.
+ */
 public class RecipeExtractor {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private ServletContext servletContext;
@@ -32,9 +35,18 @@ public class RecipeExtractor {
 
     private Users user;
 
+    /**
+     * Instantiates a new Recipe extractor.
+     */
     public RecipeExtractor() {
     }
 
+    /**
+     * Instantiates a new Recipe extractor.
+     *
+     * @param request        the request
+     * @param servletContext the servlet context
+     */
     public RecipeExtractor(HttpServletRequest request, ServletContext servletContext) {
         this.request = request;
         this.servletContext = servletContext;
@@ -42,11 +54,17 @@ public class RecipeExtractor {
         setUser();
     }
 
+    /**
+     * sets user to the logged in user
+     */
     private void setUser() {
         LoggedInUser helper = new LoggedInUser();
         user = helper.getLoggedInUser(request);
     }
 
+    /**
+     * takes all info from request and places it in local variables
+     */
     private void extractRecipe() {
         // checks if the request actually contains upload file
         if (!ServletFileUpload.isMultipartContent(request)) {
@@ -82,6 +100,11 @@ public class RecipeExtractor {
         }
     }
 
+    /**
+     * Takes fieldName and assigns corresponding value to instance variable
+     * @param fieldName name of request field
+     * @param value     value from request
+     */
     private void setRecipeValue(String fieldName, String value) {
         switch (fieldName) {
             case "name":
@@ -117,6 +140,11 @@ public class RecipeExtractor {
         }
     }
 
+    /**
+     * Save image to local(machine) storage
+     * @param item          image item
+     * @throws Exception
+     */
     private void saveImage(FileItem item) throws Exception {
         String fileName = "";
 
@@ -156,6 +184,11 @@ public class RecipeExtractor {
         imagePath.add(fileName);
     }
 
+    /**
+     * Create recipe recipe.
+     *
+     * @return the recipe
+     */
     public Recipe createRecipe() {
         extractRecipe();
 
@@ -195,6 +228,12 @@ public class RecipeExtractor {
         return recipeAfterInsert;
     }
 
+    /**
+     * Update recipe recipe.
+     *
+     * @param id the id
+     * @return the recipe
+     */
     public Recipe updateRecipe(int id){
         extractRecipe();
 
@@ -248,25 +287,5 @@ public class RecipeExtractor {
         Recipe recipeAfterUpdate = (Recipe) recipeDao.getById(id);
         logger.info("Recipe Updated: " + recipeAfterUpdate);
         return recipeAfterUpdate;
-    }
-
-    private ArrayList<Integer> parseInts(String[] arrayOfValues) {
-        ArrayList<Integer> parsedInts = new ArrayList<Integer>();
-        for (String value : arrayOfValues) {
-            parsedInts.add(Integer.parseInt(value));
-        }
-        return parsedInts;
-    }
-
-    private String removeTargetDirectory(String contextPath) {
-        int index;
-        String newPath = contextPath;
-
-        for (int i = 0; i < 3; i++) {
-            index = newPath.lastIndexOf("/");
-            newPath = newPath.substring(0, index);
-        }
-
-        return newPath;
     }
 }

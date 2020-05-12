@@ -13,14 +13,12 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * View recipe in step by step view
+ * Redirect to appropriate page after login
  * @author Jacob Doney
  */
-
 @WebServlet(
         urlPatterns = {"/login/*"}
 )
-
 public class Login extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 

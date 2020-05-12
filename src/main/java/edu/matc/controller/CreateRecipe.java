@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * A simple servlet to welcome the recipe.
- * @author pwaite
+ * Create recipe form
+ * @author Jacob Doney
  */
-
 @WebServlet(
         urlPatterns = {"/createRecipe"}
 )

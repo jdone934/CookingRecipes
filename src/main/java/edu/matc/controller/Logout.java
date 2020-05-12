@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * View recipe in step by step view
+ * Redirect to previous page after logout
  * @author Jacob Doney
  */
 

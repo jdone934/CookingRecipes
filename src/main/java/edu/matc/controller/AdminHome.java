@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Go to admin home
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/adminOnly/home"}
 )

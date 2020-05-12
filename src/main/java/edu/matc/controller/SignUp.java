@@ -13,7 +13,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * View recipe in step by step view
+ * Sign up user with new account
  * @author Jacob Doney
  */
 

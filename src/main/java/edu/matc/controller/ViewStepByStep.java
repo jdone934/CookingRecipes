@@ -17,7 +17,6 @@ import java.io.IOException;
  * View recipe in step by step view
  * @author Jacob Doney
  */
-
 @WebServlet(
         urlPatterns = {"/viewRecipeStepByStep"} //viewRecipeStepByStep
 )

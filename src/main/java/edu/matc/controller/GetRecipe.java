@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * return json of requested recipe (from AJAX request)
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/getRecipe"}
 )

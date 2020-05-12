@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Remove image from recipe
+ * @author Jacob Doney
+ */
 @WebServlet(
         urlPatterns = {"/removeRecipeImage"}
 )
