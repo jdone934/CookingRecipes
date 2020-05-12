@@ -74,7 +74,7 @@ const createIngredientsList = ingredients => {
 const createInstructionsList = (instructions, recipeId) => {
     instructions.forEach((instruction, i) => {
         let image = instruction.image;
-        if (image == null) {
+        if (image === null) {
             addInstructionToSet(createInstructionFormElement(instruction.description));
         } else {
             let newElement = createInstructionFormElement(instruction.description, null, image.filepath);

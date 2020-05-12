@@ -6,7 +6,7 @@ const init = () => {
 const changeForm = event => {
     let searchByValue = event.target.value;
 
-    if (searchByValue == 'user') {
+    if (searchByValue === 'user') {
         changeToUser();
     } else {
         changeToRecipe();

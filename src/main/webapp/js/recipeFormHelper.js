@@ -129,7 +129,7 @@ const deleteIngredientGroup = event => {
     let parent = ingredientGroup.parentNode;
     parent.removeChild(ingredientGroup);
 
-    if (parent.childElementCount == 1) {
+    if (parent.childElementCount === 1) {
         parent.innerHTML = "";
     }
 }
@@ -140,7 +140,7 @@ const deleteInstructionGroup = event => {
     let parent = formGroup.parentNode;
     parent.removeChild(formGroup);
 
-    if (parent.childElementCount == 1) {
+    if (parent.childElementCount === 1) {
         parent.innerHTML = "";
     }
 

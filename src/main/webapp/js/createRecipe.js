@@ -79,7 +79,7 @@ const addNewIngredient = () => {
 const addInstructionToSet = instructionToAdd => {
     let addedInstructions = document.querySelector(".addedInstructions");
 
-    if (addedInstructions.childElementCount == 0) {
+    if (addedInstructions.childElementCount === 0) {
         addedInstructions.appendChild(document.createElement("hr"))
     }
 
@@ -141,7 +141,7 @@ const setOptionGroup = instruction => {
 const addIngredientToSet = ingredientToAdd => {
     let ingredientSet = document.querySelector(".addedIngredients");
 
-    if (ingredientSet.childElementCount == 0) {
+    if (ingredientSet.childElementCount === 0) {
         ingredientSet.appendChild(document.createElement("hr"));
     }
 
@@ -152,7 +152,7 @@ const validateField = event => {
     let target = event.target;
     let value = target.value;
 
-    if(value =="") {
+    if(value === "") {
         setErrorMessage();
     } else {
         document.querySelector("#errorMessage").innerHTML = "";
@@ -178,14 +178,14 @@ const setErrorMessage = message => {
 const validateForm = () => {
     let addedIngredients = document.querySelector(".addedIngredients");
 
-    if(addedIngredients.childElementCount == 0) {
+    if(addedIngredients.childElementCount === 0) {
         setErrorMessage("You need at least 1 ingredient");
         return false;
     }
 
     let addedInstructions = document.querySelector(".addedInstructions");
 
-    if(addedInstructions.childElementCount == 0) {
+    if(addedInstructions.childElementCount === 0) {
         setErrorMessage("You need at least 1 instruction");
         return false;
     }
