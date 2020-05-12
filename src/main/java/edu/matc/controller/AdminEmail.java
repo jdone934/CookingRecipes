@@ -3,6 +3,7 @@ package edu.matc.controller;
 import edu.matc.entity.Role;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
+import edu.matc.utility.SMTPAuthenticator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,23 +26,8 @@ import java.util.Set;
         urlPatterns = {"/adminOnly/email"}
 )
 public class AdminEmail extends HttpServlet {
-    private class SMTPAuthenticator extends Authenticator
-    {
-        private PasswordAuthentication authentication;
-
-        public SMTPAuthenticator(String login, String password)
-        {
-            authentication = new PasswordAuthentication(login, password);
-        }
-
-        @Override
-        protected PasswordAuthentication getPasswordAuthentication()
-        {
-            return authentication;
-        }
-    }
-
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Properties properties;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -70,20 +56,21 @@ public class AdminEmail extends HttpServlet {
             emails.add(role.getUser().getEmail());
         }
 
-        logger.info(emails);
-
         if (emails.size() > 0) {
-            String from = "CookingRecipes934@gmail.com";
+            loadProperties();
+            String fromEmail = properties.getProperty("fromEmail");
+
+            String from = fromEmail;
             String subject = emailSubject;
             String message = emailMessage;
-            String login = "CookingRecipes934@gmail.com";
-            String password = "Java1133";
+            String login = fromEmail;
+            String password = properties.getProperty("password");
 
             Properties props = new Properties();
-            props.setProperty("mail.host", "smtp.gmail.com");
-            props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.auth", "true");
-            props.setProperty("mail.smtp.starttls.enable", "true");
+            props.setProperty("mail.host", properties.getProperty("host"));
+            props.setProperty("mail.smtp.port", properties.getProperty("port"));
+            props.setProperty("mail.smtp.auth", properties.getProperty("auth"));
+            props.setProperty("mail.smtp.starttls.enable", properties.getProperty("tlsEnable"));
 
             try
             {
@@ -99,10 +86,11 @@ public class AdminEmail extends HttpServlet {
                     msg.setSubject(subject);
                     msg.setFrom(new InternetAddress(from));
                     for (String email : emails) {
-                        msg.addRecipient(Message.RecipientType.TO,
+                        msg.addRecipient(Message.RecipientType.BCC,
                                 new InternetAddress(email));
                     }
                     Transport.send(msg);
+                    logger.info("Email sent to: " + emails);
                 }
                 catch (MessagingException ex)
                 {
@@ -118,5 +106,19 @@ public class AdminEmail extends HttpServlet {
         errorMessage = "Email message sent!";
 
         resp.sendRedirect("/CookingRecipes/adminOnly/email?message=" + errorMessage);
+    }
+
+    private void loadProperties() {
+        properties = new Properties();
+        try {
+            properties.load (this.getClass().getResourceAsStream("/email.properties"));
+        } catch (IOException ioe) {
+            System.out.println("Database.loadProperties()...Cannot load the properties file");
+            ioe.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Database.loadProperties()..." + e);
+            e.printStackTrace();
+        }
+
     }
 }
