@@ -19,7 +19,7 @@ avoiding this drawback.
   * Tomcat's JDBC Realm Authentication
   * Admin role: create/read/update/delete (crud) of all data
   * User role: create recipes, store favorite recipes, edit data they have entered previously
-  * All: anyone can view trail information (no login)
+  * All: anyone can view recipe information (no login)
 * Database
   * MySQL
   * Store users and roles
@@ -29,10 +29,7 @@ avoiding this drawback.
 * Dependency Management
   * Maven
 * CSS 
-  * Bootstrap or Materialize
-* Data Validation
-  * Bootstrap Validator for front end
-  * Explore Hibernate's validation
+  * Bootstrap
 * Logging
   * Configurable logging using Log4J2. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
 * Hosting
@@ -41,9 +38,10 @@ avoiding this drawback.
   * Alexa Skills
   * Alexa Voice Service
   * Alexa Skill Kit SDK (ASK SDK) for Java
-  * Hibernate Validation
-  * Hibernate Search
-* Project Lombok to eliminate boilerplate code like getters/setters/equals
+* Image Storage
+  * FileUpload
+* Admin Email
+  * JavaMail
 * Unit Testing
   * JUnit tests to achieve 80%+ code coverage 
 * IDE: IntelliJ IDEA
