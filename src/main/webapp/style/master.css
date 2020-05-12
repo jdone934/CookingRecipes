@@ -139,3 +139,7 @@ i:hover {
     white-space: normal;
     height:auto;
 }
+
+#recipeSearchOptions {
+    display: none;
+}

@@ -26,8 +26,8 @@
     <c:set var="user" value="${user}" />
     <c:set var="isAdmin" value="${false}" />
 
-    <c:forEach var="role" items="${user.role}">
-        <c:if test="${role.roleName == admin}">
+    <c:forEach var="role" items="${user.roles}">
+        <c:if test="${role.roleName == 'admin'}">
             <a href="adminOnly/home">Admin Page</a>
         </c:if>
     </c:forEach>
