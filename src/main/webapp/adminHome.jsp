@@ -55,6 +55,12 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
+    <hr>
+
+    <div class="row">
+        <a href="email" class="btn btn-primary ml-auto mr-auto">Compose Email</a>
+    </div>
 </div>
 
 </body>
