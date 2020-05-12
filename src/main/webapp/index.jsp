@@ -19,8 +19,9 @@
             </div>
         </div>
 
-        <div class="searchingSection">
-            <form method="GET" action="searchRecipe" class="form-inline">
+        <div class="searchingSection container">
+            <h2 class="text-center">Search for New Recipes</h2>
+            <form method="GET" action="searchRecipe" class="form col-8 offset-2" id="searchForm">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter search here" name="searchTerm" id="searchTerm">
                 </div>
