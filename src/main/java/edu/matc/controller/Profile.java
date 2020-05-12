@@ -4,8 +4,6 @@ import edu.matc.entity.FavoritedRecipe;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.utility.LoggedInUser;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +20,6 @@ import java.util.Set;
 )
 
 public class Profile extends HttpServlet {
-    private final Logger logger = LogManager.getLogger(this.getClass());
     private LoggedInUser helper = new LoggedInUser();
 
     @Override

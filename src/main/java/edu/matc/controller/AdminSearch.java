@@ -30,11 +30,13 @@ public class AdminSearch extends HttpServlet {
 
             GenericDao userDao = new GenericDao(Users.class);
             req.setAttribute("users", userDao.getByPropertyLike(searchBy, searchTerm));
+            logger.info("Searched for Users. Searched By: " + searchBy + " Search Term: " + searchTerm);
         } else {
             String searchBy = req.getParameter("recipeSearchBy");
 
             GenericDao recipeDao = new GenericDao(Recipe.class);
             req.setAttribute("recipes", recipeDao.getByPropertyLike(searchBy, searchTerm));
+            logger.info("Searched for Recipes. Searched By: " + searchBy + " Search Term: " + searchTerm);
         }
 
         String message = req.getParameter("message");

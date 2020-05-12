@@ -4,6 +4,8 @@ import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
 import edu.matc.utility.LoggedInUser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +25,8 @@ import java.io.IOException;
 )
 
 public class SearchRecipe extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -40,8 +44,10 @@ public class SearchRecipe extends HttpServlet {
 
         if (searchTerm == null) {
             req.setAttribute("recipes", recipeDao.getAll());
+            logger.info("Searched for all recipes");
         } else {
             req.setAttribute("recipes", recipeDao.getByPropertyLike(searchType, searchTerm));
+            logger.info("Searched for recipe by " + searchType + " for value " + searchTerm);
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");

@@ -1,7 +1,6 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Role;
-import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
 import edu.matc.utility.SMTPAuthenticator;
 import org.apache.logging.log4j.LogManager;

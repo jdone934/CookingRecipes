@@ -1,9 +1,10 @@
 package edu.matc.controller;
 
-import edu.matc.persistence.GenericDao;
 import edu.matc.entity.Users;
+import edu.matc.utility.LoggedInUser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,8 @@ import java.io.IOException;
 )
 
 public class Login extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestServlet = req.getPathInfo();
@@ -30,9 +33,12 @@ public class Login extends HttpServlet {
             loginPath = requestServlet + "?" + req.getQueryString();
         }
 
+        LoggedInUser helper = new LoggedInUser();
+        Users user = helper.getLoggedInUser(req);
+        logger.info("UserId " + user.getId() + " logged in");
+
         req.setAttribute("path", loginPath);
 
-        //dispatcher.forward(req, resp);
         resp.sendRedirect("/CookingRecipes" + loginPath);
     }
 }

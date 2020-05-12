@@ -2,6 +2,9 @@ package edu.matc.controller;
 
 import edu.matc.persistence.GenericDao;
 import edu.matc.entity.Users;
+import edu.matc.utility.LoggedInUser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,8 +25,14 @@ import java.io.IOException;
 )
 
 public class Logout extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LoggedInUser helper = new LoggedInUser();
+        Users user = helper.getLoggedInUser(req);
+        logger.info("User " + user.getId() + " logged out");
+
         HttpSession session = req.getSession();
         session.invalidate();
 
@@ -36,7 +45,6 @@ public class Logout extends HttpServlet {
 
         req.setAttribute("path", loginPath);
 
-        //dispatcher.forward(req, resp);
         resp.sendRedirect("/CookingRecipes" + loginPath);
     }
 }

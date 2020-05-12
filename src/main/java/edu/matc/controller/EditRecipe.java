@@ -5,7 +5,6 @@ import edu.matc.entity.Users;
 import edu.matc.persistence.GenericDao;
 import edu.matc.utility.LoggedInUser;
 import edu.matc.utility.RecipeExtractor;
-import net.bytebuddy.description.type.TypeList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,6 +40,7 @@ public class EditRecipe extends HttpServlet {
             if (recipe.getCreatedByUser().getId() == user.getId()) {
                 dispatcher = req.getRequestDispatcher("/editRecipe.jsp");
             } else {
+                logger.error("LoggedInUserId: " + user.getId() + " CreatedByUserId: " + recipe.getCreatedByUser().getId());
                 dispatcher = req.getRequestDispatcher("/index.jsp");
             }
 

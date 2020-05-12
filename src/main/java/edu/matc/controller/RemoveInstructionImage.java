@@ -26,10 +26,6 @@ public class RemoveInstructionImage extends HttpServlet {
         String recipeIdString = req.getParameter("recipeId");
         String rankString = req.getParameter("instRank");
 
-        logger.info("Recipe Id: " + recipeIdString);
-        logger.info("Rank Id: " + rankString);
-
-
         String response;
 
         try {
@@ -41,12 +37,9 @@ public class RemoveInstructionImage extends HttpServlet {
 
             Recipe recipe = (Recipe) recipeDao.getById(recipeId);
 
-            logger.info(recipe);
-
             Instruction instructionToDeleteFrom = null;
             for (Instruction instruction : recipe.getInstructions()) {
                 if (instruction.getRecipeRank() == rank) {
-                    logger.info(instruction);
                     instructionToDeleteFrom = instruction;
                 }
             }
@@ -55,8 +48,8 @@ public class RemoveInstructionImage extends HttpServlet {
                 throw new FileNotFoundException("Instruction was not found in recipe");
             } else {
                 Image image = instructionToDeleteFrom.getImage();
-                logger.info(image);
                 imageDao.delete(image);
+                logger.info("Image Deleted: " + image);
                 response = "Image deleted";
             }
         } catch (Exception e) {

@@ -32,6 +32,7 @@ public class RemoveRecipeImage extends HttpServlet {
             Recipe recipeToDeleteFrom = (Recipe) recipeDao.getById(recipeId);
             Image image = recipeToDeleteFrom.getImage();
             imageDao.delete(image);
+            logger.info("Image deleted: " + image);
         } catch (Exception e) {
             //TODO redirect to 500 page
         }
