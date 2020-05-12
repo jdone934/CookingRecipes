@@ -54,6 +54,7 @@ avoiding this drawback.
 * [Database Design (External Page to Draw.io Diagram)](https://drive.google.com/file/d/1Xa2Qe7GLNbkUfWn-g1wTmdzZB7NCPQyq/view?usp=sharing)
 * [Database Design (External Page to Draw.io Diagram)](https://drive.google.com/file/d/1Xa2Qe7GLNbkUfWn-g1wTmdzZB7NCPQyq/view?usp=sharing)
 * [Servlet UML Diagram](DesignDocuments/ServletUML.png)
+* [Video Demonstration](screenrec.com/share/zQU19PWmRh)
 
 ### [Project Plan](ProjectPlan.md)
 

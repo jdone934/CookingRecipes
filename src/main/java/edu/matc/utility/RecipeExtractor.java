@@ -191,6 +191,7 @@ public class RecipeExtractor {
      */
     public Recipe createRecipe() {
         extractRecipe();
+        logger.info("Instructions:" + instructions);
 
         Recipe recipeToInsert = new Recipe(name, description, category, user);
         GenericDao recipeDao = new GenericDao(Recipe.class);
@@ -215,7 +216,7 @@ public class RecipeExtractor {
         String instImagePath;
         for (int i = 0; i < instructions.size(); i++) {
             Instruction instToInsert = new Instruction(i + 1, instructions.get(i), newRecipe);
-            //instructionDao.insert(new Instruction(i + 1, instructions.get(i), newRecipe));
+            instructionDao.insert(new Instruction(i + 1, instructions.get(i), newRecipe));
 
             instImagePath = imagePath.get(i + 1);
             if (instImagePath.length() > 0) {
