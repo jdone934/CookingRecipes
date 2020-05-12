@@ -6,8 +6,7 @@ I recently moved to an apartment where I have a far better ability to cook for m
 I also recently purchased a tablet which I use to follow recipes while I cook.
 While there are plenty of sources around for finding recipes, there's a lack of good 
 sites that have an easy to use interface while cooking. My aim is to create a website that
-makes it easy to follow along with a recipe while you are cooking, while giving the user access
-to different tools they may need while cooking. 
+makes it easy to follow along with a recipe while you are cooking.
 
 One "Nice to have" feature that served as a large motivation for this project is being able to control the website using Alexa.
 One massive setback for using laptops/tablets for reading recipes while cooking is getting
