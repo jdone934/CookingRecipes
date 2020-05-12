@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .jumbotron {
     margin-bottom: 0;
 }
@@ -142,4 +146,8 @@ i:hover {
 
 #recipeSearchOptions {
     display: none;
+}
+
+#500Error {
+    width: 100%;
 }
