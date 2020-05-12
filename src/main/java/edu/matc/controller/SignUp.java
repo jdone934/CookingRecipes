@@ -3,8 +3,6 @@ package edu.matc.controller;
 import edu.matc.entity.Role;
 import edu.matc.persistence.GenericDao;
 import edu.matc.entity.Users;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,8 +22,6 @@ import java.io.IOException;
 )
 
 public class SignUp extends HttpServlet {
-    private final Logger logger = LogManager.getLogger(this.getClass());
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String requestServlet = req.getPathInfo();

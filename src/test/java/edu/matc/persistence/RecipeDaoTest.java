@@ -20,6 +20,7 @@ public class RecipeDaoTest {
     GenericDao instructionDao;
     GenericDao imageDao;
     GenericDao favoriteDao;
+    GenericDao ingredientDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
@@ -41,6 +42,7 @@ public class RecipeDaoTest {
         instructionDao = new GenericDao(Instruction.class);
         imageDao = new GenericDao(Image.class);
         favoriteDao = new GenericDao(FavoritedRecipe.class);
+        ingredientDao = new GenericDao(Ingredient.class);
     }
 
     /**
@@ -131,5 +133,16 @@ public class RecipeDaoTest {
         recipeDao.delete(recipeToDelete);
         FavoritedRecipe fav = (FavoritedRecipe) favoriteDao.getById(1);
         assertNull(favoriteDao.getById(1));
+    }
+
+    /**
+     * Verify Ingredient deletion on deletion of Recipe
+     */
+    @Test
+    void deleteIngredientsSuccess() {
+        Recipe recipeToDelete = (Recipe) recipeDao.getById(1);
+        recipeDao.delete(recipeToDelete);
+        Ingredient ing = (Ingredient) ingredientDao.getById(1);
+        assertNull(ing);
     }
 }

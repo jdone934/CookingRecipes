@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Image;
 import edu.matc.entity.Instruction;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.Users;
@@ -15,11 +16,27 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Instruction dao test.
+ */
 public class InstructionDaoTest {
+    /**
+     * The Recipe dao.
+     */
     GenericDao recipeDao;
+    /**
+     * The Instruction dao.
+     */
     GenericDao instructionDao;
+    /**
+     * The Image dao.
+     */
+    GenericDao imageDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     * The Session factory.
+     */
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
 
@@ -36,6 +53,7 @@ public class InstructionDaoTest {
 
         instructionDao = new GenericDao(Instruction.class);
         recipeDao = new GenericDao(Recipe.class);
+        imageDao = new GenericDao(Image.class);
     }
 
     /**
@@ -94,5 +112,14 @@ public class InstructionDaoTest {
     void getAllSuccess() {
         List<Instruction> instructions = instructionDao.getAll();
         assertEquals(5, instructions.size());
+    }
+
+    /**
+     * Verify deletion of image when instruction deleted.
+     */
+    @Test
+    void deleteImageSuccess() {
+        instructionDao.delete(instructionDao.getById(1));
+        assertNull(imageDao.getById(2));
     }
 }

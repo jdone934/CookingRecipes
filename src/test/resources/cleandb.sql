@@ -49,7 +49,6 @@ CREATE TABLE image
     `filepath` varchar(300) NOT NULL,
     `recipe_id` int,
     `instruction_id` int,
-    `description` varchar(50),
     PRIMARY KEY (`id`),
     foreign key (recipe_id) references recipe (id)
             on update cascade on delete cascade,
@@ -114,9 +113,9 @@ INSERT INTO
            (5, 5, 'Cook the mixture on LOW for another 3 hours, stirring about once every hour to ensure the meat doesn\'t burn.', 1);
 
 INSERT INTO
-    image (id, filepath, description, recipe_id, instruction_id)
-    VALUES (1, 'catLightning.png', 'cat shooting lightning from his paws', 1, null),
-           (2, 'waterfall.jpeg', 'waterfall from Grand Portage', null, 1);
+    image (id, filepath, recipe_id, instruction_id)
+    VALUES (1, 'catLightning.png', 1, null),
+           (2, 'waterfall.jpeg', null, 1);
 
 INSERT INTO
     ingredient (id, name, unit_of_measurement, quantity_numerator, quantity_denominator, recipe_id)
