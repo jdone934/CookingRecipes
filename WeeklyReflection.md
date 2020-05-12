@@ -65,3 +65,37 @@ Tasks Completed:
 * Completed Exercise for week 5
 
 I was able to catch up on graded materials for the week but wasn't able to put in any work on my project. Need to catch up on this for next week.
+
+### Week 14
+
+Total Time - 8 hours
+
+Tasks Completed:
+* Completed User login and registration
+* Completed add recipe form (w/o images)
+* Completed User profile page
+* Added path forwarding (allow user to be redirected to page they were on when logging in and out)
+* Further worked on attempting to integrate Alexa
+
+### Week 15
+
+Total time - 20 hours
+
+Tasks Completed:
+* Completed Edit Recipe Form
+* Added Image ability to store images to file directory (using FileUpload from Apache Commons)
+* Added file fields to add recipe and edit recipe forms
+* Added favoriting features
+* Confirmed everything to date is working on AWS (including reworking FileUpload to work on server)
+
+### Week 16
+
+Total time - 15 hours
+
+Tasks Completed:
+* Completed Admin features
+* Implemented JavaMail for API
+* Worked on styling the website
+* Implemented feedback from recent code reviews
+* Finished presentation
+* Recorded Demo
