@@ -52,6 +52,8 @@ avoiding this drawback.
 * [Screen Design (External Page to Moqups Project)](https://app.moqups.com/PwlaN4YYza/view/page/aa9df7b72)
 * [Application Flow](DesignDocuments/applicationFlow.md)
 * [Database Design (External Page to Draw.io Diagram)](https://drive.google.com/file/d/1Xa2Qe7GLNbkUfWn-g1wTmdzZB7NCPQyq/view?usp=sharing)
+* [Database Design (External Page to Draw.io Diagram)](https://drive.google.com/file/d/1Xa2Qe7GLNbkUfWn-g1wTmdzZB7NCPQyq/view?usp=sharing)
+* [Servlet UML Diagram](DesignDocuments/ServletUML.png)
 
 ### [Project Plan](ProjectPlan.md)
 
